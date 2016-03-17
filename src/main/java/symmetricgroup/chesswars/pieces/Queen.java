@@ -19,6 +19,13 @@ public class Queen extends Piece {
 
     public Queen(int x, int y, ArmyColor color) {
         super(x, y, color);
+        
+        setMoveLength(6);
+        
+        setMoveDirX(King.moveDirX);
+        setMoveDirY(King.moveDirY);
+        setEatDir(King.eatDir);
+        setMustEatDir(King.mustEatDir);
     }
 
     

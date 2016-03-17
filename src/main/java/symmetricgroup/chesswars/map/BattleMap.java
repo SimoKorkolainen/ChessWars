@@ -8,8 +8,10 @@ package symmetricgroup.chesswars.map;
 
 
 
+import java.util.ArrayList;
 import symmetricgroup.chesswars.pieces.Piece;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,6 +20,7 @@ import java.util.Map;
  */
 public class BattleMap {
     private Map<ArmyColor, Integer> team;
+    private List<Move> moves;
     private int width;
     private int height;
     private Piece[][] map; //Kartta käyttää matriisi-indeksointia
@@ -27,6 +30,7 @@ public class BattleMap {
         this.height = height;
         this.map = new Piece[width][height];
         this.team = new HashMap<>();
+        this.moves = new ArrayList<>();
         init();
 
     }
@@ -82,12 +86,26 @@ public class BattleMap {
     
     
     public void doMove(Move move) {
+        
+        map[move.getStartY()][move.getEndY()] = null;
+        
+        map[move.getEndY()][move.getEndX()] = move.getPiece();
+        
+        moves.add(move);
+    }
+    
+    private void undoMove(Move move) {
+        
+        map[move.getStartY()][move.getEndY()] = move.getPiece();
+        
+        map[move.getEndY()][move.getEndX()] = move.getEaten();
     
     }
     
-    public void undoMove(Move move) {
-    
+    public void undoLastMove() {
+        if (moves.isEmpty()) {
+            return;
+        }
+        undoMove(moves.remove(moves.size() - 1));
     }
-    
-    
 }

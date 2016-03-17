@@ -30,6 +30,32 @@ public class Move {
         this.piece = piece;
         this.eaten = eaten;
     }
+
+    public int getStartX() {
+        return startX;
+    }
+
+    public int getStartY() {
+        return startY;
+    }
+
+    public int getEndX() {
+        return endX;
+    }
+
+    public int getEndY() {
+        return endY;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
+    public Piece getEaten() {
+        return eaten;
+    }
+    
+    
     
     
 }

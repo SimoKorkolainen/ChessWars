@@ -16,9 +16,21 @@ import java.util.List;
  * @author simokork
  */
 public class Pawn extends Piece {
-
+    
+    static final int[] moveDirX = new int[]{1, 1, 0, -1, -1, -1, 0, 1};
+    static final int[] moveDirY = new int[]{0, -1, -1, -1, 0, 1, 1, 1};
+    static final boolean[] eatDir = new boolean[]{false, true, false, true, false, true, false, true};
+    static final boolean[] mustEatDir = new boolean[]{false, true, false, true, false, true, false, true};
+    
     public Pawn(int x, int y, ArmyColor color) {
         super(x, y, color);
+        
+        setMoveLength(1);
+        
+        setMoveDirX(moveDirX);
+        setMoveDirY(moveDirY);
+        setEatDir(eatDir);
+        setMustEatDir(mustEatDir);
     }
 
 

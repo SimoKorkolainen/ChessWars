@@ -27,7 +27,7 @@ public abstract class Piece {
     private int moveDirX[];
     private int moveDirY[];
     private boolean eatDir[];
-
+    private boolean mustEatDir[];
 
     public Piece(int x, int y, ArmyColor color) {
         this.x = x;
@@ -77,8 +77,9 @@ public abstract class Piece {
                     
                     break;
                 }
-                
-                moves.add(new Move(x, y, newX, newY, this, null));
+                if (!mustEatDir[j]) {
+                    moves.add(new Move(x, y, newX, newY, this, null));
+                }
                 
             }
         
@@ -102,6 +103,10 @@ public abstract class Piece {
 
     public int getMoveLength() {
         return moveLength;
+    }
+
+    public void setMustEatDir(boolean[] mustEatDir) {
+        this.mustEatDir = mustEatDir;
     }
     
     

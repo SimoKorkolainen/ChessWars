@@ -3,26 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package symmetricgroup.chesswars.pieces;
 
 import symmetricgroup.chesswars.map.ArmyColor;
-import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.Move;
-import java.util.List;
 
 /**
  *
- * @author simokork
+ * @author Simo
  */
-public class Rook extends Piece {
+public class Bishop extends Piece {
     
-    static final int[] moveDirX = new int[]{1, 0, -1, 0};
-    static final int[] moveDirY = new int[]{0, -1, 0, 1};
+    static final int[] moveDirX = new int[]{1, -1, -1, 1};
+    static final int[] moveDirY = new int[]{-1, -1, 1, 1};
     static final boolean[] eatDir = new boolean[]{true, true, true, true};
     static final boolean[] mustEatDir = new boolean[]{false, false, false, false};
      
-    public Rook(int x, int y, ArmyColor color) {
+
+    public Bishop(int x, int y, ArmyColor color) {
         super(x, y, color);
         
         setMoveLength(6);
@@ -32,6 +29,5 @@ public class Rook extends Piece {
         setEatDir(eatDir);
         setMustEatDir(mustEatDir);
     }
-
     
 }
