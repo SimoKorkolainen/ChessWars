@@ -13,6 +13,8 @@ import symmetricgroup.chesswars.pieces.Piece;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import symmetricgroup.chesswars.terrain.Plain;
+import symmetricgroup.chesswars.terrain.Terrain;
 
 /**
  *
@@ -24,11 +26,13 @@ public class BattleMap {
     private int width;
     private int height;
     private Piece[][] map; //Kartta käyttää matriisi-indeksointia
-
+    private Terrain[][] mapTerrain;
+    
     public BattleMap(int width, int height) {
         this.width = width;
         this.height = height;
         this.map = new Piece[width][height];
+        this.mapTerrain = new Terrain[width][height];
         this.team = new HashMap<>();
         this.moves = new ArrayList<>();
         init();
@@ -58,7 +62,7 @@ public class BattleMap {
             for (int j = 0; j < height; j++) {
             
                 map[j][i] = null;
-                
+                mapTerrain[j][i] = new Plain();
             }
         }
     
@@ -71,6 +75,10 @@ public class BattleMap {
 
     public Piece getPiece(int x, int y) {
         return map[y][x];
+    }
+    
+    public Terrain getTerrain(int x, int y) {
+        return mapTerrain[x][y];
     }
     
     public boolean isInside(int x, int y) {
@@ -108,4 +116,10 @@ public class BattleMap {
         }
         undoMove(moves.remove(moves.size() - 1));
     }
+
+    public List<Move> getMoves() {
+        return moves;
+    }
+    
+    
 }

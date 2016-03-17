@@ -22,8 +22,8 @@ public class Pawn extends Piece {
     static final boolean[] eatDir = new boolean[]{false, true, false, true, false, true, false, true};
     static final boolean[] mustEatDir = new boolean[]{false, true, false, true, false, true, false, true};
     
-    public Pawn(int x, int y, ArmyColor color) {
-        super(x, y, color);
+    public Pawn(ArmyColor color) {
+        super(color);
         
         setMoveLength(1);
         
@@ -34,5 +34,6 @@ public class Pawn extends Piece {
     }
 
 
+    
     
 }

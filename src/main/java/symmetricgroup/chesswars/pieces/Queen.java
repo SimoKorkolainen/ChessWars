@@ -17,8 +17,8 @@ import java.util.List;
  */
 public class Queen extends Piece {
 
-    public Queen(int x, int y, ArmyColor color) {
-        super(x, y, color);
+    public Queen(ArmyColor color) {
+        super(color);
         
         setMoveLength(6);
         
@@ -27,6 +27,7 @@ public class Queen extends Piece {
         setEatDir(King.eatDir);
         setMustEatDir(King.mustEatDir);
     }
+
 
     
 }

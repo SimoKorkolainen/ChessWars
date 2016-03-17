@@ -12,14 +12,14 @@ import symmetricgroup.chesswars.map.Move;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+import symmetricgroup.chesswars.terrain.Mountains;
+import symmetricgroup.chesswars.terrain.Terrain;
 
 /**
  *
  * @author simokork
  */
 public abstract class Piece {
-    private int x;
-    private int y;
     private ArmyColor color;
     
     
@@ -29,9 +29,7 @@ public abstract class Piece {
     private boolean eatDir[];
     private boolean mustEatDir[];
 
-    public Piece(int x, int y, ArmyColor color) {
-        this.x = x;
-        this.y = y;
+    public Piece(ArmyColor color) {
         this.color = color;
     }
 
@@ -54,11 +52,12 @@ public abstract class Piece {
     
     
     
-    public List<Move> getMoves(BattleMap map) {
+    public List<Move> getMoves(int x, int y, BattleMap map) {
         List<Move> moves = new ArrayList<>();
         
         
         for (int i = 0; i < moveDirX.length; i++) {
+            int stepsLeft = moveLength;
             for (int j = 1; j <= moveLength; j++) {
                 
                 int newX = x + j * moveDirX[j];
@@ -66,11 +65,38 @@ public abstract class Piece {
                 
                 if (!map.isInside(newX, newY)) {
                     break;
+                
                 }
+                
+                Terrain terrain = map.getTerrain(newX, newY);
+                
+                if (terrain.getClass() == Mountains.class && getClass() != Pawn.class) {
+                    break;
+                }
+                
+                stepsLeft -= terrain.moveCost();
+                
+                if (stepsLeft < 0 && j > 1) {
+                    break;
+                }
+                
                 Piece eaten = map.getPiece(newX, newY);
                 if (eaten != null) {
                     if (eatDir[i] && map.getTeam(eaten.getColor()) != map.getTeam(color)) {
                         
+                        if (!map.getMoves().isEmpty()) {
+                            Move last = map.getMoves().get(map.getMoves().size() - 1);
+                            
+                            if (last.getEaten().getClass() == Pawn.class && getClass() == Pawn.class) {
+                                if (last.getEaten().getColor() == color) {
+                                    if (last.getPiece().getClass() != Pawn.class) {
+                                        break;
+                                    }
+                                }
+                            
+                            }
+                        
+                        }
                         moves.add(new Move(x, y, newX, newY, this, eaten));
                         
                     }
@@ -89,13 +115,6 @@ public abstract class Piece {
         return moves;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
 
     public ArmyColor getColor() {
         return color;
@@ -109,7 +128,6 @@ public abstract class Piece {
         this.mustEatDir = mustEatDir;
     }
     
-    
-    
+
 
 }

@@ -22,8 +22,8 @@ public class Rook extends Piece {
     static final boolean[] eatDir = new boolean[]{true, true, true, true};
     static final boolean[] mustEatDir = new boolean[]{false, false, false, false};
      
-    public Rook(int x, int y, ArmyColor color) {
-        super(x, y, color);
+    public Rook(ArmyColor color) {
+        super(color);
         
         setMoveLength(6);
         
@@ -32,6 +32,7 @@ public class Rook extends Piece {
         setEatDir(eatDir);
         setMustEatDir(mustEatDir);
     }
+
 
     
 }

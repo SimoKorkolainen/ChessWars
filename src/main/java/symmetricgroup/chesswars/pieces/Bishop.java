@@ -19,8 +19,8 @@ public class Bishop extends Piece {
     static final boolean[] mustEatDir = new boolean[]{false, false, false, false};
      
 
-    public Bishop(int x, int y, ArmyColor color) {
-        super(x, y, color);
+    public Bishop(ArmyColor color) {
+        super(color);
         
         setMoveLength(6);
         
@@ -30,4 +30,5 @@ public class Bishop extends Piece {
         setMustEatDir(mustEatDir);
     }
     
+
 }
