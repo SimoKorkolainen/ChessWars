@@ -15,6 +15,7 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
 - Pelin pelaaminen tietokonetta vastaan
 - Kenttäeditorin käyttö
 - Luodun kentän pelaaminen
+  * Onnistuu, mikäli kentän luonti onnistui.
 - Pelin tallentaminen
 - Tallennetun pelin jatkaminen
  * Onnistuu, mikäli aikaisemmin tallennettu peli on olemassa.
