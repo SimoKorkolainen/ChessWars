@@ -1,1 +1,0 @@
-# Ohjelman kuvaus
