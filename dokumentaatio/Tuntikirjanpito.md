@@ -3,4 +3,4 @@
 Päivä | Tunnit | Kuvaus
 ------|--------|---------
 16.3.2016| 1.5h | Aiheen suunnittelua
-17.3.2016| 6h | Reposition ja dokumentaation luonti, pelin koodaamisen aloitus
+17.3.2016| 7h | Reposition ja dokumentaation luonti, pelin koodaamisen aloitus
