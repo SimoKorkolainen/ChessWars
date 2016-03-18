@@ -1,5 +1,11 @@
 package symmetricgroup.chesswars.map;
 
+import javax.swing.SwingUtilities;
+import symmetricgroup.chesswars.ui.Game;
+import symmetricgroup.chesswars.ui.GameScreen;
+import symmetricgroup.chesswars.ui.GameTimer;
+import symmetricgroup.chesswars.ui.UserInterface;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,7 +24,17 @@ public class ChessWars {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Game game = new Game(new GameScreen());
+        UserInterface ui = new UserInterface(game);
+        
+        
+        
+        SwingUtilities.invokeLater(ui);
+        
+        GameTimer timer = new GameTimer(30, game);
+        
+
     }
     
 }
