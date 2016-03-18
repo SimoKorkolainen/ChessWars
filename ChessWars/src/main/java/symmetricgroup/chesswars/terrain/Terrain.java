@@ -5,6 +5,8 @@
  */
 package symmetricgroup.chesswars.terrain;
 
+import java.awt.Graphics2D;
+
 /**
  *
  * @author Simo
@@ -12,5 +14,7 @@ package symmetricgroup.chesswars.terrain;
 public interface Terrain {
         
     public int moveCost();
+    
+    public void draw(Graphics2D g2d, int x, int y);
     
 }

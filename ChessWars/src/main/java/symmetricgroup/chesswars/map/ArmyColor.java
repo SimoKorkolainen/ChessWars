@@ -13,6 +13,16 @@ package symmetricgroup.chesswars.map;
  * @author simokork
  */
 public enum ArmyColor {
-    BLACK, WHITE, GREEN, BLUE, RED;
+    BLACK("Black"), WHITE("White"), GREEN("Green"), BLUE("Blue"), RED("Red");
     
+    private String color;
+    
+    private ArmyColor(String color) {
+        this.color = color;
+    }
+    
+    @Override
+    public String toString() {
+        return color;
+    }
 }

@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.pieces;
 
+import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.map.ArmyColor;
 
 /**
@@ -12,6 +13,7 @@ import symmetricgroup.chesswars.map.ArmyColor;
  * @author Simo
  */
 public class Bishop extends Piece {
+    private static PieceImages images;
     
     static final int[] moveDirX = new int[]{1, -1, -1, 1};
     static final int[] moveDirY = new int[]{-1, -1, 1, 1};
@@ -20,7 +22,7 @@ public class Bishop extends Piece {
      
 
     public Bishop(ArmyColor color) {
-        super(color);
+        super(color, "Bishop");
         
         setMoveLength(6);
         
@@ -28,6 +30,15 @@ public class Bishop extends Piece {
         setMoveDirY(moveDirY);
         setEatDir(eatDir);
         setMustEatDir(mustEatDir);
+        
+        if (images == null) {
+            images = new PieceImages(getName());
+        }
+    }
+
+    @Override
+    public BufferedImage getImage() {
+        return images.getImage(getColor());
     }
     
 

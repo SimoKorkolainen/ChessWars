@@ -27,7 +27,9 @@ public class UserInterface implements Runnable {
         frame = new JFrame();
         frame.setVisible(true);
         
-        frame.setPreferredSize(new Dimension(500, 400));
+        frame.setPreferredSize(new Dimension(600, 600));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         createContainer(frame.getContentPane());
         frame.pack();
     }

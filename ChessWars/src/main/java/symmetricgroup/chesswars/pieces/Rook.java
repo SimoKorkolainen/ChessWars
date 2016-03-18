@@ -6,16 +6,15 @@
 
 package symmetricgroup.chesswars.pieces;
 
+import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.map.ArmyColor;
-import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.Move;
-import java.util.List;
 
 /**
  *
  * @author simokork
  */
 public class Rook extends Piece {
+    private static PieceImages images;
     
     static final int[] moveDirX = new int[]{1, 0, -1, 0};
     static final int[] moveDirY = new int[]{0, -1, 0, 1};
@@ -23,7 +22,7 @@ public class Rook extends Piece {
     static final boolean[] mustEatDir = new boolean[]{false, false, false, false};
      
     public Rook(ArmyColor color) {
-        super(color);
+        super(color, "Rook");
         
         setMoveLength(6);
         
@@ -31,8 +30,14 @@ public class Rook extends Piece {
         setMoveDirY(moveDirY);
         setEatDir(eatDir);
         setMustEatDir(mustEatDir);
+        
+        if (images == null) {
+            images = new PieceImages(getName());
+        }
     }
 
-
-    
+    @Override
+    public BufferedImage getImage() {
+        return images.getImage(getColor());
+    } 
 }

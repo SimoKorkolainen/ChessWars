@@ -6,6 +6,7 @@
 
 package symmetricgroup.chesswars.pieces;
 
+import java.awt.Graphics2D;
 import symmetricgroup.chesswars.map.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.map.Move;
@@ -22,6 +23,8 @@ import symmetricgroup.chesswars.terrain.Terrain;
 public abstract class Piece {
     private ArmyColor color;
     
+    private String name;
+
     
     private int moveLength;
     private int moveDirX[];
@@ -29,8 +32,9 @@ public abstract class Piece {
     private boolean eatDir[];
     private boolean mustEatDir[];
 
-    public Piece(ArmyColor color) {
+    public Piece(ArmyColor color, String name) {
         this.color = color;
+        this.name = name;
     }
 
     public void setMoveLength(int moveLength) {
@@ -127,7 +131,15 @@ public abstract class Piece {
     public void setMustEatDir(boolean[] mustEatDir) {
         this.mustEatDir = mustEatDir;
     }
+
+    public String getName() {
+        return name;
+    }
     
-
-
+    public abstract BufferedImage getImage();    
+    
+    
+    public void draw(Graphics2D g2d, int x, int y) {
+        g2d.drawImage(getImage(), x, y, null);
+    }
 }

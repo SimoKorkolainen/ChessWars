@@ -6,6 +6,7 @@
 
 package symmetricgroup.chesswars.pieces;
 
+import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.map.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.map.Move;
@@ -17,13 +18,15 @@ import java.util.List;
  */
 public class King extends Piece {
     
+    private static PieceImages images;
+    
     static final int[] moveDirX = new int[]{1, 1, 0, -1, -1, -1, 0, 1};
     static final int[] moveDirY = new int[]{0, -1, -1, -1, 0, 1, 1, 1};
     static final boolean[] eatDir = new boolean[]{true, true, true, true, true, true, true, true};
      static final boolean[] mustEatDir = new boolean[]{false, false, false, false, false, false, false, false};
      
     public King(ArmyColor color) {
-        super(color);
+        super(color, "King");
         
         setMoveLength(1);
         
@@ -32,9 +35,13 @@ public class King extends Piece {
         setEatDir(eatDir);
         setMustEatDir(mustEatDir);
         
-        
-        
+        if (images == null) {
+            images = new PieceImages(getName());
+        }
     }
 
-    
+    @Override
+    public BufferedImage getImage() {
+        return images.getImage(getColor());
+    }
 }
