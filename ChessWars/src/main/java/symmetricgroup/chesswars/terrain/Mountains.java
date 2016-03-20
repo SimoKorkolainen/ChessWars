@@ -29,7 +29,7 @@ public class Mountains implements Terrain {
         return 6;
     }
 
-    public static BufferedImage getImage() {
+    public BufferedImage getImage() {
         return image;
     }
     

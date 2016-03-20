@@ -23,6 +23,7 @@ public class PieceImages {
     private BufferedImage redImage;
     private BufferedImage greenImage;
     private BufferedImage blueImage;
+    private BufferedImage yellowImage;
     
     public PieceImages(String pieceName) {
         
@@ -35,7 +36,7 @@ public class PieceImages {
         redImage = ImageColorer.color(whiteImage, Color.red);
         greenImage = ImageColorer.color(whiteImage, Color.green);
         blueImage = ImageColorer.color(whiteImage, Color.blue);
-        
+        yellowImage = ImageColorer.color(whiteImage, Color.yellow);
         
     }
     
@@ -54,6 +55,8 @@ public class PieceImages {
                 
             case WHITE: return whiteImage;
             
+            case YELLOW: return yellowImage;
+                
             default: return null;
     
         }

@@ -24,8 +24,8 @@ public class ChessWars {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Game game = new Game(new GameScreen());
+        BattleMap map = new BattleMap(10, 10);
+        Game game = new Game(new GameScreen(map), map);
         UserInterface ui = new UserInterface(game);
         
         

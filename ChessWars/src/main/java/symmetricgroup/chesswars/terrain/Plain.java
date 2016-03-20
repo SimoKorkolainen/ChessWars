@@ -6,7 +6,7 @@
 package symmetricgroup.chesswars.terrain;
 
 import java.awt.Graphics2D;
-import static symmetricgroup.chesswars.terrain.Mountains.getImage;
+import java.awt.image.BufferedImage;
 
 /**
  *
@@ -23,5 +23,12 @@ public class Plain implements Terrain {
     public void draw(Graphics2D g2d, int x, int y) {
     
     }
+
+    @Override
+    public BufferedImage getImage() {
+        return new BufferedImage(50, 50, BufferedImage.TYPE_4BYTE_ABGR_PRE);
+    }
+    
+    
     
 }

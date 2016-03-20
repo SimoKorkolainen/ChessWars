@@ -64,8 +64,8 @@ public abstract class Piece {
             int stepsLeft = moveLength;
             for (int j = 1; j <= moveLength; j++) {
                 
-                int newX = x + j * moveDirX[j];
-                int newY = y + j * moveDirY[j];
+                int newX = x + j * moveDirX[i];
+                int newY = y + j * moveDirY[i];
                 
                 if (!map.isInside(newX, newY)) {
                     break;
@@ -74,8 +74,10 @@ public abstract class Piece {
                 
                 Terrain terrain = map.getTerrain(newX, newY);
                 
-                if (terrain.getClass() == Mountains.class && getClass() != Pawn.class) {
-                    break;
+                if (terrain.getClass() == Mountains.class) {
+                    if (!getName().equals("Pawn")) {
+                        break;
+                    }
                 }
                 
                 stepsLeft -= terrain.moveCost();
@@ -90,31 +92,48 @@ public abstract class Piece {
                         
                         if (!map.getMoves().isEmpty()) {
                             Move last = map.getMoves().get(map.getMoves().size() - 1);
-                            
-                            if (last.getEaten().getClass() == Pawn.class && getClass() == Pawn.class) {
-                                if (last.getEaten().getColor() == color) {
-                                    if (last.getPiece().getClass() != Pawn.class) {
-                                        break;
+                            if (last.getEaten() != null) {
+                                if (last.getEaten().getClass() == Pawn.class && getClass() == Pawn.class) {
+                                    if (last.getEaten().getColor() == color) {
+                                        if (last.getPiece().getClass() != Pawn.class) {
+                                            break;
+                                        }
                                     }
+
                                 }
-                            
                             }
-                        
                         }
                         moves.add(new Move(x, y, newX, newY, this, eaten));
                         
+                        if (map.getPiece(x, y) != this) {
+                            System.out.println("Error");
+                        }
                     }
                     
                     break;
                 }
-                if (!mustEatDir[j]) {
-                    moves.add(new Move(x, y, newX, newY, this, null));
+                if (!mustEatDir[i]) {
+                    Move move = new Move(x, y, newX, newY, this, null);
+                    moves.add(move);
+                    
+                    if (map.getPiece(x, y) != this) {
+                        System.out.println("Error");
+                    }
+
                 }
                 
             }
         
         }
         
+        for (Move i : moves) {
+            if (map.getPiece(i.getEndX(), i.getEndY()) != i.getEaten()) {
+                System.out.println("Move error!! ");
+            }
+            if (map.getPiece(i.getStartX(), i.getStartY()) != i.getPiece()) {
+                System.out.println("Move error2!! " + map.getPiece(i.getStartX(), i.getStartY()) + " " + i.getPiece());
+            }
+        }
         
         return moves;
     }
@@ -142,4 +161,10 @@ public abstract class Piece {
     public void draw(Graphics2D g2d, int x, int y) {
         g2d.drawImage(getImage(), x, y, null);
     }
+
+    public void setColor(ArmyColor color) {
+        this.color = color;
+    }
+    
+    
 }

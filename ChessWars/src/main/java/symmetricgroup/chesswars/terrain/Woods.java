@@ -7,7 +7,6 @@ package symmetricgroup.chesswars.terrain;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import static symmetricgroup.chesswars.terrain.Mountains.getImage;
 import symmetricgroup.chesswars.util.ImageLoader;
 
 /**
@@ -25,7 +24,8 @@ public class Woods implements Terrain {
     
     }
     
-    public static BufferedImage getImage() {
+    @Override
+    public BufferedImage getImage() {
         return image;
     }
     

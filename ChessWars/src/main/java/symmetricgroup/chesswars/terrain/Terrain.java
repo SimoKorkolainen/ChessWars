@@ -6,6 +6,7 @@
 package symmetricgroup.chesswars.terrain;
 
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 /**
  *
@@ -17,4 +18,5 @@ public interface Terrain {
     
     public void draw(Graphics2D g2d, int x, int y);
     
+    public BufferedImage getImage();
 }

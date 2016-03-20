@@ -7,6 +7,7 @@
 package symmetricgroup.chesswars.ui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
@@ -24,9 +25,15 @@ import symmetricgroup.chesswars.util.ImageColorer;
  */
 public class GameScreen extends JPanel {
     private BattleMap map;
-    public GameScreen() {
+
+    private int mapX;
+    private int mapY;
+    
+    public GameScreen(BattleMap map) {
         super();
-        this.map = new BattleMap(10, 10);
+        this.map = map;
+        mapX = 10;
+        mapY = 10;
     }
     
     @Override
@@ -35,12 +42,29 @@ public class GameScreen extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         
 
-        map.drawMap(g2d, 10, 10);
+        map.drawMap(g2d, mapX, mapY);
         
         Toolkit.getDefaultToolkit().sync();
         g2d.dispose();
     
     }
+
+    public int getMapX() {
+        return mapX;
+    }
+
+    public int getMapY() {
+        return mapY;
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(map.getWidth() * map.getGridSize() + 50, map.getHeight() * map.getGridSize() + 50);
+    }
     
+    @Override
+    public Dimension getMinimumSize() {
+        return getPreferredSize();
+    }
     
 }
