@@ -10,3 +10,4 @@ Päivä | Tunnit | Kuvaus
 24.3.2016 | 5h | Editorin koodaus
 26.3.2016 | 6h | Käyttöliittymän koodaus
 28.3.2016 | 6h | Testien kirjoittaminen, tekoälyn parannus ja koodin siistiminen
+30.3.2016 | 1.5h | Luokkakaavion teko
