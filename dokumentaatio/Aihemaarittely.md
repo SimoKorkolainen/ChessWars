@@ -21,7 +21,7 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
  * Onnistuu, mikäli aikaisemmin tallennettu peli on olemassa.
  
 
-![Alt text](/path/to/img.jpg "Luokkakaavio")
+![Alt text](/ChessWars/dokumentaatio/chesswarsClassDiagram "Luokkakaavio")
  
  
 
