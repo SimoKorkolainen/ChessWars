@@ -23,20 +23,20 @@ public class Knight extends Piece {
     
     private static PieceImages images;
     
-    static final int[] moveDirX = new int[]{2, 1, -1, -2, -2, -1, 1, 2};
-    static final int[] moveDirY = new int[]{-1, -2, -2, -1, 1, 2, 2, 1};
-    static final boolean[] eatDir = new boolean[]{true, true, true, true, true, true, true, true};
-    static final boolean[] mustEatDir = new boolean[]{false, false, false, false, false, false, false, false};
+    private static final int[] MOVE_DIR_X = new int[]{2, 1, -1, -2, -2, -1, 1, 2};
+    private static final int[] MOVE_DIR_Y = new int[]{-1, -2, -2, -1, 1, 2, 2, 1};
+    private static final boolean[] EAT_DIR = new boolean[]{true, true, true, true, true, true, true, true};
+    private static final boolean[] MUST_EAT_DIR = new boolean[]{false, false, false, false, false, false, false, false};
     
     public Knight(ArmyColor color) {
         super(color, "Knight");
         
         setMoveLength(1);
         
-        setMoveDirX(moveDirX);
-        setMoveDirY(moveDirY);
-        setEatDir(eatDir);
-        setMustEatDir(mustEatDir);
+        setMoveDirX(MOVE_DIR_X);
+        setMoveDirY(MOVE_DIR_Y);
+        setEatDir(EAT_DIR);
+        setMustEatDir(MUST_EAT_DIR);
         
         if (images == null) {
             images = new PieceImages(getName());
@@ -50,7 +50,10 @@ public class Knight extends Piece {
     }
 
     
-    
+    @Override
+    public Piece copy() {
+        return new Knight(getColor());
+    }
     
     
 }

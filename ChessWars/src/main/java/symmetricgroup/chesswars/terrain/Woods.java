@@ -7,6 +7,7 @@ package symmetricgroup.chesswars.terrain;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.util.ImageLoader;
 
 /**
@@ -23,6 +24,7 @@ public class Woods implements Terrain {
         }
     
     }
+
     
     @Override
     public BufferedImage getImage() {
@@ -37,5 +39,15 @@ public class Woods implements Terrain {
     @Override
     public void draw(Graphics2D g2d, int x, int y) {
         g2d.drawImage(image, x, y, null);
+    }
+    
+    @Override
+    public String getName() {
+        return "Woods";
+    }
+    
+    @Override
+    public Terrain copy() {
+        return new Woods();
     }
 }

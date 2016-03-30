@@ -13,6 +13,7 @@ import symmetricgroup.chesswars.map.Move;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+import symmetricgroup.chesswars.map.Battle;
 import symmetricgroup.chesswars.terrain.Mountains;
 import symmetricgroup.chesswars.terrain.Terrain;
 
@@ -56,9 +57,9 @@ public abstract class Piece {
     
     
     
-    public List<Move> getMoves(int x, int y, BattleMap map) {
+    public List<Move> getMoves(int x, int y, Battle battle) {
         List<Move> moves = new ArrayList<>();
-        
+        BattleMap map = battle.getMap();
         
         for (int i = 0; i < moveDirX.length; i++) {
             int stepsLeft = moveLength;
@@ -88,26 +89,14 @@ public abstract class Piece {
                 
                 Piece eaten = map.getPiece(newX, newY);
                 if (eaten != null) {
-                    if (eatDir[i] && map.getTeam(eaten.getColor()) != map.getTeam(color)) {
+                    if (eatDir[i] && battle.getTeam(eaten.getColor()) != battle.getTeam(color)) {
                         
-                        if (!map.getMoves().isEmpty()) {
-                            Move last = map.getMoves().get(map.getMoves().size() - 1);
-                            if (last.getEaten() != null) {
-                                if (last.getEaten().getClass() == Pawn.class && getClass() == Pawn.class) {
-                                    if (last.getEaten().getColor() == color) {
-                                        if (last.getPiece().getClass() != Pawn.class) {
-                                            break;
-                                        }
-                                    }
-
-                                }
-                            }
-                        }
-                        moves.add(new Move(x, y, newX, newY, this, eaten));
+                        boolean eat = !lastEatenWasOwnPawn(battle) || lastEaterWasPawn(battle) || !isPawn(); 
                         
-                        if (map.getPiece(x, y) != this) {
-                            System.out.println("Error");
+                        if (eat) {
+                            moves.add(new Move(x, y, newX, newY, this, eaten));
                         }
+                        
                     }
                     
                     break;
@@ -116,9 +105,6 @@ public abstract class Piece {
                     Move move = new Move(x, y, newX, newY, this, null);
                     moves.add(move);
                     
-                    if (map.getPiece(x, y) != this) {
-                        System.out.println("Error");
-                    }
 
                 }
                 
@@ -126,19 +112,48 @@ public abstract class Piece {
         
         }
         
-        for (Move i : moves) {
-            if (map.getPiece(i.getEndX(), i.getEndY()) != i.getEaten()) {
-                System.out.println("Move error!! ");
-            }
-            if (map.getPiece(i.getStartX(), i.getStartY()) != i.getPiece()) {
-                System.out.println("Move error2!! " + map.getPiece(i.getStartX(), i.getStartY()) + " " + i.getPiece());
-            }
-        }
-        
         return moves;
     }
+    
+    public void pawnSpecialEating(List<Move> moves, int x, int y, Battle battle) {
 
 
+    }
+    
+    private boolean isPawn() {
+        return "Pawn".equals(getName());
+    }
+
+    private boolean lastEaterWasPawn(Battle battle) {
+        if (battle.getMoves().isEmpty()) {
+            return false;
+        }
+        
+        Move last = battle.getLastMove();
+        Piece eater = last.getPiece();
+        return eater.isPawn();
+    }
+
+    private boolean lastEatenWasOwnPawn(Battle battle) {
+        if (battle.getMoves().isEmpty()) {
+            return false;
+        }
+        
+        Move last = battle.getLastMove();
+        Piece eaten = last.getEaten();
+        if (eaten == null) {
+            return false;
+        }
+        
+        if (!eaten.isPawn()) {
+            return false;
+        }
+        
+        return eaten.getColor() == getColor();
+        
+    }
+    
+    
     public ArmyColor getColor() {
         return color;
     }
@@ -166,5 +181,10 @@ public abstract class Piece {
         this.color = color;
     }
     
+    @Override
+    public String toString() {
+        return color.toString() + "_" + name;
+    }
     
+    public abstract Piece copy();
 }

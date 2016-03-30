@@ -13,17 +13,25 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
+import symmetricgroup.chesswars.editor.Editor;
 import symmetricgroup.chesswars.editor.EditorPanel;
+import symmetricgroup.chesswars.map.AiPlayer;
+import symmetricgroup.chesswars.map.ArmyColor;
+import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.map.BattleMap;
+import symmetricgroup.chesswars.map.BattleThread;
+import symmetricgroup.chesswars.map.UserControl;
+import symmetricgroup.chesswars.map.UserPlayer;
+import symmetricgroup.chesswars.pieces.Rook;
 
 /**
  *
  * @author simokork
  */
 public class UserInterface implements Runnable {
-    JFrame frame;
-    Game game;
-    public UserInterface(Game game) {
-        this.game = game;
+    private JFrame frame;
+
+    public UserInterface() {
     }
     @Override
     public void run() {
@@ -34,29 +42,67 @@ public class UserInterface implements Runnable {
         frame.setPreferredSize(new Dimension(800, 600));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setFocusable(true);
+        Rook rook = new Rook(ArmyColor.WHITE);
+        frame.setIconImage(rook.getImage());
         
-        createContainer(frame.getContentPane());
+        showMainMenu();
+        
         frame.pack();
     }
     
-    public void createContainer(Container container) {
-        container.setLayout(new GridBagLayout());
+    
+ 
+    public void showEditorMenu() {
+        Container container = frame.getContentPane();
+        container.removeAll();
+        container.add(new EditorMenu(this));
+        frame.revalidate();
+        frame.repaint();
+    
+    }
+    
+    public void showMainMenu() {
+        Container container = frame.getContentPane();
+        container.removeAll();
+        container.add(new MainMenu(this));
+        frame.revalidate();
+        frame.repaint();
         
-        GridBagConstraints constraints = new GridBagConstraints();
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+    
+    public void showEditor() {
+        Container container = frame.getContentPane();
+        container.removeAll();
+        container.add(new Editor(new BattleMap(10, 10)));
+        frame.revalidate();
+        frame.repaint();
+    }
+    
+    public void showGame()  {
+        Container container = frame.getContentPane();
+        container.removeAll();
+        BattleMap map = new BattleMap(10, 10);
+        map.putSomeTroops();
+        Battle battle = new Battle(map);
         
-        constraints.anchor = GridBagConstraints.WEST;
-        constraints.gridx = 0;
-        constraints.gridy = 0;
+        UserControl control = new UserControl(battle);
         
-        game.getGameScreen().addMouseListener(new GameMouseListener(game));
-        container.add(game.getGameScreen(), constraints);
+        UserPlayer white = new UserPlayer(ArmyColor.WHITE, control);
+        AiPlayer black = new AiPlayer(5, ArmyColor.BLACK, battle);
+        battle.addPlayer(white);
+        battle.addPlayer(black);
         
-        constraints.anchor = GridBagConstraints.EAST;
-        constraints.gridx = 1;
-        constraints.gridy = 0;
-        EditorPanel panel = new EditorPanel();
-        game.getMap().setPanel(panel);
-        container.add(panel, constraints);
+        battle.start();
+        
+        
+        
+        container.add(new Game(battle, control));
+        frame.revalidate();
+        frame.repaint();
     }
     
 }

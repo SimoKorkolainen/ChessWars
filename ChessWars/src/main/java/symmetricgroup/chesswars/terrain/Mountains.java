@@ -37,4 +37,14 @@ public class Mountains implements Terrain {
     public void draw(Graphics2D g2d, int x, int y) {
         g2d.drawImage(image, x, y, null);
     }
+    
+    @Override
+    public String getName() {
+        return "Mountains";
+    }
+    
+    @Override
+    public Terrain copy() {
+        return new Mountains();
+    }
 }

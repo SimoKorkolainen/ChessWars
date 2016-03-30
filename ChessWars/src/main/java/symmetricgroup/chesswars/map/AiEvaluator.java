@@ -13,12 +13,12 @@ import symmetricgroup.chesswars.pieces.Piece;
  * @author Simo
  */
 public class AiEvaluator {
-    public static double ROOK_VALUE = 5;
-    public static double KNIGHT_VALUE = 3;
-    public static double BISHOP_VALUE = 3;
-    public static double KING_VALUE = 100000;
-    public static double QUEEN_VALUE = 9;
-    public static double PAWN_VALUE = 1;
+    public static final double ROOK_VALUE = 5;
+    public static final double KNIGHT_VALUE = 3;
+    public static final double BISHOP_VALUE = 3;
+    public static final double KING_VALUE = 100000;
+    public static final double QUEEN_VALUE = 9;
+    public static final double PAWN_VALUE = 1;
     public static double evaluate(BattleMap map, Set<ArmyColor> myTeam) {
         
         double eval = 0;

@@ -10,6 +10,11 @@ package symmetricgroup.chesswars.map;
  * @author Simo
  */
 public interface Player {
-    public Move getMove(BattleMap map);
+    
+    public void calculateMove();
     public ArmyColor getColor();
+    public boolean moveIsReady();
+    public Move getNextMove();
+
+    
 }

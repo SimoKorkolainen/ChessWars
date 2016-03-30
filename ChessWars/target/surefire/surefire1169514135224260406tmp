@@ -1,0 +1,7 @@
+#surefire
+#Mon Mar 28 14:55:28 EEST 2016
+maven.ext.class.path=C\:\\Program Files\\tmcbeans\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Simo\\Documents\\NetBeansProjects\\ChessWars\\ChessWars
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Simo\\.m2\\repository
+basedir=C\:\\Users\\Simo\\Documents\\NetBeansProjects\\ChessWars\\ChessWars

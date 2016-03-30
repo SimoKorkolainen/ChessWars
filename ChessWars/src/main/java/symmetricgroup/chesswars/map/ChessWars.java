@@ -2,7 +2,7 @@ package symmetricgroup.chesswars.map;
 
 import javax.swing.SwingUtilities;
 import symmetricgroup.chesswars.ui.Game;
-import symmetricgroup.chesswars.ui.GameScreen;
+import symmetricgroup.chesswars.ui.MapScreen;
 import symmetricgroup.chesswars.ui.GameTimer;
 import symmetricgroup.chesswars.ui.UserInterface;
 
@@ -24,16 +24,13 @@ public class ChessWars {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        BattleMap map = new BattleMap(10, 10);
-        Game game = new Game(new GameScreen(map), map);
-        UserInterface ui = new UserInterface(game);
+
         
+        UserInterface ui = new UserInterface();
         
+        GameTimer timer = new GameTimer(30, ui);
         
         SwingUtilities.invokeLater(ui);
-        
-        GameTimer timer = new GameTimer(30, game);
-        
 
     }
     

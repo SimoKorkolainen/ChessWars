@@ -16,11 +16,11 @@ import java.util.TimerTask;
 public class GameTimer extends TimerTask {
     private Timer timer;
     private int fps;
-    private Game game;
+    private UserInterface ui;
     
     
-    public GameTimer(int fps, Game game) {
-        this.game = game;
+    public GameTimer(int fps, UserInterface ui) {
+        this.ui = ui;
         timer = new Timer();
         timer.scheduleAtFixedRate(this, 100, fps);
     
@@ -28,10 +28,9 @@ public class GameTimer extends TimerTask {
 
     @Override
     public void run() {
-        
-        
-        game.getGameScreen().repaint();
-        
+        if (ui.getFrame() != null) {
+            ui.getFrame().repaint();
+        }
     }
     
 }

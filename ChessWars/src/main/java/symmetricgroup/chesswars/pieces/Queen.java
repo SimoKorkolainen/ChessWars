@@ -25,10 +25,10 @@ public class Queen extends Piece {
         
         setMoveLength(6);
         
-        setMoveDirX(King.moveDirX);
-        setMoveDirY(King.moveDirY);
-        setEatDir(King.eatDir);
-        setMustEatDir(King.mustEatDir);
+        setMoveDirX(King.MOVE_DIR_X);
+        setMoveDirY(King.MOVE_DIR_Y);
+        setEatDir(King.EAT_DIR);
+        setMustEatDir(King.MUST_EAT_DIR);
         
         if (images == null) {
             images = new PieceImages(getName());
@@ -39,5 +39,8 @@ public class Queen extends Piece {
     public BufferedImage getImage() {
         return images.getImage(getColor());
     }
-    
+    @Override
+    public Piece copy() {
+        return new Queen(getColor());
+    }
 }

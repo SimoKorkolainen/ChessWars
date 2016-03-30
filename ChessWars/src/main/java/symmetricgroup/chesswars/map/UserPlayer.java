@@ -5,28 +5,51 @@
  */
 package symmetricgroup.chesswars.map;
 
+import symmetricgroup.chesswars.pieces.Piece;
+
 /**
  *
  * @author Simo
  */
 public class UserPlayer implements Player {
-    
+    private boolean moveIsReady;
+    private Move next;
+    private UserControl control;
     private ArmyColor color;
 
-    public UserPlayer(ArmyColor color) {
+    public UserPlayer(ArmyColor color, UserControl control) {
         this.color = color;
+        this.moveIsReady = false;
+        this.control = control;
+    }
+
+
+    public void setNextMove(Move next) {
+        this.next = next;
+        this.moveIsReady = true;
     }
     
     
 
-    @Override
-    public Move getMove(BattleMap map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public ArmyColor getColor() {
         return color;
     }
-    
+
+    @Override
+    public void calculateMove() {
+        moveIsReady = false;
+        control.setPlayer(this);
+
+    }
+
+    @Override
+    public boolean moveIsReady() {
+        return moveIsReady;
+    }
+
+    @Override
+    public Move getNextMove() {
+        return next;
+    }
+
 }

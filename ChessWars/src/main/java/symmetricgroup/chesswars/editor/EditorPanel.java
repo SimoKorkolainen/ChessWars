@@ -87,7 +87,7 @@ public class EditorPanel extends JPanel {
 
         
         
-     }
+    }
     public void setColor(ArmyColor color) {
         this.color = color;
         for (PieceSelectionButton i : pieceButtons) {

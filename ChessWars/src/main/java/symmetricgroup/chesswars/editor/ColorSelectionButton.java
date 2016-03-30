@@ -6,6 +6,7 @@
 package symmetricgroup.chesswars.editor;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JToggleButton;
 import symmetricgroup.chesswars.map.ArmyColor;
@@ -46,6 +47,16 @@ public class ColorSelectionButton extends JToggleButton {
 
     public ArmyColor getColor() {
         return color;
+    }
+    
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(50, 50);
+    }
+    
+    @Override
+    public Dimension getMaximumSize() {
+        return getPreferredSize();
     }
     
     

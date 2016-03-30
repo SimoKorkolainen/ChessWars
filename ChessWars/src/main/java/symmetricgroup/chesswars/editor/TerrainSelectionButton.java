@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.editor;
 
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JToggleButton;
@@ -25,6 +26,15 @@ public class TerrainSelectionButton extends JToggleButton {
 
     public Terrain getTerrain() {
         return terrain;
+    }
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(50, 50);
+    }
+    
+    @Override
+    public Dimension getMaximumSize() {
+        return getPreferredSize();
     }
     
     

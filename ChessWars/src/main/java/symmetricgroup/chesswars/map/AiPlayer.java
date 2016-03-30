@@ -5,80 +5,93 @@
  */
 package symmetricgroup.chesswars.map;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
  *
  * @author Simo
  */
-public class AiPlayer {
+public class AiPlayer implements Player {
     private int searchDepth;
     private ArmyColor color;
     private Set<ArmyColor> myTeam;
-    public AiPlayer(int searchDepth, ArmyColor color) {
+    private Battle battle;
+    private Battle copy;
+    private boolean moveIsReady;
+    private Move nextMove;
+    public AiPlayer(int searchDepth, ArmyColor color, Battle battle) {
         this.searchDepth = searchDepth;
         this.color = color;
         this.myTeam = new HashSet<>();
         this.myTeam.add(color);
+        this.searchDepth = searchDepth;
+        this.battle = battle;
     }
     
     
     //Tekoäly pelaa aivan kuin kaikki eri tiimeissä olevat vastustajat olisivat liittoutuneet keskenään ja omien tiimiläisten siirrot olisivat tekoälyn itse päätettävissä.
-    public Move alphaBeta(BattleMap map, int depth) {
+    public Move alphaBeta() {
+        copy = BattleCopier.copy(battle);
         double value = -1000000;
         Move best = null;
-
-        for (Move i : map.allPossibleNextMoves()) {
+        
+        List<EvalMove> evalMoves = sortedEvalMoves();
+        Collections.reverse(evalMoves);
+        for (EvalMove i : evalMoves) {
             
-            map.doMove(i);
+            copy.doMove(i.getMove());
             
             double newValue;
-            if (myTeam.contains(map.nextColorToMove())) {
+            if (myTeam.contains(copy.nextColorToMove())) {
                 
-                newValue = maxValue(map, -1000000, 1000000, depth - 1);
+                newValue = maxValue(-1000000, 1000000, searchDepth - 1);
             } else {
-                newValue = minValue(map, -1000000, 1000000, depth - 1);
+                newValue = minValue(-1000000, 1000000, searchDepth - 1);
             }
             
             if (newValue > value) {
                 value = newValue;
-                best = i;
+                best = i.getMove();
             }
             
-            map.undoLastMove();
+            copy.undoLastMove();
         
         }
         System.out.println(value);
         return best;
     }
     
-    public double maxValue(BattleMap map, double alpha, double beta, int depth) {
+    public double maxValue(double alpha, double beta, int depth) {
         //System.out.println("alphaBeta depth: " + depth + " turn: " + map.nextColorToMove());
         if (depth == 0) {
-            return AiEvaluator.evaluate(map, myTeam);
+            return AiEvaluator.evaluate(copy.getMap(), myTeam);
         }
         
         double value = -1000000;
-        
-        for (Move i : map.allPossibleNextMoves()) {
+        List<EvalMove> evalMoves = sortedEvalMoves();
+        Collections.reverse(evalMoves);
+        for (EvalMove i : evalMoves) {
 
-            map.doMove(i);
+            copy.doMove(i.getMove());
             
-            if (myTeam.contains(map.nextColorToMove())) {
-                value = Math.max(value, maxValue(map, alpha, beta, depth - 1));
+            if (myTeam.contains(copy.nextColorToMove())) {
+                value = Math.max(value, maxValue(alpha, beta, depth - 1));
             } else {
-                value = Math.max(value, minValue(map, alpha, beta, depth - 1));
+                value = Math.max(value, minValue(alpha, beta, depth - 1));
             }
             
             if (beta <= value) {
-                map.undoLastMove();
+                copy.undoLastMove();
                 return value;
             }
             
             alpha = Math.max(alpha, value);
             
-            map.undoLastMove();
+            copy.undoLastMove();
         
         }
         
@@ -86,34 +99,75 @@ public class AiPlayer {
     
     }
     
-    public double minValue(BattleMap map, double alpha, double beta, int depth) {
+    public double minValue(double alpha, double beta, int depth) {
         
         if (depth == 0) {
-            return AiEvaluator.evaluate(map, myTeam);
+            return AiEvaluator.evaluate(copy.getMap(), myTeam);
         }
         double value = 1000000;
         
-        for (Move i : map.allPossibleNextMoves()) {
+        List<EvalMove> evalMoves = sortedEvalMoves();
+        
+        for (EvalMove i : evalMoves) {
             
-            map.doMove(i);
+            copy.doMove(i.getMove());
             
-            if (myTeam.contains(map.nextColorToMove())) {
-                value = Math.min(value, maxValue(map, alpha, beta, depth - 1));
+            if (myTeam.contains(copy.nextColorToMove())) {
+                value = Math.min(value, maxValue(alpha, beta, depth - 1));
             } else {
-                value = Math.min(value, minValue(map, alpha, beta, depth - 1));
+                value = Math.min(value, minValue(alpha, beta, depth - 1));
             }
             
             if (alpha >= value) {
-                map.undoLastMove();
+                copy.undoLastMove();
                 return value;
             }
             
             beta = Math.min(beta, value);
             
-            map.undoLastMove();
+            copy.undoLastMove();
         
         }
         return value;
     }
+
+    @Override
+    public void calculateMove() {
+        moveIsReady = false;
+        nextMove = alphaBeta();
+        moveIsReady = true;
+
+    }
+
+    @Override
+    public ArmyColor getColor() {
+        return color;
+    }
+
+    @Override
+    public boolean moveIsReady() {
+        return moveIsReady;
+    }
+
+    @Override
+    public Move getNextMove() {
+        return nextMove;
+    }
     
+    public List<EvalMove> sortedEvalMoves() {
+        List<Move> moves = copy.allPossibleNextMoves();
+        List<EvalMove> evalMoves = new ArrayList<>();
+        for (Move i : moves) {
+            copy.doMove(i);
+            double eval = AiEvaluator.evaluate(copy.getMap(), myTeam);
+            evalMoves.add(new EvalMove(eval, i));
+            copy.undoLastMove();
+        }
+        
+        Collections.sort(evalMoves);
+        
+        return evalMoves;
+    
+    } 
+
 }

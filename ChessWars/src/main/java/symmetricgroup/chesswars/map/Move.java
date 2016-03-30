@@ -56,6 +56,9 @@ public class Move {
     }
     
     
-    
-    
+    public Move copy() {
+        return new Move(startX, startY, endX, endY, piece.copy(), eaten.copy());
+    }
+
+
 }

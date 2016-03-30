@@ -19,20 +19,20 @@ import java.util.List;
 public class Pawn extends Piece {
     private static PieceImages images;
     
-    static final int[] moveDirX = new int[]{1, 1, 0, -1, -1, -1, 0, 1};
-    static final int[] moveDirY = new int[]{0, -1, -1, -1, 0, 1, 1, 1};
-    static final boolean[] eatDir = new boolean[]{false, true, false, true, false, true, false, true};
-    static final boolean[] mustEatDir = new boolean[]{false, true, false, true, false, true, false, true};
+    public static final int[] MOVE_DIR_X = new int[]{1, 1, 0, -1, -1, -1, 0, 1};
+    public static final int[] MOVE_DIR_Y = new int[]{0, -1, -1, -1, 0, 1, 1, 1};
+    public static final boolean[] EAT_DIR = new boolean[]{false, true, false, true, false, true, false, true};
+    public static final boolean[] MUST_EAT_DIR = new boolean[]{false, true, false, true, false, true, false, true};
     
     public Pawn(ArmyColor color) {
         super(color, "Pawn");
         
         setMoveLength(1);
         
-        setMoveDirX(moveDirX);
-        setMoveDirY(moveDirY);
-        setEatDir(eatDir);
-        setMustEatDir(mustEatDir);
+        setMoveDirX(MOVE_DIR_X);
+        setMoveDirY(MOVE_DIR_Y);
+        setEatDir(EAT_DIR);
+        setMustEatDir(MUST_EAT_DIR);
         
         if (images == null) {
             images = new PieceImages(getName());
@@ -44,5 +44,8 @@ public class Pawn extends Piece {
         return images.getImage(getColor());
     }
     
-    
+    @Override
+    public Piece copy() {
+        return new Pawn(getColor());
+    }
 }

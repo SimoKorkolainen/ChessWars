@@ -6,30 +6,55 @@
 
 package symmetricgroup.chesswars.ui;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JPanel;
+import symmetricgroup.chesswars.map.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
+import symmetricgroup.chesswars.map.BattleThread;
+import symmetricgroup.chesswars.map.Player;
+import symmetricgroup.chesswars.map.UserControl;
+import symmetricgroup.chesswars.map.UserPlayer;
 
 /**
  *
  * @author simokork
  */
-public class Game {
-    private GameScreen gameScreen;
-    private BattleMap map;
-    
+public class Game extends JPanel {
+    private MapScreen screen;
+    private Battle battle;
+    UserControl control;
 
-    public Game(GameScreen gameScreen, BattleMap map) {
-        this.gameScreen = gameScreen;
-        this.map = map;
-    }
-
-    public GameScreen getGameScreen() {
-        return gameScreen;
-    }
-
-    public BattleMap getMap() {
-        return map;
+    public Game(Battle battle, UserControl control) {
+        this.battle = battle;
+        this.control = control;
+        createComponents();
+        
     }
     
+
+    public void createComponents() {
+        
+        screen = new MapScreen(battle, control);
+        
+        MapMouseListener listener = new MapMouseListener(screen, control);
+        
+
+        
+        screen.addMouseListener(listener);
+        
+        super.setLayout(new GridBagLayout());
+        
+        GridBagConstraints constraints = new GridBagConstraints();
+        
+        constraints.anchor = GridBagConstraints.WEST;
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        
+        super.add(screen, constraints);
     
+    }
     
 }

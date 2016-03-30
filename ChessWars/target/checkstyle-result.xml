@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\ClearButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\ClearButtonListener.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\ColorSelectionButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\Editor.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\EditorPanel.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\MapEditor.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\PieceSelectionButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\SelectionButtonListener.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\editor\TerrainSelectionButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\AiEvaluator.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\AiPlayer.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\ArmyColor.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\Battle.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\BattleCopier.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\BattleMap.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\BattleThread.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\ChessWars.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\MapCopier.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\MapIO.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\Move.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\Player.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\SelectedPiece.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\UserControl.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\UserPlayer.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Bishop.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\King.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Knight.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Pawn.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Piece.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\PieceImages.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Queen.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Rook.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\Mountains.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\Plain.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\Terrain.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\Woods.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\EditorMenu.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\Game.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\GameTimer.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MainMenu.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MapMouseListener.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MapScreen.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MenuButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MenuButtonListener.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\UserInterface.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\util\ImageColorer.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\util\ImageLoader.java">
+</file>
+</checkstyle>

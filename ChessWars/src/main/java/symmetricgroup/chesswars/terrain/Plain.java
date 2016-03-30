@@ -29,6 +29,14 @@ public class Plain implements Terrain {
         return new BufferedImage(50, 50, BufferedImage.TYPE_4BYTE_ABGR_PRE);
     }
     
-    
+    @Override
+    public String getName() {
+        return "Plain";
+    }
+
+    @Override
+    public Terrain copy() {
+        return new Plain();
+    }
     
 }

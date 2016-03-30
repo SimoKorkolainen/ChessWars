@@ -16,28 +16,35 @@ import symmetricgroup.chesswars.map.ArmyColor;
 public class Rook extends Piece {
     private static PieceImages images;
     
-    static final int[] moveDirX = new int[]{1, 0, -1, 0};
-    static final int[] moveDirY = new int[]{0, -1, 0, 1};
-    static final boolean[] eatDir = new boolean[]{true, true, true, true};
-    static final boolean[] mustEatDir = new boolean[]{false, false, false, false};
+    public static final int[] MOVE_DIR_X = new int[]{1, 0, -1, 0};
+    public static final int[] MOVE_DIR_Y = new int[]{0, -1, 0, 1};
+    public static final boolean[] EAT_DIR = new boolean[]{true, true, true, true};
+    public static final boolean[] MUST_EAT_DIR = new boolean[]{false, false, false, false};
      
     public Rook(ArmyColor color) {
         super(color, "Rook");
         
         setMoveLength(6);
         
-        setMoveDirX(moveDirX);
-        setMoveDirY(moveDirY);
-        setEatDir(eatDir);
-        setMustEatDir(mustEatDir);
+        setMoveDirX(MOVE_DIR_X);
+        setMoveDirY(MOVE_DIR_Y);
+        setEatDir(EAT_DIR);
+        setMustEatDir(MUST_EAT_DIR);
         
         if (images == null) {
             images = new PieceImages(getName());
         }
     }
 
+
+
     @Override
     public BufferedImage getImage() {
         return images.getImage(getColor());
     } 
+    
+    @Override
+    public Piece copy() {
+        return new Rook(getColor());
+    }
 }

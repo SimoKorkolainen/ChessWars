@@ -19,4 +19,8 @@ public interface Terrain {
     public void draw(Graphics2D g2d, int x, int y);
     
     public BufferedImage getImage();
+    
+    public String getName();
+    
+    public Terrain copy();
 }
