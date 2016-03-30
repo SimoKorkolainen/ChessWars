@@ -7,3 +7,6 @@ Päivä | Tunnit | Kuvaus
 18.3.2016 | 5h | Graafisen käyttöliittymän luonnin aloitus
 19.3.2016 | 8h | Editorin koodaus ja tekoälyn koodauksen aloitus
 20.3.2016 | 3h | Tekoälyn bugien korjaus (Voi olla vielä bugeja jäljellä)
+24.3.2016 | 5h | Editorin koodaus
+26.3.2016 | 6h | Käyttöliittymän koodaus
+28.3.2016 | 6h | Testien kirjoittaminen, tekoälyn parannus ja koodin siistiminen
