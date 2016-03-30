@@ -20,8 +20,9 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
 - Tallennetun pelin jatkaminen
  * Onnistuu, mikäli aikaisemmin tallennettu peli on olemassa.
  
+## Luokkakaavio
 
-![Alt text](/dokumentaatio/chesswarsClassDiagram.png "Luokkakaavio")
+![Luokkakaavio](/dokumentaatio/chesswarsClassDiagram.png "Luokkakaavio")
  
  
 
