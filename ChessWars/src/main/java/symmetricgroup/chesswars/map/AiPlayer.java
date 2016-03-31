@@ -23,6 +23,7 @@ public class AiPlayer implements Player {
     private Battle copy;
     private boolean moveIsReady;
     private Move nextMove;
+
     public AiPlayer(int searchDepth, ArmyColor color, Battle battle) {
         this.searchDepth = searchDepth;
         this.color = color;

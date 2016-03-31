@@ -26,6 +26,10 @@ public class ImageColorer {
                 int g = (col & 0x0000ff00) >> 8;
                 int b = (col & 0x000000ff);
                 
+                //r = 255 - 2 * (255 - r) / 3;
+                //g = 255 - 2 * (255 - g) / 3;
+                //b = 255 - 2 * (255 - b) / 3;
+                
                 int newR = (int) Math.floor((double) r / 255 * color.getRed());
                 int newG = (int) Math.floor((double) g / 255 * color.getGreen());
                 int newB = (int) Math.floor((double) b / 255 * color.getBlue());

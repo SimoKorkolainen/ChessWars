@@ -33,9 +33,9 @@ public class PieceImages {
         whiteImage = ImageLoader.loadImage(startPart + "White" + endPart);
         blackImage = ImageLoader.loadImage(startPart + "Black" + endPart);
         
-        redImage = ImageColorer.color(whiteImage, Color.red);
-        greenImage = ImageColorer.color(whiteImage, Color.green);
-        blueImage = ImageColorer.color(whiteImage, Color.blue);
+        redImage = ImageColorer.color(whiteImage, new Color(255, 100, 100));
+        greenImage = ImageColorer.color(whiteImage, new Color(100, 255, 100));
+        blueImage = ImageColorer.color(whiteImage, new Color(100, 100, 255));
         yellowImage = ImageColorer.color(whiteImage, Color.yellow);
         
     }

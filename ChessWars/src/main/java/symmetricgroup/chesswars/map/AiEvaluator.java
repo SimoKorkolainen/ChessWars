@@ -19,9 +19,11 @@ public class AiEvaluator {
     public static final double KING_VALUE = 100000;
     public static final double QUEEN_VALUE = 9;
     public static final double PAWN_VALUE = 1;
+    public static final double AGGRESSIVENESS = 0.2;
+    public static final double RANDOMNESS = 1;
     public static double evaluate(BattleMap map, Set<ArmyColor> myTeam) {
         
-        double eval = 0;
+        double eval = Math.random() * RANDOMNESS;
         
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
@@ -35,7 +37,7 @@ public class AiEvaluator {
     }
     
     private static double evalMapPosition(int x, int y, BattleMap map, Set<ArmyColor> myTeam) {
-        double factor = -1;
+        double factor = -1 - AGGRESSIVENESS;
         
         Piece p = map.getPiece(x, y);
         
