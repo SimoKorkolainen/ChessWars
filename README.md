@@ -1,2 +1,2 @@
 # ChessWars
-Shakkiin perustuva strategiapeli.
+Shakkiin perustuva strategiapeli, jossa pelaajat liikuttelevat vuorotellen napuloitaan yrittäen syödä vastustajan kuninkaan.
