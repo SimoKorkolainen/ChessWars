@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.map;
 
+import symmetricgroup.chesswars.players.ArmyColor;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

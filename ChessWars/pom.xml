@@ -33,6 +33,19 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
+                <configuration>
+                    <targetClasses>
+                        <param>symmetricgroup.chesswars.map.*</param>
+                        <param>symmetricgroup.chesswars.players.*</param>
+                        <param>symmetricgroup.chesswars.pieces.*</param>
+                        <param>symmetricgroup.chesswars.terrain.*</param>
+                        <param>symmetricgroup.chesswars.battle.*</param>
+                        <param>symmetricgroup.chesswars.players.*</param>
+                        <param>symmetricgroup.chesswars.util.*</param>
+                    </targetClasses>
+                    <targetTests>
+                    </targetTests>
+                </configuration>
             </plugin>
             <plugin>
             <artifactId>maven-assembly-plugin</artifactId>

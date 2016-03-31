@@ -1,4 +1,4 @@
-package symmetricgroup.chesswars.map;
+package symmetricgroup.chesswars.ui;
 
 import javax.swing.SwingUtilities;
 import symmetricgroup.chesswars.ui.Game;

@@ -1,4 +1,4 @@
-package symmetricgroup.chesswars.map;
+package symmetricgroup.chesswars.players;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package symmetricgroup.chesswars.editor;
+package symmetricgroup.chesswars.ui.editor;
 
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JPanel;
-import symmetricgroup.chesswars.map.ArmyColor;
+import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.pieces.Bishop;
 import symmetricgroup.chesswars.pieces.King;
 import symmetricgroup.chesswars.pieces.Knight;

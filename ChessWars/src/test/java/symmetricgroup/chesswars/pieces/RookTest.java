@@ -13,10 +13,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import symmetricgroup.chesswars.map.ArmyColor;
-import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.players.ArmyColor;
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.Move;
+import symmetricgroup.chesswars.battle.Move;
 import symmetricgroup.chesswars.pieces.Rook;
 import symmetricgroup.chesswars.terrain.Mountains;
 

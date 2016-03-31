@@ -7,9 +7,9 @@
 package symmetricgroup.chesswars.pieces;
 
 import java.awt.image.BufferedImage;
-import symmetricgroup.chesswars.map.ArmyColor;
+import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.Move;
+import symmetricgroup.chesswars.battle.Move;
 import java.util.List;
 
 /**

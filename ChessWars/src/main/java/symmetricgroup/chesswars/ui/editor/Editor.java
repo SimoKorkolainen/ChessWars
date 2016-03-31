@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package symmetricgroup.chesswars.editor;
+package symmetricgroup.chesswars.ui.editor;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JPanel;
-import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.ui.MapMouseListener;
 import symmetricgroup.chesswars.ui.MapScreen;

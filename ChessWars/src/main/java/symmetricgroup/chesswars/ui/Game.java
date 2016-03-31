@@ -11,12 +11,12 @@ import java.awt.GridBagLayout;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JPanel;
-import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.BattleThread;
-import symmetricgroup.chesswars.map.Player;
-import symmetricgroup.chesswars.map.UserControl;
-import symmetricgroup.chesswars.map.UserPlayer;
+import symmetricgroup.chesswars.battle.BattleThread;
+import symmetricgroup.chesswars.players.Player;
+import symmetricgroup.chesswars.players.UserControl;
+import symmetricgroup.chesswars.players.UserPlayer;
 
 /**
  *

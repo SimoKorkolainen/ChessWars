@@ -7,13 +7,13 @@
 package symmetricgroup.chesswars.pieces;
 
 import java.awt.Graphics2D;
-import symmetricgroup.chesswars.map.ArmyColor;
+import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.Move;
+import symmetricgroup.chesswars.battle.Move;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.terrain.Mountains;
 import symmetricgroup.chesswars.terrain.Terrain;
 

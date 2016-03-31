@@ -1,0 +1,155 @@
+<html>
+<head>
+  
+    <style type='text/css'>
+   
+   .tests{ 
+     width : 50%;
+     float : left;
+   }
+   
+   .mutees{
+     float : right;
+     width : 50%;
+   }
+   
+   .unit {
+     padding-top : 20px;
+     clear : both;
+   }
+   
+   .coverage_bar {
+    display : inline-block;
+    height : 1.1em;
+    width: 130px;
+    background: #FAA;
+    margin: 0 5px;
+    vertical-align: middle;
+    border: 1px solid #AAA;
+    position : relative;
+   }
+   
+   .coverage_complete {
+    display : inline-block;
+    height : 100%;
+    background: #DFD;
+    float: left;
+   }
+   
+   .coverage_ledgend {
+        position : absolute;
+        height : 100%;
+        width : 100%;
+        left : 0;
+        top : 0;
+        text-align : center;
+   }
+   
+   .line, .mut {
+        vertical-align : middle;
+   }
+   
+   .coveragePercentage {
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+   }
+  </style>
+  
+</head>
+<body>
+
+<h1>Pit Test Coverage Report</h1>
+
+<h3>Project Summary</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Number of Classes</th>
+            <th>Line Coverage</th>
+            <th>Mutation Coverage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>27</td>
+            <td>32% <div class="coverage_bar"><div class="coverage_complete" style="width:32%"></div><div class="coverage_ledgend">186/583</div></div></td>
+            <td>21% <div class="coverage_bar"><div class="coverage_complete" style="width:21%"></div><div class="coverage_ledgend">74/360</div></div></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h3>Breakdown by Package</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number of Classes</th>
+            <th>Line Coverage</th>
+            <th>Mutation Coverage</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.battle/index.html">symmetricgroup.chesswars.battle</a></td>
+            <td>4</td>
+            <td><div class="coveragePercentage">30% </div><div class="coverage_bar"><div class="coverage_complete" style="width:30%"></div><div class="coverage_ledgend">31/102</div></div></td>
+            <td><div class="coveragePercentage">16% </div><div class="coverage_bar"><div class="coverage_complete" style="width:16%"></div><div class="coverage_ledgend">9/58</div></div></td>
+        </tr>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.map/index.html">symmetricgroup.chesswars.map</a></td>
+            <td>3</td>
+            <td><div class="coveragePercentage">29% </div><div class="coverage_bar"><div class="coverage_complete" style="width:29%"></div><div class="coverage_ledgend">30/105</div></div></td>
+            <td><div class="coveragePercentage">48% </div><div class="coverage_bar"><div class="coverage_complete" style="width:48%"></div><div class="coverage_ledgend">28/58</div></div></td>
+        </tr>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.pieces/index.html">symmetricgroup.chesswars.pieces</a></td>
+            <td>8</td>
+            <td><div class="coveragePercentage">58% </div><div class="coverage_bar"><div class="coverage_complete" style="width:58%"></div><div class="coverage_ledgend">98/169</div></div></td>
+            <td><div class="coveragePercentage">36% </div><div class="coverage_bar"><div class="coverage_complete" style="width:36%"></div><div class="coverage_ledgend">35/98</div></div></td>
+        </tr>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.players/index.html">symmetricgroup.chesswars.players</a></td>
+            <td>4</td>
+            <td><div class="coveragePercentage">8% </div><div class="coverage_bar"><div class="coverage_complete" style="width:8%"></div><div class="coverage_ledgend">5/60</div></div></td>
+            <td><div class="coveragePercentage">0% </div><div class="coverage_bar"><div class="coverage_complete" style="width:0%"></div><div class="coverage_ledgend">0/22</div></div></td>
+        </tr>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.players.ai/index.html">symmetricgroup.chesswars.players.ai</a></td>
+            <td>3</td>
+            <td><div class="coveragePercentage">0% </div><div class="coverage_bar"><div class="coverage_complete" style="width:0%"></div><div class="coverage_ledgend">0/101</div></div></td>
+            <td><div class="coveragePercentage">0% </div><div class="coverage_bar"><div class="coverage_complete" style="width:0%"></div><div class="coverage_ledgend">0/80</div></div></td>
+        </tr>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.terrain/index.html">symmetricgroup.chesswars.terrain</a></td>
+            <td>3</td>
+            <td><div class="coveragePercentage">27% </div><div class="coverage_bar"><div class="coverage_complete" style="width:27%"></div><div class="coverage_ledgend">7/26</div></div></td>
+            <td><div class="coveragePercentage">7% </div><div class="coverage_bar"><div class="coverage_complete" style="width:7%"></div><div class="coverage_ledgend">1/14</div></div></td>
+        </tr>
+
+        <tr>
+            <td><a href="./symmetricgroup.chesswars.util/index.html">symmetricgroup.chesswars.util</a></td>
+            <td>2</td>
+            <td><div class="coveragePercentage">75% </div><div class="coverage_bar"><div class="coverage_complete" style="width:75%"></div><div class="coverage_ledgend">15/20</div></div></td>
+            <td><div class="coveragePercentage">3% </div><div class="coverage_bar"><div class="coverage_complete" style="width:3%"></div><div class="coverage_ledgend">1/30</div></div></td>
+        </tr>
+
+     </tbody>
+</table>
+<br/>
+
+
+
+<hr/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>

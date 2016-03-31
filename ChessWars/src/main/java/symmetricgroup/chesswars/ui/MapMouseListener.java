@@ -10,13 +10,13 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
-import symmetricgroup.chesswars.editor.Editor;
-import symmetricgroup.chesswars.editor.MapEditor;
-import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.ui.editor.Editor;
+import symmetricgroup.chesswars.ui.editor.MapEditor;
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.Player;
-import symmetricgroup.chesswars.map.UserControl;
-import symmetricgroup.chesswars.map.UserPlayer;
+import symmetricgroup.chesswars.players.Player;
+import symmetricgroup.chesswars.players.UserControl;
+import symmetricgroup.chesswars.players.UserPlayer;
 
 /**
  *

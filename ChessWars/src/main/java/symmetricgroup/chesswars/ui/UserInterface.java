@@ -13,15 +13,15 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
-import symmetricgroup.chesswars.editor.Editor;
-import symmetricgroup.chesswars.editor.EditorPanel;
-import symmetricgroup.chesswars.map.AiPlayer;
-import symmetricgroup.chesswars.map.ArmyColor;
-import symmetricgroup.chesswars.map.Battle;
+import symmetricgroup.chesswars.ui.editor.Editor;
+import symmetricgroup.chesswars.ui.editor.EditorPanel;
+import symmetricgroup.chesswars.players.ai.AiPlayer;
+import symmetricgroup.chesswars.players.ArmyColor;
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.map.BattleThread;
-import symmetricgroup.chesswars.map.UserControl;
-import symmetricgroup.chesswars.map.UserPlayer;
+import symmetricgroup.chesswars.battle.BattleThread;
+import symmetricgroup.chesswars.players.UserControl;
+import symmetricgroup.chesswars.players.UserPlayer;
 import symmetricgroup.chesswars.pieces.Rook;
 
 /**

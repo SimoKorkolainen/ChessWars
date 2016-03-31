@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package symmetricgroup.chesswars.map;
+package symmetricgroup.chesswars.players.ai;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import symmetricgroup.chesswars.battle.Battle;
+import symmetricgroup.chesswars.battle.BattleCopier;
+import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.players.ArmyColor;
+import symmetricgroup.chesswars.players.Player;
 
 /**
  *

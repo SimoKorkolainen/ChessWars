@@ -8,6 +8,8 @@ package symmetricgroup.chesswars.map;
 
 
 
+import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.players.ArmyColor;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -24,8 +26,7 @@ import symmetricgroup.chesswars.terrain.Mountains;
 import symmetricgroup.chesswars.terrain.Plain;
 import symmetricgroup.chesswars.terrain.Terrain;
 import symmetricgroup.chesswars.terrain.Woods;
-import symmetricgroup.chesswars.editor.EditorPanel;
-import symmetricgroup.chesswars.editor.*;
+import symmetricgroup.chesswars.ui.editor.EditorPanel;
 import symmetricgroup.chesswars.pieces.King;
 import symmetricgroup.chesswars.pieces.Knight;
 import symmetricgroup.chesswars.pieces.Queen;
