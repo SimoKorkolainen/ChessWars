@@ -6,4 +6,4 @@ Shakkiin perustuva strategiapeli, jossa pelaajat liikuttelevat vuorotellen napul
 - [Aiheen kuvaus ja ohjelman rakenne](https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/AihemaarittelyJaRakenne.md)
 - [Tuntikirjanpito](https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/Tuntikirjanpito.md)
 - [PIT-raportti (puuttuu)](https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/)
-- [CheckStyle-raportti (puuttuu)](http://htmlpreview.github.io/?https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/site/checkstyle.html)
+- [CheckStyle-raportti](http://htmlpreview.github.io/?https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/site/checkstyle.html)
