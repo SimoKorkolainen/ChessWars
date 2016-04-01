@@ -12,6 +12,3 @@ Päivä | Tunnit | Kuvaus
 28.3.2016 | 6h | Testien kirjoittaminen, tekoälyn parannus ja koodin siistiminen
 30.3.2016 | 1.5h | Luokkakaavion teko
 31.3.2016 | 1h | Dokumentaation kanssa säätämistä
-31.3.2016 | 10s | Tuntikirjanpidon päivitys
-31.3.2016 | 10s | Tuntikirjanpidon päivitys... Stack overflow error
-31.3.2016 | (1 + 2i) h| Koodin kompleksitasoon kuvaavan homeomorfismin algebrallisten ominaisuuksien tutkiminen
