@@ -92,7 +92,7 @@ public class UserInterface implements Runnable {
         UserControl control = new UserControl(battle);
         
         UserPlayer white = new UserPlayer(ArmyColor.WHITE, control);
-        AiPlayer black = new AiPlayer(5, ArmyColor.BLACK, battle);
+        AiPlayer black = new AiPlayer(4, ArmyColor.BLACK, battle);
         battle.addPlayer(white);
         battle.addPlayer(black);
         
