@@ -13,3 +13,4 @@ Päivä | Tunnit | Kuvaus
 30.3.2016 | 1.5h | Luokkakaavion teko
 31.3.2016 | 1h | Dokumentaation kanssa säätämistä
 1.4.2016 | 2h | Testien kirjoittaminen
+3.4.2016 | 3h | Editorin teko
