@@ -27,11 +27,11 @@ public class PieceImages {
     
     public PieceImages(String pieceName) {
         
-        String startPart = "images/";
+        String startPart = "/images/";
         String endPart = pieceName + ".png";
-        
-        whiteImage = ImageLoader.loadImage(startPart + "White" + endPart);
-        blackImage = ImageLoader.loadImage(startPart + "Black" + endPart);
+        ImageLoader loader = new ImageLoader();
+        whiteImage = loader.loadImage(startPart + "White" + endPart);
+        blackImage = loader.loadImage(startPart + "Black" + endPart);
         
         redImage = ImageColorer.color(whiteImage, new Color(255, 100, 100));
         greenImage = ImageColorer.color(whiteImage, new Color(100, 255, 100));

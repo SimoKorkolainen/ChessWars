@@ -25,10 +25,10 @@ import symmetricgroup.chesswars.terrain.Woods;
  * @author Simo
  */
 public class MapEditor {
-    private EditorPanel panel;
+    private MapEditorPanel panel;
     private BattleMap map;
 
-    public MapEditor(EditorPanel panel, BattleMap map) {
+    public MapEditor(MapEditorPanel panel, BattleMap map) {
         this.panel = panel;
         this.map = map;
     }

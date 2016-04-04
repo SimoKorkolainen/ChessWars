@@ -14,7 +14,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import symmetricgroup.chesswars.ui.editor.Editor;
-import symmetricgroup.chesswars.ui.editor.EditorPanel;
+import symmetricgroup.chesswars.ui.editor.MapEditorPanel;
 import symmetricgroup.chesswars.players.ai.AiPlayer;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.battle.Battle;

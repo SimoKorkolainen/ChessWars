@@ -1,0 +1,5 @@
+symmetricgroup\chesswars\battle\BattleTest.class
+symmetricgroup\chesswars\pieces\RookTest.class
+symmetricgroup\chesswars\map\BattleMapTest.class
+.netbeans_automatic_build
+symmetricgroup\chesswars\pieces\KingTest.class

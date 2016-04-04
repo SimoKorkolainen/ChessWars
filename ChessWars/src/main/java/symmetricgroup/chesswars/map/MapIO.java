@@ -50,6 +50,7 @@ public class MapIO {
             BufferedReader reader = new BufferedReader(fileReader);
             
             String mapConf = reader.readLine();
+            
             return stringToMap(mapConf);
             
         } catch (Exception e) {

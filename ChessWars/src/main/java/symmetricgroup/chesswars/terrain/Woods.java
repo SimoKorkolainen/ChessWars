@@ -20,7 +20,8 @@ public class Woods implements Terrain {
     public Woods() {
         
         if (image == null) {
-            image = ImageLoader.loadImage("images/Woods.png");
+            ImageLoader loader = new ImageLoader();
+            image = loader.loadImage("/images/Woods.png");
         }
     
     }

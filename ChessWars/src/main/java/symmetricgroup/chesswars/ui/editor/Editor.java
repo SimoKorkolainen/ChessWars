@@ -44,27 +44,13 @@ public class Editor extends JPanel {
 
         super.add(screen, constraints);
         
-        constraints.anchor = GridBagConstraints.EAST;
+        constraints.anchor = GridBagConstraints.CENTER;
+        
         constraints.gridx = 1;
         constraints.gridy = 0;
-        EditorPanel panel = new EditorPanel();
-        super.add(panel, constraints);
         
-        constraints.anchor = GridBagConstraints.EAST;
-        constraints.gridx = 1;
-        constraints.gridy = 1;
+        EditorPanel editorPanel = new EditorPanel(map, screen);
         
-        ClearButtonListener clearListener = new ClearButtonListener(map, screen);
-        ClearButton clearButton = new ClearButton();
-        clearButton.addActionListener(clearListener);
-        
-        super.add(clearButton, constraints);
-        
-        editor = new MapEditor(panel, map);
-        MapMouseListener listener = new MapMouseListener(screen, null);
-        listener.setEditor(editor);
-        
-        screen.addMouseListener(listener);
-        
+        super.add(editorPanel, constraints);
     }
 }

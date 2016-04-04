@@ -5,131 +5,71 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.util.ArrayList;
-import java.util.List;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import javax.swing.JPanel;
-import symmetricgroup.chesswars.players.ArmyColor;
-import symmetricgroup.chesswars.pieces.Bishop;
-import symmetricgroup.chesswars.pieces.King;
-import symmetricgroup.chesswars.pieces.Knight;
-import symmetricgroup.chesswars.pieces.Pawn;
-import symmetricgroup.chesswars.pieces.Queen;
-import symmetricgroup.chesswars.pieces.Rook;
-import symmetricgroup.chesswars.terrain.Mountains;
-import symmetricgroup.chesswars.terrain.Plain;
-import symmetricgroup.chesswars.terrain.Woods;
+import symmetricgroup.chesswars.battle.Battle;
+import symmetricgroup.chesswars.map.BattleMap;
+import symmetricgroup.chesswars.ui.MapMouseListener;
+import symmetricgroup.chesswars.ui.MapScreen;
 
 /**
  *
  * @author Simo
  */
 public class EditorPanel extends JPanel {
-    
-    GridLayout layout;
-    ArmyColor color;
-    List<PieceSelectionButton> pieceButtons;
-    List<ColorSelectionButton> colorButtons;
-    List<TerrainSelectionButton> terrainButtons;
-    
-    ColorSelectionButton selectedColorButton;
-    TerrainSelectionButton selectedTerrainButton;
-    PieceSelectionButton selectedPieceButton;
-    
-    public EditorPanel() {
-        layout = new GridLayout(5, 3);
-        color = ArmyColor.WHITE;
-        pieceButtons = new ArrayList<>();
-        colorButtons = new ArrayList<>();
-        terrainButtons = new ArrayList<>();
+    private BattleMap map;
+    private MapEditor editor;
+    private MapScreen screen;
+    public EditorPanel(BattleMap map, MapScreen screen) {
+        this.map = map;
+        this.screen = screen;
         createComponents();
     }
+
     public void createComponents() {
-        super.setLayout(layout);
+        super.setLayout(new GridBagLayout());
         
-        colorButtons.add(new ColorSelectionButton(ArmyColor.WHITE));
-        colorButtons.add(new ColorSelectionButton(ArmyColor.BLACK));
-        colorButtons.add(new ColorSelectionButton(ArmyColor.YELLOW));
-        colorButtons.add(new ColorSelectionButton(ArmyColor.RED));
-        colorButtons.add(new ColorSelectionButton(ArmyColor.GREEN));
-        colorButtons.add(new ColorSelectionButton(ArmyColor.BLUE));
+        GridBagConstraints constraints = new GridBagConstraints();
         
+        constraints.insets = new Insets(10, 10, 10, 10);
+  
+        constraints.anchor = GridBagConstraints.CENTER;
         
+        MapNameField mapName = new MapNameField("Best map ever");
         
-        pieceButtons.add(new PieceSelectionButton(new Rook(color)));
-        pieceButtons.add(new PieceSelectionButton(new Pawn(color)));
-        pieceButtons.add(new PieceSelectionButton(new King(color)));
-        pieceButtons.add(new PieceSelectionButton(new Queen(color)));
-        pieceButtons.add(new PieceSelectionButton(new Bishop(color)));
-        pieceButtons.add(new PieceSelectionButton(new Knight(color)));
+        constraints.gridx = 0;
+        constraints.gridy = 0;
         
-        terrainButtons.add(new TerrainSelectionButton(new Mountains()));
-        terrainButtons.add(new TerrainSelectionButton(new Woods()));
-        terrainButtons.add(new TerrainSelectionButton(new Plain()));
+        super.add(mapName, constraints);
         
+        constraints.gridx = 0;
+        constraints.gridy = 1;
         
+        TeamSelectionPanel teamPanel = new TeamSelectionPanel();
+        super.add(teamPanel, constraints);
         
-        SelectionButtonListener listener = new SelectionButtonListener(this);
-        
-        for (ColorSelectionButton i : colorButtons) {
-            i.addActionListener(listener);
-            super.add(i);
-        }
-        for (PieceSelectionButton i : pieceButtons) {
-            i.addActionListener(listener);
-            super.add(i);
-        }
-        for (TerrainSelectionButton i : terrainButtons) {
-            i.addActionListener(listener);
-            super.add(i);
-        }
-
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        MapEditorPanel panel = new MapEditorPanel();
+        super.add(panel, constraints);
         
         
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        
+        ClearButtonListener clearListener = new ClearButtonListener(map, screen);
+        ClearButton clearButton = new ClearButton();
+        clearButton.addActionListener(clearListener);
+        
+        super.add(clearButton, constraints);
+        
+        editor = new MapEditor(panel, map);
+        MapMouseListener listener = new MapMouseListener(screen, null);
+        listener.setEditor(editor);
+        
+        screen.addMouseListener(listener);
+        
     }
-    public void setColor(ArmyColor color) {
-        this.color = color;
-        for (PieceSelectionButton i : pieceButtons) {
-            i.setColor(color);
-        }
-    }
-
-    public List<PieceSelectionButton> getPieceButtons() {
-        return pieceButtons;
-    }
-
-    public List<ColorSelectionButton> getColorButtons() {
-        return colorButtons;
-    }
-
-    public List<TerrainSelectionButton> getTerrainButtons() {
-        return terrainButtons;
-    }
-
-    public ColorSelectionButton getSelectedColorButton() {
-        return selectedColorButton;
-    }
-
-    public void setSelectedColorButton(ColorSelectionButton selectedColorButton) {
-        this.selectedColorButton = selectedColorButton;
-    }
-
-    public TerrainSelectionButton getSelectedTerrainButton() {
-        return selectedTerrainButton;
-    }
-
-    public void setSelectedTerrainButton(TerrainSelectionButton selectedTerrainButton) {
-        this.selectedTerrainButton = selectedTerrainButton;
-    }
-
-    public PieceSelectionButton getSelectedPieceButton() {
-        return selectedPieceButton;
-    }
-
-    public void setSelectedPieceButton(PieceSelectionButton selectedPieceButton) {
-        this.selectedPieceButton = selectedPieceButton;
-    }
-    
-    
 }

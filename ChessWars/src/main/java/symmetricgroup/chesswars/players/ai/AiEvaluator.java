@@ -53,12 +53,42 @@ public class AiEvaluator {
                 case "Rook": return factor * ROOK_VALUE;
                 case "Bishop": return factor * BISHOP_VALUE;
                 case "Knight": return factor * KNIGHT_VALUE;
-                case "King": return factor * KING_VALUE;
+                       
+                case "King": if (myTeam.contains(p.getColor())) {
+                                return factor * KING_VALUE;
+                             } 
+                            return factor * KING_VALUE - distanceToKing(map, myTeam, x, y) * 2;
                 case "Queen": return factor * QUEEN_VALUE;
                 case "Pawn": return factor * PAWN_VALUE; 
             }
         }
         
         return 0;
+    }
+    
+    
+    public static double distanceToKing(BattleMap map, Set<ArmyColor> myTeam, int kingX, int kingY) {
+        double distSum = 0;
+        for (int i = 0; i < map.getWidth(); i++) {
+            for (int j = 0; j < map.getHeight(); j++) {
+                if (map.getPiece(i, j) != null) {
+                    if (myTeam.contains(map.getPiece(i, j).getColor())) {
+                        distSum += distance(kingX, kingY, i, j) / (map.getWidth() + map.getHeight());
+                    }
+                }
+                
+            }
+        
+        }
+        return distSum;
+    }
+    
+    public static double distance(int x, int y, int endX, int endY) {
+        
+        int dx = x - endX;
+        int dy = y - endY;
+        
+        return Math.sqrt(dx * dx + dy * dy);
+    
     }
 }

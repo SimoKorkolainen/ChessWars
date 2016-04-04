@@ -52,7 +52,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>symmetricgroup.chesswars.map.ChessWars</mainClass>
+                  <mainClass>symmetricgroup.chesswars.ui.ChessWars</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>

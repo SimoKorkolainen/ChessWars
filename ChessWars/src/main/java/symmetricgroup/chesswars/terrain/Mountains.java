@@ -19,7 +19,8 @@ public class Mountains implements Terrain {
     
     public Mountains() {
         if (image == null) {
-            image = ImageLoader.loadImage("images/Mountains.png");
+            ImageLoader loader = new ImageLoader();
+            image = loader.loadImage("/images/Mountains.png");
         }
     }
     

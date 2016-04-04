@@ -14,9 +14,9 @@ import symmetricgroup.chesswars.players.ArmyColor;
  * @author Simo
  */
 public class SelectionButtonListener implements ActionListener {
-    private EditorPanel panel;
+    private MapEditorPanel panel;
 
-    public SelectionButtonListener(EditorPanel panel) {
+    public SelectionButtonListener(MapEditorPanel panel) {
         this.panel = panel;
     }
     

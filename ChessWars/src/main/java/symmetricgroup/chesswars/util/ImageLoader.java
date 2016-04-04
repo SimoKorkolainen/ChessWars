@@ -17,11 +17,11 @@ import javax.imageio.ImageIO;
 public class ImageLoader {
     
     
-    public static BufferedImage loadImage(String filename) {
+    public BufferedImage loadImage(String filename) {
         
         try {
-            return ImageIO.read(new File(filename));
-        
+            //return ImageIO.read(new File(filename));
+            return ImageIO.read(getClass().getResource(filename));
         } catch (Exception e) {
             
             System.out.println("Unable to read image " + filename + ": " + e.getMessage());
