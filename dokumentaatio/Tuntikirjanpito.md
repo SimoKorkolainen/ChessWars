@@ -15,5 +15,5 @@ Päivä | Tunnit | Kuvaus
 1.4.2016 | 2h | Testien kirjoittaminen
 3.4.2016 | 3h | Editorin teko
 5.4.2016 | 1h | Tiedostojen lukuun liittyvä koodaaminen
-6.4.2016 | 3h | Vertaisarviointien kirjoittaminen
+6.4.2016 | 3h | Koodinkatselmointien kirjoittaminen
 8.4.2016 | 6h | Testien kirjoittaminen ja koodin siistiminen
