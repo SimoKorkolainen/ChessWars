@@ -22,11 +22,14 @@ public class AiEvaluator {
     public static final double QUEEN_VALUE = 9;
     public static final double PAWN_VALUE = 1;
     public static final double AGGRESSIVENESS = 0.2;
-    public static final double RANDOMNESS = 1;
-    public static double evaluate(BattleMap map, Set<ArmyColor> myTeam) {
+    public static final double RANDOMNESS = 0.8;
+    public static final double DIST_TO_KING_IMPORTANCE = 2;
+    public static double evaluate(BattleMap map, Set<ArmyColor> myTeam, boolean random) {
+        double eval = 0;
         
-        double eval = Math.random() * RANDOMNESS;
-        
+        if (random) {
+            eval += Math.random() * RANDOMNESS;
+        }
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
                 eval += evalMapPosition(i, j, map, myTeam);
@@ -54,10 +57,13 @@ public class AiEvaluator {
                 case "Bishop": return factor * BISHOP_VALUE;
                 case "Knight": return factor * KNIGHT_VALUE;
                        
-                case "King": if (myTeam.contains(p.getColor())) {
-                                return factor * KING_VALUE;
-                             } 
-                            return factor * KING_VALUE - distanceToKing(map, myTeam, x, y) * 2;
+                case "King": 
+                    
+                    if (myTeam.contains(p.getColor())) {
+                        return factor * KING_VALUE;
+                    } 
+                    return factor * KING_VALUE - distanceToKing(map, myTeam, x, y) * DIST_TO_KING_IMPORTANCE;
+                    
                 case "Queen": return factor * QUEEN_VALUE;
                 case "Pawn": return factor * PAWN_VALUE; 
             }

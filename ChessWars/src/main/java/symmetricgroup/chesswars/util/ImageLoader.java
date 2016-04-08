@@ -20,7 +20,6 @@ public class ImageLoader {
     public BufferedImage loadImage(String filename) {
         
         try {
-            //return ImageIO.read(new File(filename));
             return ImageIO.read(getClass().getResource(filename));
         } catch (Exception e) {
             

@@ -15,8 +15,8 @@ import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.battle.BattleThread;
 import symmetricgroup.chesswars.players.Player;
-import symmetricgroup.chesswars.players.UserControl;
-import symmetricgroup.chesswars.players.UserPlayer;
+import symmetricgroup.chesswars.players.ui.UserControl;
+import symmetricgroup.chesswars.players.ui.UserPlayer;
 
 /**
  *

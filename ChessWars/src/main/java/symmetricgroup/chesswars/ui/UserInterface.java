@@ -20,8 +20,8 @@ import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.battle.BattleThread;
-import symmetricgroup.chesswars.players.UserControl;
-import symmetricgroup.chesswars.players.UserPlayer;
+import symmetricgroup.chesswars.players.ui.UserControl;
+import symmetricgroup.chesswars.players.ui.UserPlayer;
 import symmetricgroup.chesswars.pieces.Rook;
 
 /**
@@ -91,7 +91,8 @@ public class UserInterface implements Runnable {
         
         UserControl control = new UserControl(battle);
         
-        UserPlayer white = new UserPlayer(ArmyColor.WHITE, control);
+        //UserPlayer white = new UserPlayer(ArmyColor.WHITE, control);
+        AiPlayer white = new AiPlayer(4, ArmyColor.WHITE, battle);
         AiPlayer black = new AiPlayer(4, ArmyColor.BLACK, battle);
         battle.addPlayer(white);
         battle.addPlayer(black);

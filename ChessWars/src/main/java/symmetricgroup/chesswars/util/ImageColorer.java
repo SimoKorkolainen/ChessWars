@@ -15,28 +15,15 @@ import java.awt.image.BufferedImage;
 public class ImageColorer {
     
     public static BufferedImage color(BufferedImage mask, Color color) {
+        
         BufferedImage colored = new BufferedImage(mask.getWidth(), mask.getHeight(), BufferedImage.TYPE_4BYTE_ABGR_PRE);
         
         for (int i = 0; i < mask.getWidth(); i++) {
             for (int j = 0; j < mask.getHeight(); j++) {
-                int col = mask.getRGB(i, j);
                 
-                int alpha = (col & 0xff000000) >> 24;
-                int r = (col & 0x00ff0000) >> 16;
-                int g = (col & 0x0000ff00) >> 8;
-                int b = (col & 0x000000ff);
+                int oldCol = mask.getRGB(i, j);
                 
-                //r = 255 - 2 * (255 - r) / 3;
-                //g = 255 - 2 * (255 - g) / 3;
-                //b = 255 - 2 * (255 - b) / 3;
-                
-                int newR = (int) Math.floor((double) r / 255 * color.getRed());
-                int newG = (int) Math.floor((double) g / 255 * color.getGreen());
-                int newB = (int) Math.floor((double) b / 255 * color.getBlue());
-                
-                int newCol = (alpha << 24) | (newR << 16) | (newG << 8) | newB;
-                
-                colored.setRGB(i, j, newCol);
+                colored.setRGB(i, j, getColoredColor(oldCol, color));
             }
             
         }
@@ -44,8 +31,40 @@ public class ImageColorer {
     
         return colored;
     }
+    private static int getAlpha(int col) {
+        return (col & 0xff000000) >> 24;
+    }
+    private static int getRed(int col) {
+        return (col & 0x00ff0000) >> 16;
+    }
+    private static int getGreen(int col) {
+        return (col & 0x0000ff00) >> 8;
+    }
+    private static int getBlue(int col) {
+        return col & 0x000000ff;
+    }
     
+    private static int getColoredRed(int col, Color color) {
+        return (int) Math.floor(getRed(col) / 255.0 * color.getRed());
+    }
+    
+    private static int getColoredGreen(int col, Color color) {
+        return (int) Math.floor(getGreen(col) / 255.0 * color.getGreen());
+    }
+    
+    private static int getColoredBlue(int col, Color color) {
+        return (int) Math.floor(getBlue(col) / 255.0 * color.getBlue());
+    }
+    
+    private static int getColoredColor(int oldCol, Color color) {
+        int newA = getAlpha(oldCol);
+        int newR = getColoredRed(oldCol, color);
+        int newG = getColoredGreen(oldCol, color);
+        int newB = getColoredBlue(oldCol, color);
+
+        return (newA << 24) | (newR << 16) | (newG << 8) | newB;
+                
+    }
     
 
-    
 }

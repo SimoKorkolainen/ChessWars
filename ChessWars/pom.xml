@@ -36,11 +36,10 @@
                 <configuration>
                     <targetClasses>
                         <param>symmetricgroup.chesswars.map.*</param>
-                        <param>symmetricgroup.chesswars.players.*</param>
+                        <param>symmetricgroup.chesswars.players.ai.*</param>
                         <param>symmetricgroup.chesswars.pieces.*</param>
                         <param>symmetricgroup.chesswars.terrain.*</param>
                         <param>symmetricgroup.chesswars.battle.*</param>
-                        <param>symmetricgroup.chesswars.players.*</param>
                         <param>symmetricgroup.chesswars.util.*</param>
                     </targetClasses>
                     <targetTests>

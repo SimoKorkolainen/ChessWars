@@ -23,7 +23,7 @@ import symmetricgroup.chesswars.players.Player;
 public class AiPlayer implements Player {
     private int searchDepth;
     private ArmyColor color;
-    private Set<ArmyColor> myTeam;
+    private Set<ArmyColor> myTeam; //Koodia voi muokata siten, että myTeam on tarpeeton
     private Battle battle;
     private Battle copy;
     private boolean moveIsReady;
@@ -36,6 +36,14 @@ public class AiPlayer implements Player {
         this.myTeam.add(color);
         this.searchDepth = searchDepth;
         this.battle = battle;
+    }
+    
+    public void setUpTeam() {
+        for (Player i : battle.getPlayers()) {
+            if (battle.getTeam(color) == battle.getTeam(i.getColor())) {
+                myTeam.add(i.getColor());
+            }
+        }
     }
     
     
@@ -74,7 +82,7 @@ public class AiPlayer implements Player {
     public double maxValue(double alpha, double beta, int depth) {
         //System.out.println("alphaBeta depth: " + depth + " turn: " + map.nextColorToMove());
         if (depth == 0) {
-            return AiEvaluator.evaluate(copy.getMap(), myTeam);
+            return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
         
         double value = -1000000;
@@ -108,7 +116,7 @@ public class AiPlayer implements Player {
     public double minValue(double alpha, double beta, int depth) {
         
         if (depth == 0) {
-            return AiEvaluator.evaluate(copy.getMap(), myTeam);
+            return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
         double value = 1000000;
         
@@ -165,7 +173,7 @@ public class AiPlayer implements Player {
         List<EvalMove> evalMoves = new ArrayList<>();
         for (Move i : moves) {
             copy.doMove(i);
-            double eval = AiEvaluator.evaluate(copy.getMap(), myTeam);
+            double eval = AiEvaluator.evaluate(copy.getMap(), myTeam, true);
             evalMoves.add(new EvalMove(eval, i));
             copy.undoLastMove();
         }
