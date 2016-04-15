@@ -79,6 +79,14 @@ public class BattleMap {
         return mapTerrain[y][x];
     }
     
+    /**
+     * Metodi kertoo onko piste (x, y) kartan sisällä
+     * @param   x X-koordinaatti
+     * @param   y Y-koordinaatti
+     * 
+ 
+     * @return totuusarvo
+     */
     public boolean isInside(int x, int y) {
         if (x < 0 || x >= width) {
             return false;

@@ -52,8 +52,12 @@ public class Battle {
     public void setTeam(ArmyColor color, int teamNumber) {
         team.put(color, teamNumber);
     }
-    
-    public void setDefaultTeams() { //Jokainen pelaaja on eri joukkueessa
+    /**
+     * Metodi asettaa oletusarvoiset joukkueet.
+     * Jokainen pelaaja on oletusarvoisesti eri joukkueessa.
+     *
+     */
+    public void setDefaultTeams() {
         setTeam(ArmyColor.WHITE, 1);
         setTeam(ArmyColor.BLACK, 2);
         setTeam(ArmyColor.BLUE, 3); 
@@ -67,7 +71,13 @@ public class Battle {
         players.add(player);
     
     }
-
+    /**
+     * Metodi toteuttaa siirron taistelussa.
+     *
+     * @param   move  Siirto, joka halutaan tehdä
+     * 
+     * @see symmetricgroup.chesswars.battle.Move
+     */
     public void doMove(Move move) {
         turn = (turn + 1) % players.size();
         map.doMove(move);
@@ -80,7 +90,7 @@ public class Battle {
         
         }
     }
-    
+
     private void undoMove(Move move) {
         Piece eaten = move.getEaten();
         if (eaten != null && "King".equals(eaten.getName())) {
@@ -94,14 +104,28 @@ public class Battle {
         map.undoMove(move);
        
     }
+    
+    /**
+     * Metodi kumoaa edellisen siirron taistelussa.
+     *
+     * @see symmetricgroup.chesswars.battle.Move
+     */
     public void undoLastMove() {
         undoMove(moves.remove(moves.size() - 1));
     }
-
+    /**
+     * Metodi palauttaa seuraavaksi vuorossa olevan pelaajan värin.
+     *
+     * @return Seuraavan pelaajan väri 
+     */
     public ArmyColor nextColorToMove() {
         return players.get(turn).getColor();
     }
-    
+    /**
+     * Metodi palauttaa seuraavaksi vuorossa olevan pelaajan.
+     *
+     * @return Seuraava pelaaja 
+     */
     public Player nextPlayerToMove() {
         return players.get(turn);
     }
