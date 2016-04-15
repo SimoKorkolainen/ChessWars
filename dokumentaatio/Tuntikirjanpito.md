@@ -14,3 +14,6 @@ Päivä | Tunnit | Kuvaus
 31.3.2016 | 1h | Dokumentaation kanssa säätämistä
 1.4.2016 | 2h | Testien kirjoittaminen
 3.4.2016 | 3h | Editorin teko
+5.4.2016 | 1h | Tiedostojen lukuun liittyvä koodaaminen
+6.4.2016 | 3h | Koodinkatselmointien kirjoittaminen
+8.4.2016 | 6h | Testien kirjoittaminen ja koodin siistiminen
