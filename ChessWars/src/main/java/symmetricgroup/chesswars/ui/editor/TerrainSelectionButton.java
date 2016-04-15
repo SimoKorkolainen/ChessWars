@@ -12,8 +12,7 @@ import javax.swing.JToggleButton;
 import symmetricgroup.chesswars.terrain.Terrain;
 
 /**
- *
- * @author Simo
+ * TerrainSelectionButton on editorissa maaston tyypin valitsemiseen käyttetty nappi.
  */
 public class TerrainSelectionButton extends JToggleButton {
     private Terrain terrain;

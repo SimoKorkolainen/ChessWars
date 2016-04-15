@@ -6,7 +6,13 @@
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleIO.java">
 </file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleMoveCalculator.java">
+</file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleThread.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleWinnerChecker.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\DefeatState.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\Move.java">
 </file>
@@ -14,7 +20,7 @@
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\MapCopier.java">
 </file>
-<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\MapIO.java">
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\map\MapParser.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Bishop.java">
 </file>
@@ -27,6 +33,8 @@
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Piece.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\PieceImages.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\PieceParser.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Queen.java">
 </file>
@@ -54,9 +62,17 @@
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\Terrain.java">
 </file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\TerrainParser.java">
+</file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\terrain\Woods.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\ChessWars.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\AiButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\AiButtonListener.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\AiButtonPanel.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\ClearButton.java">
 </file>
@@ -75,6 +91,12 @@
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\MapNameField.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\PieceSelectionButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\RoundRectTextButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\SaveButton.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\SaveButtonListener.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\SelectionButtonListener.java">
 </file>
@@ -95,6 +117,8 @@
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\GameTimerManager.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MainMenu.java">
+</file>
+<file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MapDrawer.java">
 </file>
 <file name="C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\MapMouseListener.java">
 </file>

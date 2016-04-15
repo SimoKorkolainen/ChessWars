@@ -8,8 +8,7 @@ package symmetricgroup.chesswars.players;
 import symmetricgroup.chesswars.battle.Move;
 
 /**
- *
- * @author Simo
+ * Player on pelaajan toteuttama käyttöliittymä.
  */
 public interface Player {
     

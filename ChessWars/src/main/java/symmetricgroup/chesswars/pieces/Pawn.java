@@ -13,8 +13,7 @@ import symmetricgroup.chesswars.battle.Move;
 import java.util.List;
 
 /**
- *
- * @author simokork
+ * Pawn-luokka kuvaa sotilasta.
  */
 public class Pawn extends Piece {
     private static PieceImages images;

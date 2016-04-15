@@ -9,8 +9,8 @@ import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.players.Player;
 
 /**
- *
- * @author Simo
+ * BattleThread on luokka, joka pyytää pelaajia tekemään heidän seuraavat siirtonsa.
+ * Siirto pyydeään erillisessä säikeessä, jottei tekoälyn siirtojen laskeminen hidastaisi käyttöliittymää liikaa.
  */
 public class BattleThread extends Thread {
     private Battle battle;
@@ -35,6 +35,11 @@ public class BattleThread extends Thread {
         Move move = next.getNextMove();
 
         battle.doMove(move);
+        
+        if (BattleWinnerChecker.myTeamHasWon(battle, battle.nextColorToMove())) {
+            System.out.println("Team " + battle.getTeam(battle.nextColorToMove()) + " has won!");
+            return;
+        }
 
         askPlayerForNextMove();
         

@@ -10,8 +10,7 @@ import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author simokork
+ * Rook on tornia kuvaava luokka.
  */
 public class Rook extends Piece {
     private static PieceImages images;

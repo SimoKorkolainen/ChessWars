@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -15,8 +16,7 @@ import symmetricgroup.chesswars.ui.MapMouseListener;
 import symmetricgroup.chesswars.ui.MapScreen;
 
 /**
- *
- * @author Simo
+ * EditorPanel on editorin työkalut sisältävä paneeli.
  */
 public class EditorPanel extends JPanel {
     private BattleMap map;
@@ -26,6 +26,7 @@ public class EditorPanel extends JPanel {
         this.map = map;
         this.screen = screen;
         createComponents();
+        super.setBackground(new Color(218, 231, 247));
     }
 
     public void createComponents() {
@@ -47,17 +48,24 @@ public class EditorPanel extends JPanel {
         constraints.gridx = 0;
         constraints.gridy = 1;
         
+        AiButtonPanel aiPanel = new AiButtonPanel();
+        
+        super.add(aiPanel, constraints);
+        
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        
         TeamSelectionPanel teamPanel = new TeamSelectionPanel();
         super.add(teamPanel, constraints);
         
         constraints.gridx = 0;
-        constraints.gridy = 2;
+        constraints.gridy = 3;
         MapEditorPanel panel = new MapEditorPanel();
         super.add(panel, constraints);
         
         
         constraints.gridx = 0;
-        constraints.gridy = 3;
+        constraints.gridy = 4;
         
         ClearButtonListener clearListener = new ClearButtonListener(map, screen);
         ClearButton clearButton = new ClearButton();
@@ -70,6 +78,15 @@ public class EditorPanel extends JPanel {
         listener.setEditor(editor);
         
         screen.addMouseListener(listener);
+        
+        constraints.gridx = 0;
+        constraints.gridy = 5;
+        
+        SaveButton save = new SaveButton();
+        
+        save.addActionListener(new SaveButtonListener(map));
+        
+        super.add(save, constraints);
         
     }
 }

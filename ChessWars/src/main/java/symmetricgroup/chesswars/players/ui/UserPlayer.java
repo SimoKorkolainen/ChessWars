@@ -11,8 +11,8 @@ import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 
 /**
- *
- * @author Simo
+ * UserPlayer on käyttäjän tiedot sisältävä luokka.
+ * UserPlayer-oliolta voi kysyä käyttäjän seuraavaa siirtoa.
  */
 public class UserPlayer implements Player {
     private boolean moveIsReady;

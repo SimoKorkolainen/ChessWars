@@ -11,8 +11,7 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author Simo
+ * ImageLoader on kuvien lukemiseen käytetty luokka.
  */
 public class ImageLoader {
     

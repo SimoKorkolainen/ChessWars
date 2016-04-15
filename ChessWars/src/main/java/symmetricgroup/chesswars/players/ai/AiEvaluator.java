@@ -11,8 +11,7 @@ import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author Simo
+ * AiEvaluator on luokka, jonka avulla lasketaan tekoälyn käyttämä heuristiikkafunktio kartan perusteella.
  */
 public class AiEvaluator {
     public static final double ROOK_VALUE = 5;

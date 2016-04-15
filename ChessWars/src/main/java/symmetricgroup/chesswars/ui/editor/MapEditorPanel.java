@@ -22,8 +22,7 @@ import symmetricgroup.chesswars.terrain.Plain;
 import symmetricgroup.chesswars.terrain.Woods;
 
 /**
- *
- * @author Simo
+ * MapEditorPanel sisältää kartaan muokkaamiseen tarvittavat komponentit.
  */
 public class MapEditorPanel extends JPanel {
     
@@ -44,6 +43,7 @@ public class MapEditorPanel extends JPanel {
         colorButtons = new ArrayList<>();
         terrainButtons = new ArrayList<>();
         createComponents();
+
     }
     public void createComponents() {
         super.setLayout(layout);

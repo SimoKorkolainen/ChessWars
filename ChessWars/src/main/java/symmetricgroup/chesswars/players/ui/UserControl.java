@@ -12,8 +12,7 @@ import symmetricgroup.chesswars.players.ui.UserPlayer;
 import symmetricgroup.chesswars.pieces.Piece;
 
 /**
- *
- * @author Simo
+ * UserControl on käyttäjien siirtojen toteutusta hallinnoiva luokka.
  */
 public class UserControl {
     private UserPlayer player;
@@ -21,8 +20,10 @@ public class UserControl {
     private Battle battle;
 
     public UserControl(Battle battle) {
-        this.player = player;
         this.battle = battle;
+    }
+
+    public UserControl() {
     }
     
     
@@ -94,6 +95,10 @@ public class UserControl {
 
     public void setPlayer(UserPlayer player) {
         this.player = player;
+    }
+
+    public void setBattle(Battle battle) {
+        this.battle = battle;
     }
     
 

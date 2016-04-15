@@ -6,21 +6,15 @@
 
 package symmetricgroup.chesswars.ui;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JPanel;
 import symmetricgroup.chesswars.battle.Battle;
-import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.BattleThread;
-import symmetricgroup.chesswars.players.Player;
 import symmetricgroup.chesswars.players.ui.UserControl;
-import symmetricgroup.chesswars.players.ui.UserPlayer;
 
 /**
- *
- * @author simokork
+ * Game on pelin esittämiseen käytetty luokka.
  */
 public class Game extends JPanel {
     private MapScreen screen;
@@ -31,7 +25,8 @@ public class Game extends JPanel {
         this.battle = battle;
         this.control = control;
         createComponents();
-        
+        super.setBackground(new Color(218, 231, 247));
+
     }
     
 

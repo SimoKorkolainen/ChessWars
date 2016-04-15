@@ -14,8 +14,7 @@ import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.pieces.Piece;
 
 /**
- *
- * @author Simo
+ * PieceSelectionButton on nappi, jota käytetään editorissa pelinappulan tyypin valitsemiseen.
  */
 public class PieceSelectionButton extends JToggleButton {
     private Piece piece;

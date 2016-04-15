@@ -18,6 +18,7 @@ import symmetricgroup.chesswars.ui.editor.MapEditorPanel;
 import symmetricgroup.chesswars.players.ai.AiPlayer;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.battle.Battle;
+import symmetricgroup.chesswars.battle.BattleIO;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.battle.BattleThread;
 import symmetricgroup.chesswars.players.ui.UserControl;
@@ -25,8 +26,7 @@ import symmetricgroup.chesswars.players.ui.UserPlayer;
 import symmetricgroup.chesswars.pieces.Rook;
 
 /**
- *
- * @author simokork
+ * UserInterface on ohjelman koko käyttöliittymää hallinnoiva luokka.
  */
 public class UserInterface implements Runnable {
     private JFrame frame;
@@ -39,7 +39,7 @@ public class UserInterface implements Runnable {
         frame = new JFrame();
         frame.setVisible(true);
         
-        frame.setPreferredSize(new Dimension(800, 600));
+        frame.setPreferredSize(new Dimension(800, 700));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setFocusable(true);
         Rook rook = new Rook(ArmyColor.WHITE);
@@ -85,6 +85,7 @@ public class UserInterface implements Runnable {
     public void showGame()  {
         Container container = frame.getContentPane();
         container.removeAll();
+        /*
         BattleMap map = new BattleMap(10, 10);
         map.putSomeTroops();
         Battle battle = new Battle(map);
@@ -96,7 +97,10 @@ public class UserInterface implements Runnable {
         AiPlayer black = new AiPlayer(4, ArmyColor.BLACK, battle);
         battle.addPlayer(white);
         battle.addPlayer(black);
-        
+        */
+        UserControl control = new UserControl();
+        Battle battle = BattleIO.readBattle("battles/battleTest.txt", control);
+        control.setBattle(battle);
         battle.start();
         
         

@@ -13,8 +13,7 @@ import symmetricgroup.chesswars.battle.Move;
 import java.util.List;
 
 /**
- *
- * @author simokork
+ * Queen on kuningatarta kuvaava luokka.
  */
 public class Queen extends Piece {
     private static PieceImages images;

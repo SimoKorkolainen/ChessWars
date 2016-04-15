@@ -9,8 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 /**
- *
- * @author Simo
+ * Terrain on käyttöliittymä, jonka maaston tulee toteuttaa.
  */
 public interface Terrain {
         

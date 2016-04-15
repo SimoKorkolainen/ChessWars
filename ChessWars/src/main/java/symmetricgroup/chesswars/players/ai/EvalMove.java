@@ -8,8 +8,8 @@ package symmetricgroup.chesswars.players.ai;
 import symmetricgroup.chesswars.battle.Move;
 
 /**
- *
- * @author Simo
+ * EvalMove on pari, joka sisältää siirron ja siirtoa seuraavassa kartan tilassa lasketun heuristiikkafunktion arvon.
+ * EvalMove toteuttaa Comparable-rajapinnan, jotta siirrot olisi mahdollista järjestää paremmuusjärjestykseen.
  */
 public class EvalMove implements Comparable<EvalMove> {
     private double eval;

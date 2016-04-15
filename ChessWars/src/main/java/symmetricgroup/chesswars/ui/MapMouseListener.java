@@ -19,8 +19,7 @@ import symmetricgroup.chesswars.players.ui.UserControl;
 import symmetricgroup.chesswars.players.ui.UserPlayer;
 
 /**
- *
- * @author Simo
+ * MapMouseListener on hiiren kuuntelija kartan päällä.
  */
 public class MapMouseListener implements MouseListener {
     private MapScreen screen;

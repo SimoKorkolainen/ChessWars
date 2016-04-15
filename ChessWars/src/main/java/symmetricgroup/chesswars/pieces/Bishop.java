@@ -9,8 +9,7 @@ import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author Simo
+ * Bishop-luokka kuvaa lähettiä.
  */
 public class Bishop extends Piece {
 

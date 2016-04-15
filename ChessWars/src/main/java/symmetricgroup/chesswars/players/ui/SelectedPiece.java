@@ -8,8 +8,7 @@ package symmetricgroup.chesswars.players.ui;
 import symmetricgroup.chesswars.pieces.Piece;
 
 /**
- *
- * @author Simo
+ * SelectedPiece on käyttäjän kartalta valitsema nappula.
  */
 public class SelectedPiece {
     private Piece piece;

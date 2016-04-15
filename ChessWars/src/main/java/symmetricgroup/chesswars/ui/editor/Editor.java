@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -15,8 +16,7 @@ import symmetricgroup.chesswars.ui.MapMouseListener;
 import symmetricgroup.chesswars.ui.MapScreen;
 
 /**
- *
- * @author Simo
+ * Editor on editorin esittämiseen tarkoitettu luokka.
  */
 public class Editor extends JPanel {
     
@@ -27,6 +27,7 @@ public class Editor extends JPanel {
         this.map = map;
         
         createComponents();
+        super.setBackground(new Color(218, 231, 247));
     }
 
     public void createComponents() {

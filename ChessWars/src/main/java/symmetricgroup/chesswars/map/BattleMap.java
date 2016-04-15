@@ -31,8 +31,7 @@ import symmetricgroup.chesswars.pieces.King;
 import symmetricgroup.chesswars.pieces.Knight;
 import symmetricgroup.chesswars.pieces.Queen;
 /**
- *
- * @author simokork
+ * BattleMap on luokka, joka sisältää kartan nappulat ja maaston.
  */
 public class BattleMap {
     
@@ -70,28 +69,6 @@ public class BattleMap {
 
     }
     
-    public void putSomeTroops() {
-        map[0][1] = new King(ArmyColor.WHITE);
-        map[9][8] = new King(ArmyColor.BLACK);
-        map[3][3] = new Rook(ArmyColor.WHITE);
-        map[3][5] = new Bishop(ArmyColor.WHITE);
-        map[5][5] = new Rook(ArmyColor.BLACK);
-        map[5][8] = new Rook(ArmyColor.BLACK);
-        map[0][0] = new Pawn(ArmyColor.WHITE);
-        map[9][9] = new Pawn(ArmyColor.BLACK);
-        map[6][8] = new Rook(ArmyColor.BLACK);
-        map[6][7] = new Knight(ArmyColor.BLACK);
-        map[3][4] = new Knight(ArmyColor.BLACK);
-        map[5][3] = new Knight(ArmyColor.WHITE);
-        map[6][8] = new Queen(ArmyColor.BLACK);
-        map[4][2] = new Queen(ArmyColor.WHITE);
-        mapTerrain[5][6] = new Mountains();
-        mapTerrain[5][7] = new Mountains();
-        mapTerrain[5][9] = new Mountains();
-        mapTerrain[4][8] = new Woods();
-        
-        
-    }
     
 
     public Piece getPiece(int x, int y) {
@@ -163,6 +140,5 @@ public class BattleMap {
     public void setMapTerrain(Terrain[][] mapTerrain) {
         this.mapTerrain = mapTerrain;
     }
-    
-    
+
 }

@@ -9,8 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 /**
- *
- * @author Simo
+ * Plain on tasankoa kuvaava luokka.
  */
 public class Plain implements Terrain {
 

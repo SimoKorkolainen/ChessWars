@@ -18,8 +18,7 @@ import symmetricgroup.chesswars.terrain.Mountains;
 import symmetricgroup.chesswars.terrain.Terrain;
 
 /**
- *
- * @author simokork
+ * Piece on nappuloiden toimintaa abstrahoiva luokka.
  */
 public abstract class Piece {
     private ArmyColor color;
@@ -187,4 +186,6 @@ public abstract class Piece {
     }
     
     public abstract Piece copy();
+    
+
 }

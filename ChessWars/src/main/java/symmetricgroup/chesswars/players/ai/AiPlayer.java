@@ -12,15 +12,18 @@ import java.util.List;
 import java.util.Set;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleCopier;
+import symmetricgroup.chesswars.battle.BattleMoveCalculator;
+import symmetricgroup.chesswars.battle.BattleWinnerChecker;
 import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 
 /**
- *
- * @author Simo
+ * AiPlayer on tekoälyn toiminnallisuuden sisältävä luokka.
  */
 public class AiPlayer implements Player {
+    private BattleMoveCalculator moveCalculator;
     private int searchDepth;
     private ArmyColor color;
     private Set<ArmyColor> myTeam; //Koodia voi muokata siten, että myTeam on tarpeeton
@@ -28,6 +31,7 @@ public class AiPlayer implements Player {
     private Battle copy;
     private boolean moveIsReady;
     private Move nextMove;
+    private static final double LARGE = 1000000;
 
     public AiPlayer(int searchDepth, ArmyColor color, Battle battle) {
         this.searchDepth = searchDepth;
@@ -36,6 +40,7 @@ public class AiPlayer implements Player {
         this.myTeam.add(color);
         this.searchDepth = searchDepth;
         this.battle = battle;
+        
     }
     
     public void setUpTeam() {
@@ -46,11 +51,13 @@ public class AiPlayer implements Player {
         }
     }
     
-    
     //Tekoäly pelaa aivan kuin kaikki eri tiimeissä olevat vastustajat olisivat liittoutuneet keskenään ja omien tiimiläisten siirrot olisivat tekoälyn itse päätettävissä.
     public Move alphaBeta() {
         copy = BattleCopier.copy(battle);
-        double value = -1000000;
+        
+        moveCalculator = new BattleMoveCalculator(copy);
+        
+        double value = -LARGE;
         Move best = null;
         
         List<EvalMove> evalMoves = sortedEvalMoves();
@@ -59,14 +66,13 @@ public class AiPlayer implements Player {
             
             copy.doMove(i.getMove());
             
-            double newValue;
-            if (myTeam.contains(copy.nextColorToMove())) {
-                
-                newValue = maxValue(-1000000, 1000000, searchDepth - 1);
-            } else {
-                newValue = minValue(-1000000, 1000000, searchDepth - 1);
+            if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
+                copy.undoLastMove();
+                return i.getMove();
             }
-            
+
+            double newValue = calculateValue(-LARGE - searchDepth, LARGE + searchDepth, searchDepth - 1);
+
             if (newValue > value) {
                 value = newValue;
                 best = i.getMove();
@@ -80,23 +86,28 @@ public class AiPlayer implements Player {
     }
     
     public double maxValue(double alpha, double beta, int depth) {
-        //System.out.println("alphaBeta depth: " + depth + " turn: " + map.nextColorToMove());
+
+        if (!battle.getPlayers().contains(this)) {
+            return -LARGE - depth;
+        } 
         if (depth == 0) {
             return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
         
-        double value = -1000000;
+        double value = -LARGE;
+        
         List<EvalMove> evalMoves = sortedEvalMoves();
         Collections.reverse(evalMoves);
         for (EvalMove i : evalMoves) {
 
             copy.doMove(i.getMove());
             
-            if (myTeam.contains(copy.nextColorToMove())) {
-                value = Math.max(value, maxValue(alpha, beta, depth - 1));
-            } else {
-                value = Math.max(value, minValue(alpha, beta, depth - 1));
+            if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
+                copy.undoLastMove();
+                return LARGE + depth;
             }
+
+            value = Math.max(value, calculateValue(alpha, beta, depth));
             
             if (beta <= value) {
                 copy.undoLastMove();
@@ -110,7 +121,6 @@ public class AiPlayer implements Player {
         }
         
         return value;
-    
     }
     
     public double minValue(double alpha, double beta, int depth) {
@@ -118,19 +128,15 @@ public class AiPlayer implements Player {
         if (depth == 0) {
             return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
-        double value = 1000000;
+        double value = LARGE;
         
         List<EvalMove> evalMoves = sortedEvalMoves();
         
         for (EvalMove i : evalMoves) {
             
             copy.doMove(i.getMove());
-            
-            if (myTeam.contains(copy.nextColorToMove())) {
-                value = Math.min(value, maxValue(alpha, beta, depth - 1));
-            } else {
-                value = Math.min(value, minValue(alpha, beta, depth - 1));
-            }
+
+            value = Math.min(value, calculateValue(alpha, beta, depth));
             
             if (alpha >= value) {
                 copy.undoLastMove();
@@ -140,7 +146,6 @@ public class AiPlayer implements Player {
             beta = Math.min(beta, value);
             
             copy.undoLastMove();
-        
         }
         return value;
     }
@@ -169,7 +174,7 @@ public class AiPlayer implements Player {
     }
     
     public List<EvalMove> sortedEvalMoves() {
-        List<Move> moves = copy.allPossibleNextMoves();
+        List<Move> moves = moveCalculator.allPossibleNextMoves();
         List<EvalMove> evalMoves = new ArrayList<>();
         for (Move i : moves) {
             copy.doMove(i);
@@ -183,5 +188,11 @@ public class AiPlayer implements Player {
         return evalMoves;
     
     } 
-
+    
+    private double calculateValue(double alpha, double beta, int depth) {
+        if (myTeam.contains(copy.nextColorToMove())) {
+            return maxValue(alpha, beta, depth - 1);
+        }  
+        return minValue(alpha, beta, depth - 1);  
+    }
 }

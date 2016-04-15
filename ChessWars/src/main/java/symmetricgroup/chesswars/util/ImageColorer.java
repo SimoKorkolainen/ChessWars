@@ -9,8 +9,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 /**
- *
- * @author Simo
+ * ImageColorer on kuvien värittämiseen käytetty luokka.
  */
 public class ImageColorer {
     

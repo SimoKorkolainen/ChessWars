@@ -12,8 +12,7 @@ import javax.swing.JToggleButton;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author Simo
+ * ColorSelectorButton on editorissa nappulan värin valitsemiseen tarkoitettu nappi.
  */
 public class ColorSelectionButton extends JToggleButton {
     private ArmyColor color;
@@ -22,27 +21,12 @@ public class ColorSelectionButton extends JToggleButton {
         super();
         this.color = color;
         
-        super.setBackground(getButtonColor());
+        super.setBackground(color.getDrawingColor());
         super.setOpaque(true);
         super.setBorderPainted(false);
         super.setActionCommand(color.toString());
 
         
-    }
-
-    public Color getButtonColor() {
-        switch (color) {
-            
-            case WHITE: return Color.WHITE;
-            case YELLOW: return Color.YELLOW;
-            case BLACK: return Color.BLACK;
-            case BLUE: return Color.BLUE;
-            case GREEN: return Color.GREEN;
-            case RED: return Color.RED;
-                
-            default: return null;
-        }
-    
     }
 
     public ArmyColor getColor() {

@@ -10,8 +10,7 @@ import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.util.ImageLoader;
 
 /**
- *
- * @author Simo
+ * Mountains on vuoristoa kuvaava luokka.
  */
 public class Mountains implements Terrain {
 

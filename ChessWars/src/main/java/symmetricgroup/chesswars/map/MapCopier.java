@@ -10,8 +10,7 @@ import symmetricgroup.chesswars.terrain.Terrain;
 import symmetricgroup.chesswars.terrain.Woods;
 
 /**
- *
- * @author Simo
+ * MapCopier on luokka, jonka avulla on mahdollista kopioida BattleMap-olio.
  */
 public class MapCopier {
     public static BattleMap copy(BattleMap map) {

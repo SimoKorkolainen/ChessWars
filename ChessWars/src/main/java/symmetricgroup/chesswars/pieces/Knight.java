@@ -15,8 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author simokork
+ * Knight-luokka kuvaa hevosta.
  */
 public class Knight extends Piece {
     

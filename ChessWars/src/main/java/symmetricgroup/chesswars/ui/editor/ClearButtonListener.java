@@ -11,8 +11,7 @@ import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.ui.MapScreen;
 
 /**
- *
- * @author Simo
+ * ClearButtonListener on ClearButton-napin kuuntelija.
  */
 public class ClearButtonListener implements ActionListener {
     private BattleMap map;

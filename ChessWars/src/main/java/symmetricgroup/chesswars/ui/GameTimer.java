@@ -10,8 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- *
- * @author simokork
+ * GameTimer on ajastin, joka tahdistaa pelin käyttöliittymän piirtoa.
  */
 public class GameTimer {
     private Timer timer;

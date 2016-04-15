@@ -10,8 +10,7 @@ import java.awt.event.ActionListener;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author Simo
+ * SelectionButtonListener on kartan muokkamiseen käytettyjen työkalujen valitsemisen hoitava kuuntelija.
  */
 public class SelectionButtonListener implements ActionListener {
     private MapEditorPanel panel;

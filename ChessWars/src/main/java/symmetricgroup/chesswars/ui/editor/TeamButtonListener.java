@@ -9,8 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
- * @author Simo
+ * TeamButtonListener on kuuntelija, 
+ * jota käytetään pelaajien valitsemiseen.
  */
 public class TeamButtonListener implements ActionListener {
 

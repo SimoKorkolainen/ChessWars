@@ -20,7 +20,7 @@ import symmetricgroup.chesswars.pieces.Rook;
  * @author Simo
  */
 public class BattleMapTest {
-    BattleMap map;
+    private BattleMap map;
     public BattleMapTest() {
     }
     

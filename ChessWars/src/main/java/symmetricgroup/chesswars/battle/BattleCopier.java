@@ -9,8 +9,8 @@ import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.MapCopier;
 
 /**
- *
- * @author Simo
+ * BattleCopier on tekoälyn käyttöön tarkoitettu luokka, jonka avulla on mahdollista kopioida Battle-olioita lähes kokonaan.
+ * Kopiolla ja alkuperäisellä Battle-oliolla voi olla samoja olioita attribuutteina.
  */
 public class BattleCopier {
     public static Battle copy(Battle battle) {

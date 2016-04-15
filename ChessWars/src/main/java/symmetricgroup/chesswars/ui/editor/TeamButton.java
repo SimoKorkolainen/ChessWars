@@ -10,39 +10,27 @@ import javax.swing.JButton;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author Simo
+ * TeamButton on pelaajien joukkueiden valitsemiseen käytetty nappi.
  */
-public class TeamButton extends JButton {
+public class TeamButton extends RoundRectTextButton {
     private ArmyColor color;
     private int team;
     private static final int MAX_TEAMS = 6;
     public TeamButton(ArmyColor color, int team) {
-        super("" + team);
+        super(30, 30, color.getDrawingColor(), new Color(30, 30, 30), "" + team);
         this.color = color;
         this.team = team;
+        /*
         super.setOpaque(true);
         super.setBorderPainted(false);
-        super.setBackground(getButtonColor());
+        super.setBackground(color.getDrawingColor());
+        */
     }
-    
-    public Color getButtonColor() {
-        switch (color) {
-            
-            case WHITE: return Color.WHITE;
-            case YELLOW: return Color.YELLOW;
-            case BLACK: return Color.BLACK;
-            case BLUE: return Color.BLUE;
-            case GREEN: return Color.GREEN;
-            case RED: return Color.RED;
-                
-            default: return null;
-        }
-    
-    }
-    
+
     public void incrementTeam() {
         team = team % MAX_TEAMS + 1;
-        super.setText("" + team);
+        super.setButtonText("" + team);
     }
+    
+ 
 }

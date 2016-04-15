@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.ui;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -13,15 +14,17 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 import java.util.Map;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import symmetricgroup.chesswars.util.ImageColorer;
+import symmetricgroup.chesswars.util.ImageLoader;
 
 /**
- *
- * @author Simo
+ * MainMenu on ohjelman päävalikon esittämiseen käytetty luokka.
  */
 public class MainMenu extends JPanel {
     public static final String PLAYTEXT = "Play";
@@ -30,10 +33,14 @@ public class MainMenu extends JPanel {
             
     private MenuButton playButton;
     private MenuButton editorButton;
+    private BufferedImage largeRook;
     
     public MainMenu(UserInterface ui) {
         createComponents(ui);
-    
+        ImageLoader loader = new ImageLoader();
+        largeRook = loader.loadImage("/images/largeWhiteRook.png");
+        largeRook = ImageColorer.color(largeRook, new Color(187, 219, 144));
+        super.setBackground(new Color(218, 231, 247));
     }
     public void createComponents(UserInterface ui) {
         super.setLayout(new GridBagLayout());
@@ -80,14 +87,20 @@ public class MainMenu extends JPanel {
         int width = super.getWidth();
         int height = super.getHeight();
         
-        g2d.setFont(new Font("SansSerif", Font.PLAIN, Math.min(height / 10, width / 10)));
+        
+        g2d.setFont(new Font("SansSerif", Font.PLAIN, Math.min(height / 8, width / 8)));
         
         FontMetrics metrics = g2d.getFontMetrics();
+        
+        g2d.drawImage(largeRook, width / 2 - largeRook.getWidth() / 2, height / 2 - largeRook.getHeight() / 2, null);
         
         int x = width / 2 - metrics.stringWidth(GAMENAME) / 2;
         int y = height / 3 - metrics.getHeight() / 2;
         
+        g2d.setColor(new Color(46, 55, 60));
         g2d.drawString(GAMENAME, x, y);
+        
+        
     }
     
    

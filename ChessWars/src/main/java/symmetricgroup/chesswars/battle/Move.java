@@ -9,10 +9,10 @@ package symmetricgroup.chesswars.battle;
 
 
 import symmetricgroup.chesswars.pieces.Piece;
+import symmetricgroup.chesswars.pieces.PieceParser;
 
 /**
- *
- * @author simokork
+ * Move on luokka, joka sisältää pelaajan siirron tiedot.
  */
 public class Move {
     private int startX;
@@ -59,6 +59,32 @@ public class Move {
     public Move copy() {
         return new Move(startX, startY, endX, endY, piece.copy(), eaten.copy());
     }
+    
+    @Override
+    public String toString() {
+        return "" + startX + " " + startY + " " + endX + " " + endY + " " + piece + " " + eaten;
+    }
+    
+    public static Move stringToMove(String moveConf) {
+        
+        String[] conf = moveConf.split(" ");
+        
+        try {
 
-
+            int startX = Integer.parseInt(conf[0]);
+            int startY = Integer.parseInt(conf[1]);
+            int endX = Integer.parseInt(conf[2]);
+            int endY = Integer.parseInt(conf[3]);
+            Piece piece = PieceParser.stringToPiece(conf[4]);
+            Piece eaten = PieceParser.stringToPiece(conf[5]);
+            
+            return new Move(startX, startY, endX, endY, piece, eaten);
+        
+        } catch (Exception e) {
+            System.out.println("Unable to parse move: " + e.getMessage());
+        }
+        
+        return null;
+    
+    }
 }

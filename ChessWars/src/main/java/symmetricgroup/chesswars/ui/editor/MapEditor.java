@@ -21,8 +21,7 @@ import symmetricgroup.chesswars.terrain.Woods;
 
 
 /**
- *
- * @author Simo
+ * MapEditor on kartan editoimiseen käytetty luokka.
  */
 public class MapEditor {
     private MapEditorPanel panel;
@@ -31,6 +30,7 @@ public class MapEditor {
     public MapEditor(MapEditorPanel panel, BattleMap map) {
         this.panel = panel;
         this.map = map;
+        
     }
 
 

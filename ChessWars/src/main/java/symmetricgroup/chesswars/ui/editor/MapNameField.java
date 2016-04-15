@@ -15,8 +15,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
 /**
- *
- * @author Simo
+ * MapNameField on kartan nimen syöttämiseen käytetty tekstikenttä.
  */
 public class MapNameField extends JPanel {
 

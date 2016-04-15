@@ -13,8 +13,7 @@ import symmetricgroup.chesswars.battle.Move;
 import java.util.List;
 
 /**
- *
- * @author simokork
+ * King-luokka kuvaa kuningasta.
  */
 public class King extends Piece {
     

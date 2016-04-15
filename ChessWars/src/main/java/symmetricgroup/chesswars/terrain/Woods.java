@@ -11,8 +11,7 @@ import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.util.ImageLoader;
 
 /**
- *
- * @author Simo
+ * Woods on metsikköä kuvaava luokka.
  */
 public class Woods implements Terrain {
     private static BufferedImage image;

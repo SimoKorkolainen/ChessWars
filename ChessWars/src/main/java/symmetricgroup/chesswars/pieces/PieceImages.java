@@ -12,8 +12,7 @@ import symmetricgroup.chesswars.util.ImageColorer;
 import symmetricgroup.chesswars.util.ImageLoader;
 
 /**
- *
- * @author Simo
+ * PieceImage-luokka sisältää nappulatyyppiin liittyvät kuvat.
  */
 public class PieceImages {
     
@@ -32,12 +31,12 @@ public class PieceImages {
         ImageLoader loader = new ImageLoader();
         whiteImage = loader.loadImage(startPart + "White" + endPart);
         blackImage = loader.loadImage(startPart + "Black" + endPart);
-        
-        redImage = ImageColorer.color(whiteImage, new Color(255, 100, 100));
-        greenImage = ImageColorer.color(whiteImage, new Color(100, 255, 100));
-        blueImage = ImageColorer.color(whiteImage, new Color(100, 100, 255));
-        yellowImage = ImageColorer.color(whiteImage, Color.yellow);
-        
+
+        redImage = ImageColorer.color(whiteImage, ArmyColor.RED.getDrawingColor());
+        greenImage = ImageColorer.color(whiteImage, ArmyColor.GREEN.getDrawingColor());
+        blueImage = ImageColorer.color(whiteImage, ArmyColor.BLUE.getDrawingColor());
+        yellowImage = ImageColorer.color(whiteImage, ArmyColor.YELLOW.getDrawingColor());
+                
     }
     
     

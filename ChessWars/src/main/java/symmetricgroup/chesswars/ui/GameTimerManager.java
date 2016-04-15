@@ -8,8 +8,7 @@ package symmetricgroup.chesswars.ui;
 import java.util.TimerTask;
 
 /**
- *
- * @author Simo
+ * GameTimerManager-luokka suorittaa ajastimen syklin aikana käyttöliittymän päivityksen.
  */
 public class GameTimerManager extends TimerTask {
 

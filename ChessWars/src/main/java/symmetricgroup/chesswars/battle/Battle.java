@@ -17,9 +17,8 @@ import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.Piece;
 
 /**
- *
- * @author Simo
- */
+* Battle-luokka mallintaa taistelun kulkua kartalla.
+*/
 public class Battle {
     private BattleMap map;
     private Map<ArmyColor, Integer> team;
@@ -27,17 +26,17 @@ public class Battle {
     private List<Player> players;
     private int turn;
     private List<Move> moves;
+    private List<DefeatState> defeatStates;
 
     public Battle(BattleMap map) {
         this.map = map;
         this.team = new HashMap<>();
 
-
         this.players = new ArrayList<>();
         this.moves = new ArrayList<>();
+        this.defeatStates = new ArrayList<>();
         this.turn = 0;
-        
-        
+       
         setDefaultTeams();
         
     }
@@ -68,52 +67,35 @@ public class Battle {
         players.add(player);
     
     }
-    
 
-    
     public void doMove(Move move) {
         turn = (turn + 1) % players.size();
         map.doMove(move);
         moves.add(move);
+        
+        Piece eaten = move.getEaten();
+        if (eaten != null && "King".equals(eaten.getName())) {
+        
+            handleDefeat(eaten.getColor());
+        
+        }
     }
     
     private void undoMove(Move move) {
+        Piece eaten = move.getEaten();
+        if (eaten != null && "King".equals(eaten.getName())) {
+        
+            undoDefeat(defeatStates.remove(defeatStates.size() - 1));
+        
+        }
+        
+        
         turn = (turn - 1 + players.size()) % players.size();
         map.undoMove(move);
        
     }
     public void undoLastMove() {
         undoMove(moves.remove(moves.size() - 1));
-    }
-   
- 
-    public List<Move> allPossibleNextMoves() {
-        List<Move> all = new ArrayList<>();
-        
-        for (int i = 0; i < map.getWidth(); i++) {
-            for (int j = 0; j < map.getHeight(); j++) {
-                
-                addMovesInPosition(all, i, j); 
-                
-            }
-        
-        }
-    
-        return all;
-    }
-    
-    private void addMovesInPosition(List<Move> moves, int i, int j) {
-        
-        Piece piece = map.getPiece(i, j);
-
-        ArmyColor next = players.get(turn).getColor();
-
-        if (piece != null && piece.getColor() == next) {
-
-            moves.addAll(piece.getMoves(i, j, this));
-
-        }
-        
     }
 
     public ArmyColor nextColorToMove() {
@@ -167,5 +149,50 @@ public class Battle {
         this.moves = moves;
     }
 
+
+    public void handleDefeat(ArmyColor color) {
+        Player loser = null;
+        int playerPos = 0;
+        
+        for (Player i : players) {
+            
+            if (i.getColor() == color) {
+                loser = i;
+                break;
+            }
+            
+            playerPos++;
+        }
+        if (loser != null) {
+            if (playerPos < turn) {
+                turn--;
+            }
+            
+            players.remove(playerPos);
+            
+            turn %= players.size();
+            
+            DefeatState defeat = new DefeatState(loser, playerPos);
+
+            defeat.removeDefeated(map);
+            
+            defeatStates.add(defeat);
+        }
+    }
+    
+    public void undoDefeat(DefeatState defeat) {
+        
+        defeat.putDefeatedBack(map);
+        
+        players.add(defeat.getPlayerPos(), defeat.getPlayer());
+        
+        if (defeat.getPlayerPos() <= turn) {
+            turn++;
+        }
+    }
+
+    public List<DefeatState> getDefeatStates() {
+        return defeatStates;
+    }
     
 }

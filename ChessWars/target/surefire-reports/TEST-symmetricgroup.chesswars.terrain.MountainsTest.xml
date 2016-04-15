@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="symmetricgroup.chesswars.terrain.MountainsTest" time="0.008" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="symmetricgroup.chesswars.terrain.MountainsTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,7 +62,7 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="symmetricgroup.chesswars.terrain.MountainsTest" name="moveCostIsCorrect" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.terrain.MountainsTest" name="nameIsCorrect" time="0.001"/>
-  <testcase classname="symmetricgroup.chesswars.terrain.MountainsTest" name="copyProducesCorrectClass" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.terrain.MountainsTest" name="nameIsCorrect" time="0"/>
+  <testcase classname="symmetricgroup.chesswars.terrain.MountainsTest" name="copyProducesCorrectClass" time="0"/>
   <testcase classname="symmetricgroup.chesswars.terrain.MountainsTest" name="imageIsNotNull" time="0"/>
 </testsuite>

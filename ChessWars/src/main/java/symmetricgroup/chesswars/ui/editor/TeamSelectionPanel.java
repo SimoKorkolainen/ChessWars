@@ -17,8 +17,8 @@ import javax.swing.JPanel;
 import symmetricgroup.chesswars.players.ArmyColor;
 
 /**
- *
- * @author Simo
+ * TeamSelectionPanel on paneeli,
+ * joka sisältää pelaajien joukkueiden valitsemiseen käytetyt napit.
  */
 public class TeamSelectionPanel extends JPanel {
 

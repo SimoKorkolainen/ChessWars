@@ -1,4 +1,5 @@
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\pieces\QueenTest.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\battle\DefeatStateTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\map\BattleMapTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\terrain\PlainTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\pieces\KingTest.java
@@ -9,5 +10,7 @@ C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symme
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\map\MapCopierTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\players\ai\AiPlayerTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\terrain\MountainsTest.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\battle\BattleIOTest.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\map\MapParserTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\pieces\RookTest.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\test\java\symmetricgroup\chesswars\terrain\WoodsTest.java

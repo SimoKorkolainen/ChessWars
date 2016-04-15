@@ -138,7 +138,7 @@ public class RookTest {
     
     @Test 
     public void imageOfRookIsNotNull() {
-        assertFalse(rook.getImage() == null);
+        assertTrue(null != rook.getImage());
     }
     
     @Test

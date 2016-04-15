@@ -12,8 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
- *
- * @author Simo
+ * MenuButtonListener on MenuButton-napin kuuntelija.
  */
 public class MenuButtonListener implements ActionListener {
     public UserInterface ui;
@@ -27,15 +26,12 @@ public class MenuButtonListener implements ActionListener {
         String command = e.getActionCommand();
         
         if (command.equals(MainMenu.EDITORTEXT)) {
-            System.out.println("Edit!");
+
             ui.showEditorMenu();
         }
         
-        JFrame frame = ui.getFrame();
-        Container container = frame.getContentPane();
         
         if (command.equals(MainMenu.PLAYTEXT)) {
-            System.out.println("Play!");
 
             
             ui.showGame();

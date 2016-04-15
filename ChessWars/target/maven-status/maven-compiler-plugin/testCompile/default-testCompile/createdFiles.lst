@@ -1,8 +1,16 @@
+symmetricgroup\chesswars\map\MapCopierTest.class
+symmetricgroup\chesswars\players\ai\AiPlayerTest.class
 symmetricgroup\chesswars\pieces\KingTest.class
+symmetricgroup\chesswars\players\ai\AiEvaluatorTest.class
 symmetricgroup\chesswars\battle\BattleTest.class
 symmetricgroup\chesswars\pieces\KnightTest.class
+symmetricgroup\chesswars\battle\BattleIOTest.class
 symmetricgroup\chesswars\pieces\RookTest.class
+symmetricgroup\chesswars\util\ImageColorerTest.class
 symmetricgroup\chesswars\terrain\MountainsTest.class
+symmetricgroup\chesswars\map\MapParserTest.class
 symmetricgroup\chesswars\terrain\PlainTest.class
 symmetricgroup\chesswars\terrain\WoodsTest.class
+symmetricgroup\chesswars\battle\DefeatStateTest.class
 symmetricgroup\chesswars\map\BattleMapTest.class
+symmetricgroup\chesswars\pieces\QueenTest.class
