@@ -56,6 +56,7 @@ symmetricgroup\chesswars\ui\editor\settings\teams\TeamButtonListener.class
 symmetricgroup\chesswars\ui\map\MapMouseListener.class
 symmetricgroup\chesswars\battle\BattleIO.class
 symmetricgroup\chesswars\ui\editor\settings\teams\TeamButton.class
+.netbeans_automatic_build
 symmetricgroup\chesswars\ui\ChessWars.class
 symmetricgroup\chesswars\terrain\Mountains.class
 symmetricgroup\chesswars\pieces\PieceParser.class

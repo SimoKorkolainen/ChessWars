@@ -31,7 +31,7 @@ public class AiPlayer implements Player {
     private Battle copy;
     private boolean moveIsReady;
     private Move nextMove;
-    private static final double LARGE = 1000000;
+    private static final double LARGE = 9000000;
 
     public AiPlayer(int searchDepth, ArmyColor color, Battle battle) {
         this.searchDepth = searchDepth;
@@ -68,24 +68,20 @@ public class AiPlayer implements Player {
             
             if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
                 copy.undoLastMove();
-                //System.out.println("Jeee");
                 return i.getMove();
             }
 
             double newValue = calculateValue(-LARGE - searchDepth, LARGE + searchDepth, searchDepth - 1);
-            //System.out.println("newValue = " + newValue);
             if (newValue > value) {
                 value = newValue;
                 best = i.getMove();
-                if (value > 10000) {
-                    //System.out.println("Tässä value :" + value);
-                }
+
             }
             
             copy.undoLastMove();
         
         }
-        //System.out.println(value);
+        System.out.println(value);
         //System.out.println(best);
         return best;
     }
@@ -108,7 +104,6 @@ public class AiPlayer implements Player {
             
             if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
                 newValue = LARGE + depth;
-                //System.out.println("Jeee1");
             } else {
                 newValue = calculateValue(alpha, beta, depth);
             }
@@ -150,7 +145,6 @@ public class AiPlayer implements Player {
             
             if (BattleWinnerChecker.myTeamHasLost(battle, color)) {
                 newValue = - LARGE - depth;
-                //System.out.println("Jeee2 " + (- LARGE - depth));
             } else {
                 newValue = calculateValue(alpha, beta, depth);
             }
@@ -215,4 +209,10 @@ public class AiPlayer implements Player {
         }  
         return minValue(alpha, beta, depth - 1);  
     }
+
+    public Set<ArmyColor> getMyTeam() {
+        return myTeam;
+    }
+    
+    
 }

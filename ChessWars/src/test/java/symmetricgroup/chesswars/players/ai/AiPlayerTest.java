@@ -46,10 +46,13 @@ public class AiPlayerTest {
         
         map = new BattleMap(10, 10);
         battle = new Battle(map);
+        
         map.setPiece(0, 0, new King(ArmyColor.BLACK));
         map.setTerrain(1, 1, new Mountains());
-        map.setPiece(1, 0, new Rook(ArmyColor.WHITE));
-        map.setPiece(2, 0, new Rook(ArmyColor.RED));
+        map.setPiece(2, 0, new Rook(ArmyColor.WHITE));
+        map.setPiece(3, 0, new Rook(ArmyColor.RED));
+        map.setPiece(7, 0, new King(ArmyColor.WHITE));
+        map.setPiece(7, 5, new King(ArmyColor.RED));
         
         black = new AiPlayer(4, ArmyColor.BLACK, battle);
         white = new AiPlayer(4, ArmyColor.WHITE, battle);
@@ -80,10 +83,19 @@ public class AiPlayerTest {
     @Test
     public void blackKingMovesToSafety() { // Ai contains a bug and this test fails
         setOrderBRW();
+        
+        for (Move i : map.getPiece(0, 0).getMoves(0, 0, battle)) {
+            System.out.println("possible move: " + i.toString());
+        }
+        
         black.calculateMove();
+                
         Move best = black.getNextMove();
-        assertEquals(1, best.getEndX());
-        assertEquals(0, best.getEndY());
+        
+        System.out.println("best: " + best);
+
+        assertEquals(0, best.getEndX());
+        assertEquals(1, best.getEndY());
     }
     
     public void setOrderWRB() {
