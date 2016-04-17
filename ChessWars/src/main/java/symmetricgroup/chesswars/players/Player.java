@@ -16,6 +16,6 @@ public interface Player {
     public ArmyColor getColor();
     public boolean moveIsReady();
     public Move getNextMove();
-
+    
     
 }

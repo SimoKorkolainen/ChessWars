@@ -21,11 +21,11 @@ public class AiEvaluator {
     public static final double QUEEN_VALUE = 9;
     public static final double PAWN_VALUE = 1;
     public static final double AGGRESSIVENESS = 0.2;
-    public static final double RANDOMNESS = 0.8;
-    public static final double DIST_TO_KING_IMPORTANCE = 2;
+    public static final double RANDOMNESS = 0.001;
+    public static final double DIST_TO_KING_IMPORTANCE = 0;
     public static double evaluate(BattleMap map, Set<ArmyColor> myTeam, boolean random) {
         double eval = 0;
-        
+
         if (random) {
             eval += Math.random() * RANDOMNESS;
         }

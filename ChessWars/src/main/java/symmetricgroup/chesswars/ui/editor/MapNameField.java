@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
+import symmetricgroup.chesswars.ui.editor.settings.MapNameFieldListener;
 
 /**
  * MapNameField on kartan nimen syöttämiseen käytetty tekstikenttä.
@@ -21,18 +22,22 @@ public class MapNameField extends JPanel {
 
     private String mapName; 
     
-    public MapNameField(String mapName) {
+    public MapNameField(String mapName, MapNameFieldListener listener) {
         this.mapName = mapName;
         super.setLayout(new GridLayout(2, 1));
         super.setBorder(BorderFactory.createCompoundBorder(new EtchedBorder(), new EmptyBorder(10, 5, 10, 5)));
         
-        createComponents();
+        createComponents(listener);
     }
     
-    public void createComponents() {
+    public void createComponents(MapNameFieldListener listener) {
         
         super.add(new JLabel("Map name"));
-        super.add(new JTextField(mapName));
+        
+        JTextField field = new JTextField(mapName);
+        field.getDocument().addDocumentListener(listener);
+        
+        super.add(field);
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
+import symmetricgroup.chesswars.ui.editor.map.SelectionButtonListener;
+import symmetricgroup.chesswars.ui.editor.map.PieceSelectionButton;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;

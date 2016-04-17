@@ -78,7 +78,7 @@ public class AiPlayerTest {
     }
     
     @Test
-    public void blackKingMovesToSafety() {
+    public void blackKingMovesToSafety() { // Ai contains a bug and this test fails
         setOrderBRW();
         black.calculateMove();
         Move best = black.getNextMove();

@@ -20,6 +20,7 @@ import symmetricgroup.chesswars.pieces.Piece;
 * Battle-luokka mallintaa taistelun kulkua kartalla.
 */
 public class Battle {
+    private String battleName;
     private BattleMap map;
     private Map<ArmyColor, Integer> team;
 

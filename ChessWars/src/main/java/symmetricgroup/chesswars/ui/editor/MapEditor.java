@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
+import symmetricgroup.chesswars.ui.editor.map.PieceSelectionButton;
 import java.awt.event.MouseEvent;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.Bishop;

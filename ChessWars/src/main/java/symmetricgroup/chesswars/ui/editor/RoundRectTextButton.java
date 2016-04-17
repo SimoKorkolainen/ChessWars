@@ -40,7 +40,7 @@ public class RoundRectTextButton extends JButton {
         setButtonText(buttonText);
     }
     
-    private Color lighten(Color color, int amount) {
+    public static Color lighten(Color color, int amount) {
         int r = Math.min(color.getRed() + amount, 255);
         int g = Math.min(color.getGreen() + amount, 255);
         int b = Math.min(color.getBlue() + amount, 255);

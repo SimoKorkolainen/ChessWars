@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="symmetricgroup.chesswars.pieces.KingTest" time="0.032" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="symmetricgroup.chesswars.pieces.KingTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,9 +62,9 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="rookIsBlockedByMountains" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingCantMoveOutsideMap" time="0.016"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingCantMoveOutsideMap" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingsNameIsCorrect" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingHasMoves" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingsColorIsCorrect" time="0.016"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingsColorIsCorrect" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.KingTest" name="kingCanMakeCorrectNumberOfMoves" time="0"/>
 </testsuite>

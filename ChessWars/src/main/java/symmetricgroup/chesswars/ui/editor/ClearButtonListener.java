@@ -8,7 +8,7 @@ package symmetricgroup.chesswars.ui.editor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.ui.MapScreen;
+import symmetricgroup.chesswars.ui.map.MapScreen;
 
 /**
  * ClearButtonListener on ClearButton-napin kuuntelija.

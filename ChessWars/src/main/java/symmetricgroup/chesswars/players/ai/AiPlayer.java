@@ -57,7 +57,7 @@ public class AiPlayer implements Player {
         
         moveCalculator = new BattleMoveCalculator(copy);
         
-        double value = -LARGE;
+        double value = -LARGE * 2;
         Move best = null;
         
         List<EvalMove> evalMoves = sortedEvalMoves();
@@ -68,33 +68,35 @@ public class AiPlayer implements Player {
             
             if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
                 copy.undoLastMove();
+                //System.out.println("Jeee");
                 return i.getMove();
             }
 
             double newValue = calculateValue(-LARGE - searchDepth, LARGE + searchDepth, searchDepth - 1);
-
+            //System.out.println("newValue = " + newValue);
             if (newValue > value) {
                 value = newValue;
                 best = i.getMove();
+                if (value > 10000) {
+                    //System.out.println("Tässä value :" + value);
+                }
             }
             
             copy.undoLastMove();
         
         }
-        System.out.println(value);
+        //System.out.println(value);
+        //System.out.println(best);
         return best;
     }
     
     public double maxValue(double alpha, double beta, int depth) {
 
-        if (!battle.getPlayers().contains(this)) {
-            return -LARGE - depth;
-        } 
         if (depth == 0) {
             return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
         
-        double value = -LARGE;
+        double value = -LARGE * 2;
         
         List<EvalMove> evalMoves = sortedEvalMoves();
         Collections.reverse(evalMoves);
@@ -102,21 +104,29 @@ public class AiPlayer implements Player {
 
             copy.doMove(i.getMove());
             
+            double newValue;
+            
             if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
-                copy.undoLastMove();
-                return LARGE + depth;
+                newValue = LARGE + depth;
+                //System.out.println("Jeee1");
+            } else {
+                newValue = calculateValue(alpha, beta, depth);
             }
 
-            value = Math.max(value, calculateValue(alpha, beta, depth));
+            value = Math.max(value, newValue);
+            
+            if (value > 10000) {
+                //System.out.println("Tässä value2 :" + value);
+            }
+            
+            copy.undoLastMove();
             
             if (beta <= value) {
-                copy.undoLastMove();
                 return value;
             }
             
             alpha = Math.max(alpha, value);
             
-            copy.undoLastMove();
         
         }
         
@@ -124,28 +134,38 @@ public class AiPlayer implements Player {
     }
     
     public double minValue(double alpha, double beta, int depth) {
-        
+
         if (depth == 0) {
             return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
-        double value = LARGE;
+        double value = LARGE * 2;
         
         List<EvalMove> evalMoves = sortedEvalMoves();
         
         for (EvalMove i : evalMoves) {
             
             copy.doMove(i.getMove());
-
-            value = Math.min(value, calculateValue(alpha, beta, depth));
+            
+            double newValue;
+            
+            if (BattleWinnerChecker.myTeamHasLost(battle, color)) {
+                newValue = - LARGE - depth;
+                //System.out.println("Jeee2 " + (- LARGE - depth));
+            } else {
+                newValue = calculateValue(alpha, beta, depth);
+            }
+            
+            value = Math.min(value, newValue);
+            
+            copy.undoLastMove();
             
             if (alpha >= value) {
-                copy.undoLastMove();
                 return value;
             }
             
             beta = Math.min(beta, value);
             
-            copy.undoLastMove();
+
         }
         return value;
     }
