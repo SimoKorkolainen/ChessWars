@@ -19,5 +19,5 @@ Päivä | Tunnit | Kuvaus
 8.4.2016 | 6h | Testien kirjoittaminen ja koodin siistiminen
 12.4.2016 | 2h | Käyttöliittymän koodaaminen
 15.4.2016 | 7h | JavaDocsien kirjoittaminen, koodin siistiminen ja käyttöliittymän ja pelin koodaaminen
-16.4.2016 | 3h | Käyttöliittymän koodaaminen ja tekoälyn bugin etsiminen
+16.4.2016 | 3h | Käyttöliittymän koodaaminen ja tekoälyn muokkauksessa syntyneen bugin etsiminen (jäi vielä henkiin)
 17.4.2016 | 4h | Käyttöliittymän koodaaminen
