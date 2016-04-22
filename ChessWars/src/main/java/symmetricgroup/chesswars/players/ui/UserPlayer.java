@@ -5,54 +5,44 @@
  */
 package symmetricgroup.chesswars.players.ui;
 
-import symmetricgroup.chesswars.battle.Move;
-import symmetricgroup.chesswars.pieces.Piece;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
+import symmetricgroup.chesswars.ui.game.BattleMoveThread;
 
 /**
  * UserPlayer on käyttäjän tiedot sisältävä luokka.
  * UserPlayer-oliolta voi kysyä käyttäjän seuraavaa siirtoa.
  */
 public class UserPlayer implements Player {
-    private boolean moveIsReady;
-    private Move next;
+
     private UserControl control;
     private ArmyColor color;
-
+    private BattleMoveThread moveThread;
+    
     public UserPlayer(ArmyColor color, UserControl control) {
         this.color = color;
-        this.moveIsReady = false;
         this.control = control;
     }
 
 
-    public void setNextMove(Move next) {
-        this.next = next;
-        this.moveIsReady = true;
-    }
-    
     
 
     public ArmyColor getColor() {
         return color;
     }
 
+
+
+
     @Override
-    public void calculateMove() {
-        moveIsReady = false;
+    public void calculateAndExecuteMove(BattleMoveThread thread) {
         control.setPlayer(this);
-
+        moveThread = thread;
     }
-
-    @Override
-    public boolean moveIsReady() {
-        return moveIsReady;
-    }
-
-    @Override
-    public Move getNextMove() {
-        return next;
+    
+    public void executeMove(Move move) {
+        moveThread.executeMove(move);
     }
 
 }

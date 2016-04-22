@@ -13,6 +13,14 @@ import symmetricgroup.chesswars.players.Player;
  * @author Simo
  */
 public class BattleWinnerChecker {
+    
+    
+    /**
+     * Metodi kertoo onko värin joukkue voittanut taistelun
+     * @param battle taistelu, jonka tilannetta halutaan tutkia
+     * @param color väri, jonka voitosta halutaan tietoa
+     * @return palauttaa true jos ja vain jos värin joukkue on voittanut
+     */
     public static boolean myTeamHasWon(Battle battle, ArmyColor color) {
         
         for (Player i : battle.getPlayers()) {
@@ -23,6 +31,13 @@ public class BattleWinnerChecker {
         
         return true;
     }
+    
+     /**
+     * Metodi kertoo onko värin joukkue hävinnyt taistelun
+     * @param battle taistelu, jonka tilannetta halutaan tutkia
+     * @param color väri, jonka joukkueen häviöstä halutaan tietoa
+     * @return palauttaa true jos ja vain jos värin joukkue on hävinnyt
+     */
     public static boolean myTeamHasLost(Battle battle, ArmyColor color) {
 
         for (Player i : battle.getPlayers()) {

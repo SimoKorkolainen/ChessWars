@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 
-package symmetricgroup.chesswars.battle;
+package symmetricgroup.chesswars.battle.defeat;
 
 import java.util.ArrayList;
 import java.util.List;
+import symmetricgroup.chesswars.battle.Battle;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.Piece;
+import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 
 /**
@@ -22,10 +25,13 @@ public class DefeatState {
     private int playerPos;
     private List<Move> removeMove;
     
-    public DefeatState() {
+   
     
-    }
-    
+    /**
+     * Konstruktori luo lopputila olion.
+     * @param player pelaaja, jonka lopputila halutaan luoda
+     * @param playerPos pelaajan, indeksi taistelun pelaajalistalla ennen pelaajan häviötä.
+     */
     public DefeatState(Player player, int playerPos) {
         this.player = player;
         this.playerPos = playerPos;
@@ -34,7 +40,11 @@ public class DefeatState {
     
     
     
-    
+    /**
+     * Metodi poistaa hävinneen pelaajan nappulat kartalta ja tallentaa poistossa käytetyt siirrot listaan,
+     * jotta ne voitaisiin kumota tarvittaessa.
+     * @param map kartta, josta nappulat halutaan poistaa. 
+     */
     public void removeDefeated(BattleMap map) {
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getWidth(); j++) {
@@ -56,7 +66,11 @@ public class DefeatState {
         }
     
     }
-    
+    /**
+     * Metodi kumoaa häviöön liittyvän nappuloiden poisto-operaation.
+     * 
+     * @param map kartta, josta poisto-operaatio halutaan kumota
+     */
     public void putDefeatedBack(BattleMap map) {
         for (Move i : removeMove) {
                   
@@ -72,16 +86,9 @@ public class DefeatState {
         return player;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
 
     public int getPlayerPos() {
         return playerPos;
-    }
-
-    public void setPlayerPos(int playerPos) {
-        this.playerPos = playerPos;
     }
 
     public List<Move> getDefeatedRemoveMoves() {
@@ -93,6 +100,5 @@ public class DefeatState {
     }
     
 
-    
     
 }

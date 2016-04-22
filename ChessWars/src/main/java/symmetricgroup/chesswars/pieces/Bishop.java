@@ -20,6 +20,11 @@ public class Bishop extends Piece {
     public static final boolean[] EAT_DIR = new boolean[]{true, true, true, true};
     public static final boolean[] MUST_EAT_DIR = new boolean[]{false, false, false, false};
 
+    
+    /**
+     * Konstruktori luo lähetin.
+     * @param color lähetin väri
+     */
     public Bishop(ArmyColor color) {
         super(color, "Bishop");
 

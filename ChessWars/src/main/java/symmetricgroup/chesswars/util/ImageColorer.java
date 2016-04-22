@@ -13,6 +13,12 @@ import java.awt.image.BufferedImage;
  */
 public class ImageColorer {
     
+    /**
+     * Metodi värittää kuvan värillä.
+     * @param mask väritettävä kuva
+     * @param color väri, jolla kuva halutaan värittää
+     * @return väritetty kuva
+     */
     public static BufferedImage color(BufferedImage mask, Color color) {
         
         BufferedImage colored = new BufferedImage(mask.getWidth(), mask.getHeight(), BufferedImage.TYPE_4BYTE_ABGR_PRE);

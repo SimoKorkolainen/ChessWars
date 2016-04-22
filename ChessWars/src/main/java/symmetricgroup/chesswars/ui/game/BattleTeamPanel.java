@@ -36,41 +36,41 @@ public class BattleTeamPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-            Graphics2D g2d = (Graphics2D) g;
-            List<Player> players = battle.getPlayers();
-            
-            g2d.setColor(Color.LIGHT_GRAY);
-            
+        Graphics2D g2d = (Graphics2D) g;
+        List<Player> players = battle.getPlayers();
 
-            Color fill = RoundRectTextButton.lighten(ArmyColor.BLACK.getDrawingColor(), 50);
-            
-            TextDrawer drawer = new TextDrawer(fill, height * 2 / 3);
-            
-            int x = width / 2;
+        g2d.setColor(Color.LIGHT_GRAY);
 
-            int y = height;
-            
 
-            
-            drawer.draw("Teams:", x, y, g2d);
-            
-            for (int i = 0; i < players.size(); i++) {
-                Player player = players.get(i);
-                
-                String name = player.getColor().toString();
-                
-                name += " " + battle.getTeam(player.getColor());
-                
-                
-                x = width / 2;
-                
-                y = (i + 2) * height + height / 2;
-                
-                fill = RoundRectTextButton.lighten(player.getColor().getDrawingColor(), 50);
-                drawer = new TextDrawer(fill,  height * 2 / 3);
-                
-                drawer.draw(name, x, y, g2d);
-            }
+        Color fill = RoundRectTextButton.lighten(ArmyColor.BLACK.getDrawingColor(), 50);
+
+        TextDrawer drawer = new TextDrawer(fill, height * 2 / 3);
+
+        int x = width / 2;
+
+        int y = height;
+
+
+
+        drawer.draw("Teams:", x, y, g2d);
+
+        for (int i = 0; i < players.size(); i++) {
+            Player player = players.get(i);
+
+            String name = player.getColor().toString();
+
+            name += " " + battle.getTeam(player.getColor());
+
+
+            x = width / 2;
+
+            y = (i + 2) * height + height / 2;
+
+            fill = RoundRectTextButton.lighten(player.getColor().getDrawingColor(), 50);
+            drawer = new TextDrawer(fill,  height * 2 / 3);
+
+            drawer.draw(name, x, y, g2d);
+        }
 
     }
     

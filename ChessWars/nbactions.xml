@@ -14,6 +14,12 @@
         <goal>jxr:jxr</goal>
         <goal>checkstyle:checkstyle</goal>
       </goals>
+
+
+        <module name="JavadocStyle">
+          <property name="scope" value="public"/>
+          <property name="checkEmptyJavadoc" value="true"/>
+        </module>
     </action>
     <action>
             <actionName>run</actionName>

@@ -5,6 +5,8 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
+import symmetricgroup.chesswars.ui.editor.map.MapEditor;
+import symmetricgroup.chesswars.ui.map.MapAndNamePanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;

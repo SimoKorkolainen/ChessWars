@@ -19,6 +19,11 @@ public enum ArmyColor {
     private String color;
     private Color drawingColor;
 
+    /**
+     * Konstrukstori luo värin.
+     * @param color värin nimi
+     * @param drawingColor värin piirtämisessä käytetty väri
+     */
     private ArmyColor(String color, Color drawingColor) {
         this.color = color;
         this.drawingColor = drawingColor;
@@ -28,6 +33,11 @@ public enum ArmyColor {
         return drawingColor;
     }
     
+    /**
+     * Metodi muuttaa tekstin väriksi.
+     * @param armyColor värin kuvaava teksti
+     * @return tekstin kuvaama väri
+     */
     public static ArmyColor stringToArmyColor(String armyColor) {
         switch (armyColor) {
         

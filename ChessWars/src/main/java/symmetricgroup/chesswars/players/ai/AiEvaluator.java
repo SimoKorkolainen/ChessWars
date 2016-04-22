@@ -22,7 +22,15 @@ public class AiEvaluator {
     public static final double PAWN_VALUE = 1;
     public static final double AGGRESSIVENESS = 0.2;
     public static final double RANDOMNESS = 0.001;
-    public static final double DIST_TO_KING_IMPORTANCE = 0;
+    public static final double DIST_TO_KING_IMPORTANCE = 0.01;
+    
+    /**
+     * Metodi laskee heuristiikkafunktion arvon kartan nykyisen tilanteen perusteella.
+     * @param map evaluoitava kartta
+     * @param myTeam evaluoitavan pelaajan joukkue
+     * @param random totuusarvo, joka määrittelee onko tulos satunnainen vai ei
+     * @return heuristiikkafunktion arvo
+     */
     public static double evaluate(BattleMap map, Set<ArmyColor> myTeam, boolean random) {
         double eval = 0;
 
@@ -72,7 +80,7 @@ public class AiEvaluator {
     }
     
     
-    public static double distanceToKing(BattleMap map, Set<ArmyColor> myTeam, int kingX, int kingY) {
+    private static double distanceToKing(BattleMap map, Set<ArmyColor> myTeam, int kingX, int kingY) {
         double distSum = 0;
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
@@ -88,6 +96,14 @@ public class AiEvaluator {
         return distSum;
     }
     
+    /**
+     * Metodi laskee kahden tason pisteen a ja b välisen etäisyyden.
+     * @param x pisteen a x-koordinaatti
+     * @param y pisteen a y-koordinaatti
+     * @param endX pisteen b x-koordinaatti
+     * @param endY pisteen b y-koordinaatti
+     * @return euklidinen etaisyys
+     */
     public static double distance(int x, int y, int endX, int endY) {
         
         int dx = x - endX;

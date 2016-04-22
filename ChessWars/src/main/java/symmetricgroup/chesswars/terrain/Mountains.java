@@ -16,6 +16,9 @@ public class Mountains implements Terrain {
 
     private static BufferedImage image;
     
+    /**
+     * Konstruktori luo vuoristomaaston ja lataa vuoristoon liittyvän kuvan.
+     */
     public Mountains() {
         if (image == null) {
             ImageLoader loader = new ImageLoader();
@@ -33,10 +36,6 @@ public class Mountains implements Terrain {
         return image;
     }
     
-    @Override
-    public void draw(Graphics2D g2d, int x, int y) {
-        g2d.drawImage(image, x, y, null);
-    }
     
     @Override
     public String getName() {

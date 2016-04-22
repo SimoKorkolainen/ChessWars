@@ -13,13 +13,27 @@ import java.awt.image.BufferedImage;
  */
 public interface Terrain {
         
+    /**
+     * 
+     * @return palauttaa maaston läpikulkemisen kustannuksen
+     */
     public int moveCost();
-    
-    public void draw(Graphics2D g2d, int x, int y);
-    
+
+    /**
+     * 
+     * @return palauttaa maaston kuvan 
+     */
     public BufferedImage getImage();
     
+    /**
+     * 
+     * @return palauttaa maaston nimen
+     */
     public String getName();
     
+    /**
+     * 
+     * @return palauttaa kopion maastosta
+     */
     public Terrain copy();
 }

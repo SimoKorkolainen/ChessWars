@@ -7,7 +7,7 @@ package symmetricgroup.chesswars.players.ui;
 
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.players.ui.UserPlayer;
 import symmetricgroup.chesswars.pieces.Piece;
 
@@ -62,7 +62,7 @@ public class UserControl {
             
             if (move != null) {
                 
-                player.setNextMove(move);
+                player.executeMove(move);
                 
             } else {
                 

@@ -15,7 +15,11 @@ import javax.imageio.ImageIO;
  */
 public class ImageLoader {
     
-    
+    /**
+     * Metodi lataa kuvan tiedostosta.
+     * @param filename tiedoston nimi
+     * @return palauttaa tiedostosta luetun kuvan
+     */
     public BufferedImage loadImage(String filename) {
         
         try {

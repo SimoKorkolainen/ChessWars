@@ -39,81 +39,60 @@ public class BattleTurnPanel extends JPanel {
         this.height = 50;
         super.setDoubleBuffered(true);
     }
-    /*
-    public void createComponents() {
-        if (battle != null) {
-            super.removeAll();
-            super.setLayout(new GridBagLayout());
-            GridBagConstraints constraints = new GridBagConstraints();
-        
 
-            List<Player> players = battle.getPlayers();
-            for (int i = 0; i < players.size(); i++) {
-                Player player = players.get((i + battle.getTurn()) % players.size());
-                TextPanel name = new TextPanel(150, 80, player.getColor().toString(), player.getColor().getDrawingColor());
-                name.setBorder(new EmptyBorder(5, 5, 5, 5));
-                name.setOpaque(false);
-                constraints.gridx = 0;
-                constraints.gridy = i;
-                super.add(name, constraints);
-            }
-
-        }
-    }
-    */
     @Override
     public void paintComponent(Graphics g) {
-            Graphics2D g2d = (Graphics2D) g;
-            List<Player> players = battle.getPlayers();
-            
-            g2d.setColor(Color.LIGHT_GRAY);
-            
+        Graphics2D g2d = (Graphics2D) g;
+        List<Player> players = battle.getPlayers();
 
-            Color fill = RoundRectTextButton.lighten(ArmyColor.BLACK.getDrawingColor(), 50);
-            
-            TextDrawer drawer = new TextDrawer(fill, height * 2 / 3);
-            
-            int x = width / 2;
-
-            int y = height;
-            
-            
-            int turn = battle.getMoves().size() + 1;
-
-            drawer.draw("Turn " + turn, x, y, g2d);
-            
-            
-            if (BattleWinnerChecker.myTeamHasWon(battle, players.get(0).getColor())) {
-            
-                drawer.draw("Winners:", x, y + 3 * height / 2, g2d);
-                
-            } else {
+        g2d.setColor(Color.LIGHT_GRAY);
 
 
-                drawer.draw("Next:", x, y + 3 * height / 2, g2d);
-                
+        Color fill = RoundRectTextButton.lighten(ArmyColor.BLACK.getDrawingColor(), 50);
+
+        TextDrawer drawer = new TextDrawer(fill, height * 2 / 3);
+
+        int x = width / 2;
+
+        int y = height;
+
+
+        int turn = battle.getMoves().size() + 1;
+
+        drawer.draw("Turn " + turn, x, y, g2d);
+
+
+        if (BattleWinnerChecker.myTeamHasWon(battle, players.get(0).getColor())) {
+
+            drawer.draw("Winners:", x, y + 3 * height / 2, g2d);
+
+        } else {
+
+
+            drawer.draw("Next:", x, y + 3 * height / 2, g2d);
+
+        }
+
+        for (int i = 0; i < players.size(); i++) {
+            Player player = players.get((i + battle.getTurn()) % players.size());
+
+            String name = player.getColor().toString();
+
+            if (player.getClass() == AiPlayer.class) {
+                name += " ai";
             }
-            
-            for (int i = 0; i < players.size(); i++) {
-                Player player = players.get((i + battle.getTurn()) % players.size());
-                
-                String name = player.getColor().toString();
-                
-                if (player.getClass() == AiPlayer.class) {
-                    name += " ai";
-                }
-                
-                
-                
-                x = width / 2;
-                
-                y = (i + 3) * height + height / 2;
-                
-                fill = RoundRectTextButton.lighten(player.getColor().getDrawingColor(), 50);
-                drawer = new TextDrawer(fill,  height * 2 / 3);
-                
-                drawer.draw(name, x, y, g2d);
-            }
+
+
+
+            x = width / 2;
+
+            y = (i + 3) * height + height / 2;
+
+            fill = RoundRectTextButton.lighten(player.getColor().getDrawingColor(), 50);
+            drawer = new TextDrawer(fill,  height * 2 / 3);
+
+            drawer.draw(name, x, y, g2d);
+        }
 
     }
     

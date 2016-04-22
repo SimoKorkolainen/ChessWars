@@ -73,7 +73,7 @@ public class MapCopierTest {
                 
                 if(piece == null || copyPiece == null) {
                     assertTrue(piece == null && copyPiece == null);
-                    break;
+                    continue;
                 }
                 
                 assertEquals(piece.getClass(), copyPiece.getClass());

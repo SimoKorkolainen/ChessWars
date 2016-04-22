@@ -5,6 +5,8 @@
  */
 package symmetricgroup.chesswars.ui.editor;
 
+import symmetricgroup.chesswars.ui.editor.map.MapEditor;
+import symmetricgroup.chesswars.ui.editor.map.MapEditorPanel;
 import symmetricgroup.chesswars.ui.editor.settings.teams.TeamSelectionPanel;
 import symmetricgroup.chesswars.ui.editor.settings.AiButtonPanel;
 import java.awt.Color;

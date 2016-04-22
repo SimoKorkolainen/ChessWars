@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import symmetricgroup.chesswars.battle.Battle;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.King;
 import symmetricgroup.chesswars.pieces.Rook;
@@ -68,29 +68,26 @@ public class AiPlayerTest {
     @Test
     public void aiCalculatesMove() {
         setOrderWRB();
-        white.calculateMove();
-        assertTrue(white.moveIsReady());
+        assertFalse(white.alphaBeta() == null);
     }
     
     @Test
     public void whiteEatsBlackKing() {
         setOrderWRB();
-        white.calculateMove();
-        Move best = white.getNextMove();
+        Move best = white.alphaBeta();
         assertEquals("King", best.getEaten().getName());
     }
     
     @Test
-    public void blackKingMovesToSafety() { // Ai contains a bug and this test fails
+    public void blackKingMovesToSafety() {
         setOrderBRW();
         
         for (Move i : map.getPiece(0, 0).getMoves(0, 0, battle)) {
             System.out.println("possible move: " + i.toString());
         }
         
-        black.calculateMove();
-                
-        Move best = black.getNextMove();
+
+        Move best = black.alphaBeta();
         
         System.out.println("best: " + best);
 

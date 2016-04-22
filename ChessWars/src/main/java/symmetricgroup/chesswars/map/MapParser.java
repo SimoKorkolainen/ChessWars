@@ -23,7 +23,11 @@ import symmetricgroup.chesswars.terrain.TerrainParser;
 public class MapParser {
 
     
-
+    /**
+     * Metodi muuttaa kartan tekstimuotoon.
+     * @param map tekstiksi muutettava kartta
+     * @return kartan tekstinä
+     */
     public static String mapToString(BattleMap map) {
         StringBuilder builder = new StringBuilder();
         
@@ -54,7 +58,12 @@ public class MapParser {
         
         return builder.toString();
     }
-    
+    /**
+     * Metodi luo kartan tekstin perusteella.
+     * @param mapConf kartan tiedot tekstinä
+     * @return tekstin perusteella luodun kartan tai null,
+     * jos kartan luonti ei onnistunut.
+     */
     public static BattleMap stringToMap(String mapConf) {
  
         

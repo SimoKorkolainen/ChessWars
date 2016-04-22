@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.Bishop;
 import symmetricgroup.chesswars.pieces.Pawn;

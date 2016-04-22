@@ -18,6 +18,12 @@ import symmetricgroup.chesswars.players.ArmyColor;
  * TerrainParser on luokka, jonka avulla Terrain-olio on mahdollista luoda tekstin perusteella.
  */
 public class TerrainParser {
+    
+    /**
+     * Metodi luo maaston nimen perusteella.
+     * @param terrainName maaston nimi
+     * @return palauttaa nimeä vastaavan maaston
+     */
     public static Terrain stringToTerrain(String terrainName) {
     
         

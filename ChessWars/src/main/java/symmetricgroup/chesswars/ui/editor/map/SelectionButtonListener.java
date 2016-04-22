@@ -8,10 +8,8 @@ package symmetricgroup.chesswars.ui.editor.map;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import symmetricgroup.chesswars.players.ArmyColor;
-import symmetricgroup.chesswars.ui.editor.ColorSelectionButton;
-import symmetricgroup.chesswars.ui.editor.MapEditorPanel;
-import symmetricgroup.chesswars.ui.editor.TerrainSelectionButton;
-
+import symmetricgroup.chesswars.ui.editor.map.TerrainSelectionButton;
+import symmetricgroup.chesswars.ui.*;
 /**
  * SelectionButtonListener on kartan muokkamiseen käytettyjen työkalujen valitsemisen hoitava kuuntelija.
  */

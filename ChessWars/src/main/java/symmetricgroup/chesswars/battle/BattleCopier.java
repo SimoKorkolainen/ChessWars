@@ -13,8 +13,15 @@ import symmetricgroup.chesswars.map.MapCopier;
  * Kopiolla ja alkuperäisellä Battle-oliolla voi olla samoja olioita attribuutteina.
  */
 public class BattleCopier {
+    
+    /**
+     * Metodi kopio osittain Battle-olion. Metodi copy ei kopioi Battle-oliota täydellisesti,
+     * sillä kopiolla ja alkuperäisellä on yhteisiä olioita.
+     * 
+     * @param battle kopiotava taistelu
+     * @return kopioitu taistelu
+     */
     public static Battle copy(Battle battle) {
-        // Metodi copy ei kopioi Battle-oliota täydellisesti, sillä kopiolla ja alkuperäisellä on yhteisiä olioita.
         Battle copy = new Battle(MapCopier.copy(battle.getMap()));
         copy.setTeam(battle.getTeam());
         copy.setTurn(battle.getTurn());

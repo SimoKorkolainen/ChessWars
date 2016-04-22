@@ -11,6 +11,12 @@ import symmetricgroup.chesswars.players.ArmyColor;
  * PieceParser-luokan avulla on mahdollista luoda uusi Piece-olio String-olion perusteella.
  */
 public class PieceParser {
+    
+    /**
+     * Metodi luo nappulan tekstin perusteella.
+     * @param pieceConf nappulan tiedot tekstinä
+     * @return tekstin perusteella luotu nappula
+     */
     public static Piece stringToPiece(String pieceConf) {
         if ("null".equals(pieceConf)) {
             return null;

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
 import symmetricgroup.chesswars.ui.editor.EditorRoom;
-import symmetricgroup.chesswars.ui.editor.MapEditor;
+import symmetricgroup.chesswars.ui.editor.map.MapEditor;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.players.Player;
@@ -77,7 +77,7 @@ public class MapMouseListener implements MouseListener {
     }
     public void handleEditorLeftReleased() {
         if (editor != null) {
-            editor.handleLeftMouseReleased(gridX, gridY);
+            editor.addSelectedToMap(gridX, gridY);
             screen.repaint();
         }
     }

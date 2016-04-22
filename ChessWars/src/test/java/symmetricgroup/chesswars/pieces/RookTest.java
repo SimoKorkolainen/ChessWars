@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.pieces.Rook;
 import symmetricgroup.chesswars.terrain.Mountains;
 

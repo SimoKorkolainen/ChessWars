@@ -8,8 +8,10 @@ symmetricgroup\chesswars\battle\BattleIOTest.class
 symmetricgroup\chesswars\pieces\RookTest.class
 symmetricgroup\chesswars\util\ImageColorerTest.class
 symmetricgroup\chesswars\terrain\MountainsTest.class
+symmetricgroup\chesswars\battle\DefeatStateParserTest.class
 symmetricgroup\chesswars\map\MapParserTest.class
 symmetricgroup\chesswars\terrain\PlainTest.class
+symmetricgroup\chesswars\pieces\PieceParserTest.class
 symmetricgroup\chesswars\terrain\WoodsTest.class
 symmetricgroup\chesswars\battle\DefeatStateTest.class
 symmetricgroup\chesswars\map\BattleMapTest.class

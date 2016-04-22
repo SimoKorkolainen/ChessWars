@@ -20,13 +20,13 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.players.ui.SelectedPiece;
 import symmetricgroup.chesswars.players.ui.UserControl;
 import symmetricgroup.chesswars.players.ui.UserPlayer;
 import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.terrain.Terrain;
-import symmetricgroup.chesswars.ui.MapDrawer;
+import symmetricgroup.chesswars.ui.draw.MapDrawer;
 import symmetricgroup.chesswars.util.ImageColorer;
 
 /**

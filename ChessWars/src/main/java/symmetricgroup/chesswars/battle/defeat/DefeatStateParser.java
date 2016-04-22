@@ -7,8 +7,8 @@ package symmetricgroup.chesswars.battle.defeat;
 
 import java.util.ArrayList;
 import java.util.List;
-import symmetricgroup.chesswars.battle.DefeatState;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.defeat.DefeatState;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 
@@ -17,7 +17,13 @@ import symmetricgroup.chesswars.players.Player;
  * @author Simo
  */
 public class DefeatStateParser {
-    public String defeatStateToString(DefeatState defeat) {
+    
+    /**
+     * Metodi muuttaa lopputilan tekstimuotoon.
+     * @param defeat lopputila, joka halutaan muuttaa tekstimuotoon
+     * @return lopputilan tiedot sisältävän tekstin
+     */
+    public static String defeatStateToString(DefeatState defeat) {
         
         
         StringBuilder sb = new StringBuilder();
@@ -44,7 +50,13 @@ public class DefeatStateParser {
         return sb.toString();
     }
     
-    public DefeatState stringToDefeatState(String defeatConf, List<Player> players) {
+    /**
+     * Metodi luo lopputilan tekstissä olevien tietojen perusteella.
+     * @param defeatConf lopputilan tiedot sisältävä teksti
+     * @param players lista pelaajista, joiden perusteella lopputila halutaan luoda
+     * @return palauttaa lopputilan tekstinä
+     */
+    public static DefeatState stringToDefeatState(String defeatConf, List<Player> players) {
         String conf[] = defeatConf.split(" ");
         try {
             
@@ -78,7 +90,7 @@ public class DefeatStateParser {
                 String moveConf = "";
                 
                 for (int j = 0; j < 6; j++) {
-                    moveConf += conf[3 + i * 6] + " ";
+                    moveConf += conf[3 + i * 6 + j] + " ";
                 }
                 moves.add(Move.stringToMove(moveConf));
                 

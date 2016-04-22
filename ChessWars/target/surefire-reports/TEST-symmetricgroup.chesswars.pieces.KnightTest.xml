@@ -62,9 +62,9 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightCanMoveCorrectNumberOfSteps" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="imageOfKnightIsNotNull" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightCanMakeCorrectNumberOfMoves" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightCantMoveOutsideMap" time="0.018"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="imageOfKnightIsNotNull" time="0.017"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightCanMakeCorrectNumberOfMoves" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightCantMoveOutsideMap" time="0.004"/>
   <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightIsBlockedByMountains" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightCantMakeIncorrectMoves" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.KnightTest" name="knightsNameIsCorrect" time="0"/>

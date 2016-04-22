@@ -24,6 +24,10 @@ public class PieceImages {
     private BufferedImage blueImage;
     private BufferedImage yellowImage;
     
+    /**
+     * Konstruktori lataa nappulan kuvat ja värittää ne.
+     * @param pieceName nappulan nimi
+     */
     public PieceImages(String pieceName) {
         
         String startPart = "/images/";
@@ -39,7 +43,11 @@ public class PieceImages {
                 
     }
     
-    
+    /**
+     * Metodi palauttaa väriä vastaavan kuvan.
+     * @param color väri, jonka kuva halutaan
+     * @return väriä vastaavan kuvan
+     */
     public BufferedImage getImage(ArmyColor color) {
 
         switch (color) {

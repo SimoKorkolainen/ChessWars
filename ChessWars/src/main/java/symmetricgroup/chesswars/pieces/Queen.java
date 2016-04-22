@@ -9,7 +9,7 @@ package symmetricgroup.chesswars.pieces;
 import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import java.util.List;
 
 /**
@@ -18,7 +18,10 @@ import java.util.List;
 public class Queen extends Piece {
     private static PieceImages images;
     
-    
+    /**
+     * Konstruktori luo kuningattaren.
+     * @param color kuningattaren väri
+     */
     public Queen(ArmyColor color) {
         super(color, "Queen");
         

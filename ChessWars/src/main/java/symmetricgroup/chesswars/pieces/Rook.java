@@ -19,7 +19,11 @@ public class Rook extends Piece {
     public static final int[] MOVE_DIR_Y = new int[]{0, -1, 0, 1};
     public static final boolean[] EAT_DIR = new boolean[]{true, true, true, true};
     public static final boolean[] MUST_EAT_DIR = new boolean[]{false, false, false, false};
-     
+    
+    /**
+     * Konstruktori luo tornin.
+     * @param color tornin väri
+     */
     public Rook(ArmyColor color) {
         super(color, "Rook");
         

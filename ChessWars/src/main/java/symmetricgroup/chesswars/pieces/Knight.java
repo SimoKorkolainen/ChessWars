@@ -9,7 +9,7 @@ package symmetricgroup.chesswars.pieces;
 import java.awt.image.BufferedImage;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.pieces.Piece;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,10 @@ public class Knight extends Piece {
     private static final int[] MOVE_DIR_Y = new int[]{-1, -2, -2, -1, 1, 2, 2, 1};
     private static final boolean[] EAT_DIR = new boolean[]{true, true, true, true, true, true, true, true};
     private static final boolean[] MUST_EAT_DIR = new boolean[]{false, false, false, false, false, false, false, false};
-    
+   /**
+     * Konstruktori luo hevosen.
+     * @param color hevosen väri
+     */
     public Knight(ArmyColor color) {
         super(color, "Knight");
         

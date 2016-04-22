@@ -18,10 +18,6 @@ public class Plain implements Terrain {
         return 1;
     }
     
-    @Override
-    public void draw(Graphics2D g2d, int x, int y) {
-    
-    }
 
     @Override
     public BufferedImage getImage() {

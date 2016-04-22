@@ -1,4 +1,4 @@
-package symmetricgroup.chesswars.battle;
+package symmetricgroup.chesswars.battle.move;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,6 +22,15 @@ public class Move {
     private Piece piece;
     private Piece eaten;
 
+    /**
+     * Konstruktori luo uuden siirron.
+     * @param startX x-koordinaatti, josta siirto alkaa
+     * @param startY y-koordinaatti, josta siirto alkaa
+     * @param endX x-koordinaatti, johon siirto loppuu
+     * @param endY y-koordinaatti, johon siirto loppuu
+     * @param piece siirrettävä nappula
+     * @param eaten syöty nappula
+     */
     public Move(int startX, int startY, int endX, int endY, Piece piece, Piece eaten) {
         this.startX = startX;
         this.startY = startY;
@@ -55,7 +64,10 @@ public class Move {
         return eaten;
     }
     
-    
+    /**
+     * Metodi palauttaa siirron kopion.
+     * @return palauttaa siirron kopion
+     */
     public Move copy() {
         return new Move(startX, startY, endX, endY, piece.copy(), eaten.copy());
     }
@@ -64,7 +76,11 @@ public class Move {
     public String toString() {
         return "" + startX + " " + startY + " " + endX + " " + endY + " " + piece + " " + eaten;
     }
-    
+    /**
+     * Metodi luo uuden siirron tekstin perusteella.
+     * @param moveConf siirron tiedot tekstinä
+     * @return palauttaa luodun siirron
+     */
     public static Move stringToMove(String moveConf) {
         
         String[] conf = moveConf.split(" ");

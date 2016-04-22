@@ -12,12 +12,13 @@ import java.util.List;
 import java.util.Set;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleCopier;
-import symmetricgroup.chesswars.battle.BattleMoveCalculator;
+import symmetricgroup.chesswars.battle.move.BattleMoveCalculator;
 import symmetricgroup.chesswars.battle.BattleWinnerChecker;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
+import symmetricgroup.chesswars.ui.game.BattleMoveThread;
 
 /**
  * AiPlayer on tekoälyn toiminnallisuuden sisältävä luokka.
@@ -29,20 +30,27 @@ public class AiPlayer implements Player {
     private Set<ArmyColor> myTeam; //Koodia voi muokata siten, että myTeam on tarpeeton
     private Battle battle;
     private Battle copy;
-    private boolean moveIsReady;
-    private Move nextMove;
-    private static final double LARGE = 9000000;
 
+    private static final double LARGE = 9000000;
+    
+    /**
+     * Konstruktori luo tekoälypelaajan.
+     * @param searchDepth haun syvyys
+     * @param color tekoälyn väri
+     * @param battle taistelu, jossa tekoäly taistelee
+     */
     public AiPlayer(int searchDepth, ArmyColor color, Battle battle) {
         this.searchDepth = searchDepth;
         this.color = color;
         this.myTeam = new HashSet<>();
         this.myTeam.add(color);
-        this.searchDepth = searchDepth;
         this.battle = battle;
-        
+        System.out.println("Ai " + searchDepth);  
     }
     
+    /**
+     * Metodi alustaa tekoälyn joukkueen.
+     */
     public void setUpTeam() {
         for (Player i : battle.getPlayers()) {
             if (battle.getTeam(color) == battle.getTeam(i.getColor())) {
@@ -50,8 +58,13 @@ public class AiPlayer implements Player {
             }
         }
     }
-    
-    //Tekoäly pelaa aivan kuin kaikki eri tiimeissä olevat vastustajat olisivat liittoutuneet keskenään ja omien tiimiläisten siirrot olisivat tekoälyn itse päätettävissä.
+    /**
+     * Metodi laskee tekoälyn seuraavan siirron
+     * Tekoäly pelaa aivan kuin kaikki eri tiimeissä olevat vastustajat
+     * olisivat liittoutuneet keskenään ja omien tiimiläisten siirrot olisivat
+     * tekoälyn itse päätettävissä.
+     * @return paras siirto
+     */
     public Move alphaBeta() {
         copy = BattleCopier.copy(battle);
         
@@ -60,7 +73,7 @@ public class AiPlayer implements Player {
         double value = -LARGE * 2;
         Move best = null;
         
-        List<EvalMove> evalMoves = sortedEvalMoves();
+        List<EvalMove> evalMoves = EvalMove.calculateSortedEvalMoves(copy, myTeam);
         Collections.reverse(evalMoves);
         for (EvalMove i : evalMoves) {
             
@@ -71,7 +84,7 @@ public class AiPlayer implements Player {
                 return i.getMove();
             }
 
-            double newValue = calculateValue(-LARGE - searchDepth, LARGE + searchDepth, searchDepth - 1);
+            double newValue = calculateValue(-LARGE - searchDepth, LARGE + searchDepth, searchDepth);
             if (newValue > value) {
                 value = newValue;
                 best = i.getMove();
@@ -86,7 +99,7 @@ public class AiPlayer implements Player {
         return best;
     }
     
-    public double maxValue(double alpha, double beta, int depth) {
+    private double maxValue(double alpha, double beta, int depth) {
 
         if (depth == 0) {
             return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
@@ -94,7 +107,7 @@ public class AiPlayer implements Player {
         
         double value = -LARGE * 2;
         
-        List<EvalMove> evalMoves = sortedEvalMoves();
+        List<EvalMove> evalMoves = EvalMove.calculateSortedEvalMoves(copy, myTeam);
         Collections.reverse(evalMoves);
         for (EvalMove i : evalMoves) {
 
@@ -110,10 +123,7 @@ public class AiPlayer implements Player {
 
             value = Math.max(value, newValue);
             
-            if (value > 10000) {
-                //System.out.println("Tässä value2 :" + value);
-            }
-            
+
             copy.undoLastMove();
             
             if (beta <= value) {
@@ -121,21 +131,19 @@ public class AiPlayer implements Player {
             }
             
             alpha = Math.max(alpha, value);
-            
-        
         }
-        
+
         return value;
     }
     
-    public double minValue(double alpha, double beta, int depth) {
+    private double minValue(double alpha, double beta, int depth) {
 
         if (depth == 0) {
             return AiEvaluator.evaluate(copy.getMap(), myTeam, true);
         }
         double value = LARGE * 2;
         
-        List<EvalMove> evalMoves = sortedEvalMoves();
+        List<EvalMove> evalMoves = EvalMove.calculateSortedEvalMoves(copy, myTeam);
         
         for (EvalMove i : evalMoves) {
             
@@ -144,7 +152,7 @@ public class AiPlayer implements Player {
             double newValue;
             
             if (BattleWinnerChecker.myTeamHasLost(battle, color)) {
-                newValue = - LARGE - depth;
+                newValue = -LARGE - depth;
             } else {
                 newValue = calculateValue(alpha, beta, depth);
             }
@@ -158,18 +166,9 @@ public class AiPlayer implements Player {
             }
             
             beta = Math.min(beta, value);
-            
 
         }
         return value;
-    }
-
-    @Override
-    public void calculateMove() {
-        moveIsReady = false;
-        nextMove = alphaBeta();
-        moveIsReady = true;
-
     }
 
     @Override
@@ -177,42 +176,24 @@ public class AiPlayer implements Player {
         return color;
     }
 
-    @Override
-    public boolean moveIsReady() {
-        return moveIsReady;
-    }
-
-    @Override
-    public Move getNextMove() {
-        return nextMove;
-    }
-    
-    public List<EvalMove> sortedEvalMoves() {
-        List<Move> moves = moveCalculator.allPossibleNextMoves();
-        List<EvalMove> evalMoves = new ArrayList<>();
-        for (Move i : moves) {
-            copy.doMove(i);
-            double eval = AiEvaluator.evaluate(copy.getMap(), myTeam, true);
-            evalMoves.add(new EvalMove(eval, i));
-            copy.undoLastMove();
-        }
-        
-        Collections.sort(evalMoves);
-        
-        return evalMoves;
-    
-    } 
-    
     private double calculateValue(double alpha, double beta, int depth) {
         if (myTeam.contains(copy.nextColorToMove())) {
+            
             return maxValue(alpha, beta, depth - 1);
-        }  
+        } 
         return minValue(alpha, beta, depth - 1);  
     }
 
     public Set<ArmyColor> getMyTeam() {
         return myTeam;
     }
-    
-    
+    /**
+     * Metodi laskee tekoälyn seuraavan siirron ja toteuttaa sen.
+     * @param thread metodia kutsunut BattleMoveThread-olio
+     */
+    @Override
+    public void calculateAndExecuteMove(BattleMoveThread thread) { 
+        Move next = alphaBeta();
+        thread.executeMove(next);  
+    }
 }

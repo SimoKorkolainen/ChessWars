@@ -16,7 +16,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import symmetricgroup.chesswars.ui.editor.EditorPanel;
 import symmetricgroup.chesswars.ui.editor.EditorRoom;
-import symmetricgroup.chesswars.ui.editor.MapAndNamePanel;
+import symmetricgroup.chesswars.ui.map.MapAndNamePanel;
 
 /**
  *

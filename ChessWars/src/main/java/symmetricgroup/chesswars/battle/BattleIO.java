@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.map.MapParser;
 import symmetricgroup.chesswars.players.ArmyColor;
@@ -35,8 +36,13 @@ import symmetricgroup.chesswars.players.ui.UserPlayer;
  */
 public class BattleIO {
     
+    /**
+     * Metodi tallentaa taistelun tekstitiedostoon.
+     * @param filename tallennettavan tekstitiedoston nimi
+     * @param battle tallenettava taistelu
+     */
     public static void saveBattle(String filename, Battle battle) {
-        String battleConf = battleToString(battle);
+        String battleConf = BattleParser.battleToString(battle);
 
         
         try  {
@@ -57,6 +63,13 @@ public class BattleIO {
         }
     
     }
+    
+    /**
+     * Metodi lukee taistelun tiedostosta.
+     * @param filename tiedoston nimi, josta taistelu halutaan lukea.
+     * @param control käytttäjien luomiseen ja ohjaamiseen tarkoitettu olio
+     * @return palauttaa tiedostosta luetun taistelun
+     */
     public static Battle readBattle(String filename, UserControl control) {
 
 
@@ -71,7 +84,7 @@ public class BattleIO {
             
             String battleConf = reader.readLine();
 
-            return stringToBattle(battleConf, control);
+            return BattleParser.stringToBattle(battleConf, control);
             
         } catch (Exception e) {
         
@@ -81,119 +94,6 @@ public class BattleIO {
         return null;
     }
     
-    public static String battleToString(Battle battle) {
-    
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append(MapParser.mapToString(battle.getMap()));
 
-        sb.append("MAP_END ");
-        
-        sb.append(battle.getPlayers().size());
-        
-        sb.append(" ");
-        
-        for (Player i : battle.getPlayers()) {
-        
-            sb.append(i.getColor().toString());
-            sb.append(" ");
-            sb.append(isAi(i));
-            sb.append(" ");
-            sb.append(battle.getTeam(i.getColor()));
-            sb.append(" ");
-            
-        }
-        
-        sb.append(battle.getMoves().size());
-        
-        sb.append(" ");
-        
-        for (Move i : battle.getMoves()) {
-        
-            sb.append(i);
-            
-            sb.append(" ");
-        }
-        
-        
-        sb.append(battle.getTurn());
-
-       
-        return sb.toString();
-    
-    }
-    
-    
-    private static boolean isAi(Player player) {
-        
-        return player.getClass() == AiPlayer.class;
-    
-    }
-    
-    public static Battle stringToBattle(String battleConf, UserControl control) {
-        
-        try {
-            
-            String batConf[] = battleConf.split("MAP_END ");
-            
-            BattleMap map = MapParser.stringToMap(batConf[0]);
-            
-            Battle battle = new Battle(map);
-            
-            String conf[] = batConf[1].split(" ");
-
-            int playerN = Integer.parseInt(conf[0]);
-            
-            List<Player> players = new ArrayList<>();
-            Map<ArmyColor, Integer> teams = new HashMap<>();
-            
-            for (int i = 0; i < playerN; i++) {
-                
-                ArmyColor color = ArmyColor.stringToArmyColor(conf[1 + i * 3]);
-                boolean ai = Boolean.valueOf(conf[2 + i * 3]);
-                System.out.println(ai + " " + conf[2 + i * 3]);
-                int team = Integer.parseInt(conf[3 + i * 3]);
-                
-                teams.put(color, team);
-                Player player;
-
-                if (ai) {
-                    player = new AiPlayer(4, color, battle);
-                } else {
-                    player = new UserPlayer(color, control);
-                }
-                
-                players.add(player);
-            }
-            int ind = 1 + playerN * 3;
-            int moveN = Integer.parseInt(conf[ind]);
-            
-            List<Move> moves = new ArrayList<>();
-            
-            for (int i = 0; i < moveN; i++) {
-                String moveConf = "";
-                for (int j = 0; j < 6; j++) {
-                    moveConf += conf[ind + 6 * i + j + 1] + " ";
-                }
-                moves.add(Move.stringToMove(moveConf));
-            
-            }
-            ind += 6 * moveN + 1;
-            
-            int turn = Integer.parseInt(conf[ind]);
-        
-            battle.setPlayers(players);
-            battle.setMoves(moves);
-            battle.setTurn(turn);
-            return battle;
-            
-        } catch (Exception e) {
-        
-            System.out.println("Unable to parse battle: " + e.getMessage());
-        
-        }
-        
-        return null;
-    }
     
 }

@@ -5,17 +5,24 @@
  */
 package symmetricgroup.chesswars.players;
 
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.ui.game.BattleMoveThread;
 
 /**
  * Player on pelaajan toteuttama käyttöliittymä.
  */
 public interface Player {
     
-    public void calculateMove();
-    public ArmyColor getColor();
-    public boolean moveIsReady();
-    public Move getNextMove();
+    /**
+     * Metodi laskee ja toteuttaa siirron.
+     * @param thread metodia kutsunut BattleMoveThread-olio
+     */
+    public void calculateAndExecuteMove(BattleMoveThread thread);
     
+    /**
+     * Metodi palauttaa pelaajan värin. Värin tulisi vastata pelaajaa yksi-yhteen.
+     * @return pelaajan väri 
+     */
+    public ArmyColor getColor();
+
     
 }

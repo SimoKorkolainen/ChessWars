@@ -9,7 +9,7 @@ package symmetricgroup.chesswars.pieces;
 import java.awt.Graphics2D;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.map.BattleMap;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,128 +31,33 @@ public abstract class Piece {
     private int moveDirY[];
     private boolean eatDir[];
     private boolean mustEatDir[];
-
+   /**
+     * Konstruktori luo nappulan.
+     * @param color nappulan väri
+     * @param name nappulan tyypin nimi
+     */
     public Piece(ArmyColor color, String name) {
         this.color = color;
         this.name = name;
     }
 
-    public void setMoveLength(int moveLength) {
+    protected void setMoveLength(int moveLength) {
         this.moveLength = moveLength;
     }
 
-    public void setMoveDirX(int[] moveDirX) {
+    protected void setMoveDirX(int[] moveDirX) {
         this.moveDirX = moveDirX;
     }
 
-    public void setMoveDirY(int[] moveDirY) {
+    protected void setMoveDirY(int[] moveDirY) {
         this.moveDirY = moveDirY;
     }
 
-    public void setEatDir(boolean[] eatDir) {
+    protected void setEatDir(boolean[] eatDir) {
         this.eatDir = eatDir;
     }
 
-    
-    
-    
-    public List<Move> getMoves(int x, int y, Battle battle) {
-        List<Move> moves = new ArrayList<>();
-        BattleMap map = battle.getMap();
-        
-        for (int i = 0; i < moveDirX.length; i++) {
-            int stepsLeft = moveLength;
-            for (int j = 1; j <= moveLength; j++) {
-                
-                int newX = x + j * moveDirX[i];
-                int newY = y + j * moveDirY[i];
-                
-                if (!map.isInside(newX, newY)) {
-                    break;
-                
-                }
-                
-                Terrain terrain = map.getTerrain(newX, newY);
-                
-                if (terrain.getClass() == Mountains.class) {
-                    if (!getName().equals("Pawn")) {
-                        break;
-                    }
-                }
-                
-                stepsLeft -= terrain.moveCost();
-                
-                if (stepsLeft < 0 && j > 1) {
-                    break;
-                }
-                
-                Piece eaten = map.getPiece(newX, newY);
-                if (eaten != null) {
-                    if (eatDir[i] && battle.getTeam(eaten.getColor()) != battle.getTeam(color)) {
-                        
-                        boolean eat = !lastEatenWasOwnPawn(battle) || lastEaterWasPawn(battle) || !isPawn(); 
-                        
-                        if (eat) {
-                            moves.add(new Move(x, y, newX, newY, this, eaten));
-                        }
-                        
-                    }
-                    
-                    break;
-                }
-                if (!mustEatDir[i]) {
-                    Move move = new Move(x, y, newX, newY, this, null);
-                    moves.add(move);
-                    
 
-                }
-                
-            }
-        
-        }
-        
-        return moves;
-    }
-    
-    public void pawnSpecialEating(List<Move> moves, int x, int y, Battle battle) {
-
-
-    }
-    
-    private boolean isPawn() {
-        return "Pawn".equals(getName());
-    }
-
-    private boolean lastEaterWasPawn(Battle battle) {
-        if (battle.getMoves().isEmpty()) {
-            return false;
-        }
-        
-        Move last = battle.getLastMove();
-        Piece eater = last.getPiece();
-        return eater.isPawn();
-    }
-
-    private boolean lastEatenWasOwnPawn(Battle battle) {
-        if (battle.getMoves().isEmpty()) {
-            return false;
-        }
-        
-        Move last = battle.getLastMove();
-        Piece eaten = last.getEaten();
-        if (eaten == null) {
-            return false;
-        }
-        
-        if (!eaten.isPawn()) {
-            return false;
-        }
-        
-        return eaten.getColor() == getColor();
-        
-    }
-    
-    
     public ArmyColor getColor() {
         return color;
     }
@@ -169,12 +74,13 @@ public abstract class Piece {
         return name;
     }
     
+    /**
+     *
+     * @return palautaa nappulan kuvan
+     */
     public abstract BufferedImage getImage();    
     
-    
-    public void draw(Graphics2D g2d, int x, int y) {
-        g2d.drawImage(getImage(), x, y, null);
-    }
+
 
     public void setColor(ArmyColor color) {
         this.color = color;
@@ -185,7 +91,38 @@ public abstract class Piece {
         return color.toString() + "_" + name;
     }
     
+    /**
+     * 
+     * @return palauttaa kopion nappulasta 
+     */
     public abstract Piece copy();
-    
 
+    public int[] getMoveDirX() {
+        return moveDirX;
+    }
+
+    public int[] getMoveDirY() {
+        return moveDirY;
+    }
+
+    public boolean[] getEatDir() {
+        return eatDir;
+    }
+
+    public boolean[] getMustEatDir() {
+        return mustEatDir;
+    }
+    /**
+     * Metodi palauttaa siirrot, jotka nappulan on mahdollista tehdä taistelun kartalla.
+     * Pelaajien vuoroilla ei ole vaikutusta metodin toimintaan.
+     * @param x nappulan x-koordinaatti
+     * @param y nappulan y-koordinaatti
+     * @param battle taistelu, jossa siirrot halutaan laskea
+     * @return kaikki mahdolliset siirrot
+     */
+    public List<Move> getMoves(int x, int y, Battle battle) {
+        
+        return PieceMoveCalculator.getMoves(this, x, y, battle);
+        
+    }
 }

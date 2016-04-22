@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package symmetricgroup.chesswars.ui;
+package symmetricgroup.chesswars.ui.draw;
 
 import symmetricgroup.chesswars.ui.map.MapScreen;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import symmetricgroup.chesswars.battle.Battle;
-import symmetricgroup.chesswars.battle.Move;
+import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.players.ui.SelectedPiece;
@@ -102,7 +102,7 @@ public class MapDrawer {
             
             int x = screen.getMapX(i);
             int y = screen.getMapY(j);
-            piece.draw(g2d, x, y);
+            g2d.drawImage(piece.getImage(), x, y, null);
             
         }
         
@@ -134,7 +134,7 @@ public class MapDrawer {
 
         Terrain terrain = map.getTerrain(i, j);
         
-        terrain.draw(g2d, x, y);
+        g2d.drawImage(terrain.getImage(), x, y, null);
     }
     
     public Color getTileColor(int n) {

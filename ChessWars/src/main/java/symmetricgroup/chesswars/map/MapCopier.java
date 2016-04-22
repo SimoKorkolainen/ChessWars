@@ -13,13 +13,21 @@ import symmetricgroup.chesswars.terrain.Woods;
  * MapCopier on luokka, jonka avulla on mahdollista kopioida BattleMap-olio.
  */
 public class MapCopier {
+    
+    /**
+     * Metodi kopio kartan.
+     * @param map kopioitava kartta
+     * @return kopio kartasta
+     */
     public static BattleMap copy(BattleMap map) {
         BattleMap copy = new BattleMap(map.getWidth(), map.getHeight());
         copy.setMap(copyPieces(map));
         copy.setMapTerrain(copyTerrains(map));
         return copy;
     }
-    public static Terrain[][] copyTerrains(BattleMap map) {
+    
+    
+    private static Terrain[][] copyTerrains(BattleMap map) {
         Terrain[][] copy = new Terrain[map.getHeight()][map.getWidth()];
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
@@ -28,7 +36,7 @@ public class MapCopier {
         }
         return copy;
     }
-    public static Piece[][] copyPieces(BattleMap map) {
+    private static Piece[][] copyPieces(BattleMap map) {
         Piece[][] copy = new Piece[map.getHeight()][map.getWidth()];
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {

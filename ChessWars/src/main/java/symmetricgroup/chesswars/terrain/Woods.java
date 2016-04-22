@@ -15,7 +15,9 @@ import symmetricgroup.chesswars.util.ImageLoader;
  */
 public class Woods implements Terrain {
     private static BufferedImage image;
-    
+    /**
+     * Konstruktori luo metsikkömaaston ja lataa metsikköön liittyvän kuvan.
+     */
     public Woods() {
         
         if (image == null) {
@@ -35,11 +37,7 @@ public class Woods implements Terrain {
     public int moveCost() {
         return 2;
     }
-    
-    @Override
-    public void draw(Graphics2D g2d, int x, int y) {
-        g2d.drawImage(image, x, y, null);
-    }
+
     
     @Override
     public String getName() {
