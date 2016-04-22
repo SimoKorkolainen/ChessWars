@@ -23,6 +23,11 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
 ## Luokkakaavio
 
 ![Luokkakaavio](/dokumentaatio/chesswarsClassDiagram2.png "Luokkakaavio")
+
+
+## Sekvenssikaaviot
+
+Seuraavassa sekvenssikaaviossa kuvataan nappulan lisäämistä kartalle editorissa.
  
- 
+ ![Sekvenssikaavio nappulan lisäämisestä](/dokumentaatio/Adding_selected_piece_to_map_sequence_diagram.png "Sekvenssikaavio nappulan lisäämisestä")
 
