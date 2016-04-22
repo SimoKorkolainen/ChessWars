@@ -23,4 +23,4 @@ Päivä | Tunnit | Kuvaus
 17.4.2016 | 4h | Käyttöliittymän koodaaminen
 20.4.2016 | 1.5h | Koodikatselmointien kirjoitus
 21.4.2016 | 1.5h | Koodikatselmointien kirjoitus
-22.4.2016 | 10h | JavaDocsien ja testien kirjoitus, sekvenssikaavioiden teko ja koodin siistiminen (hmm... tein 14 h työtä päivässä jos opiskelu lasketaan mukaan)
+22.4.2016 | 10h | JavaDocsien ja testien kirjoitus, sekvenssikaavioiden teko ja koodin siistiminen (hmm... tein 16 h työtä päivässä jos opiskelu lasketaan mukaan)
