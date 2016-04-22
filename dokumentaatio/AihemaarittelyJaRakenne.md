@@ -27,7 +27,7 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
 
 ## Sekvenssikaaviot
 
-Seuraavassa sekvenssikaaviossa kuvataan nappulan lisäämistä kartalle editorissa.
+Seuraavassa sekvenssikaaviossa kuvataan tornin lisäämistä kartalle editorissa.
  
  ![Sekvenssikaavio nappulan lisäämisestä](/dokumentaatio/Adding_selected_piece_to_map_sequence_diagram.png "Sekvenssikaavio nappulan lisäämisestä")
 
