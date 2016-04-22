@@ -21,3 +21,6 @@ Päivä | Tunnit | Kuvaus
 15.4.2016 | 7h | JavaDocsien kirjoittaminen, koodin siistiminen ja käyttöliittymän ja pelin koodaaminen
 16.4.2016 | 3h | Käyttöliittymän koodaaminen
 17.4.2016 | 4h | Käyttöliittymän koodaaminen
+20.4.2016 | 1.5h | Koodikatselmointien kirjoitus
+21.4.2016 | 1.5h | Koodikatselmointien kirjoitus
+22.4.2016 | 10h | JavaDocsien ja testien kirjoitus, sekvenssikaavioiden teko ja koodin siistiminen
