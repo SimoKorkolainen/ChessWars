@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 67,
+      <title>File: 79,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -60,7 +60,77 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.navigation.Room.java">symmetricgroup/chesswars/ui/navigation/Room.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.pieces.Piece.java">symmetricgroup/chesswars/pieces/Piece.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.navigation.NavigationRoom.java">symmetricgroup/chesswars/ui/navigation/NavigationRoom.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.draw.MapDrawer.java">symmetricgroup/chesswars/ui/draw/MapDrawer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.map.SelectionButtonListener.java">symmetricgroup/chesswars/ui/editor/map/SelectionButtonListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.map.MapScreen.java">symmetricgroup/chesswars/ui/map/MapScreen.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +158,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.Game.java">symmetricgroup/chesswars/ui/Game.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.pieces.Rook.java">symmetricgroup/chesswars/pieces/Rook.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +172,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.pieces.Rook.java">symmetricgroup/chesswars/pieces/Rook.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.draw.TextDrawer.java">symmetricgroup/chesswars/ui/draw/TextDrawer.java</a>
                 </td>
                 <td>
                   0
@@ -130,7 +200,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.AiButton.java">symmetricgroup/chesswars/ui/editor/AiButton.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.game.BattleMoveThread.java">symmetricgroup/chesswars/ui/game/BattleMoveThread.java</a>
                 </td>
                 <td>
                   0
@@ -144,7 +214,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.AiButtonPanel.java">symmetricgroup/chesswars/ui/editor/AiButtonPanel.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.map.TerrainSelectionButton.java">symmetricgroup/chesswars/ui/editor/map/TerrainSelectionButton.java</a>
                 </td>
                 <td>
                   0
@@ -172,7 +242,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.BattleThread.java">symmetricgroup/chesswars/battle/BattleThread.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.defeat.BattleWinnerChecker.java">symmetricgroup/chesswars/battle/defeat/BattleWinnerChecker.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.move.Move.java">symmetricgroup/chesswars/battle/move/Move.java</a>
                 </td>
                 <td>
                   0
@@ -242,7 +326,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.EditorMenu.java">symmetricgroup/chesswars/ui/EditorMenu.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.draw.RoundRectPanel.java">symmetricgroup/chesswars/ui/draw/RoundRectPanel.java</a>
                 </td>
                 <td>
                   0
@@ -256,35 +340,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.TeamSelectionPanel.java">symmetricgroup/chesswars/ui/editor/TeamSelectionPanel.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.MapMouseListener.java">symmetricgroup/chesswars/ui/MapMouseListener.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.MapScreen.java">symmetricgroup/chesswars/ui/MapScreen.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.teams.TeamSelectionPanel.java">symmetricgroup/chesswars/ui/editor/settings/teams/TeamSelectionPanel.java</a>
                 </td>
                 <td>
                   0
@@ -299,6 +355,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.players.ai.AiPlayer.java">symmetricgroup/chesswars/players/ai/AiPlayer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.navigation.MenuButtonListener.java">symmetricgroup/chesswars/ui/navigation/MenuButtonListener.java</a>
                 </td>
                 <td>
                   0
@@ -340,7 +410,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.AiButtonListener.java">symmetricgroup/chesswars/ui/editor/AiButtonListener.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.navigation.Navigation.java">symmetricgroup/chesswars/ui/navigation/Navigation.java</a>
                 </td>
                 <td>
                   0
@@ -382,7 +452,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.MainMenu.java">symmetricgroup/chesswars/ui/MainMenu.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.ai.AiButton.java">symmetricgroup/chesswars/ui/editor/settings/ai/AiButton.java</a>
                 </td>
                 <td>
                   0
@@ -396,7 +466,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.MapEditorPanel.java">symmetricgroup/chesswars/ui/editor/MapEditorPanel.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.teams.TeamButtonListener.java">symmetricgroup/chesswars/ui/editor/settings/teams/TeamButtonListener.java</a>
                 </td>
                 <td>
                   0
@@ -438,7 +508,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.Editor.java">symmetricgroup/chesswars/ui/editor/Editor.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.ai.AiButtonListener.java">symmetricgroup/chesswars/ui/editor/settings/ai/AiButtonListener.java</a>
                 </td>
                 <td>
                   0
@@ -452,7 +522,49 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.DefeatState.java">symmetricgroup/chesswars/battle/DefeatState.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.MapNameFieldListener.java">symmetricgroup/chesswars/ui/editor/settings/MapNameFieldListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.navigation.MenuButton.java">symmetricgroup/chesswars/ui/navigation/MenuButton.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.ai.AiButtonPanel.java">symmetricgroup/chesswars/ui/editor/settings/ai/AiButtonPanel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.BattleParser.java">symmetricgroup/chesswars/battle/BattleParser.java</a>
                 </td>
                 <td>
                   0
@@ -480,7 +592,35 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.move.BattleMoveCalculator.java">symmetricgroup/chesswars/battle/move/BattleMoveCalculator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.players.ai.EvalMove.java">symmetricgroup/chesswars/players/ai/EvalMove.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.game.Game.java">symmetricgroup/chesswars/ui/game/Game.java</a>
                 </td>
                 <td>
                   0
@@ -522,7 +662,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.MenuButtonListener.java">symmetricgroup/chesswars/ui/MenuButtonListener.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.util.ImageColorer.java">symmetricgroup/chesswars/util/ImageColorer.java</a>
                 </td>
                 <td>
                   0
@@ -536,7 +676,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.util.ImageColorer.java">symmetricgroup/chesswars/util/ImageColorer.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.defeat.BattleDefeatHandler.java">symmetricgroup/chesswars/battle/defeat/BattleDefeatHandler.java</a>
                 </td>
                 <td>
                   0
@@ -564,34 +704,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.BattleMoveCalculator.java">symmetricgroup/chesswars/battle/BattleMoveCalculator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.Move.java">symmetricgroup/chesswars/battle/Move.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.map.MapCopier.java">symmetricgroup/chesswars/map/MapCopier.java</a>
                 </td>
                 <td>
@@ -606,7 +718,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.PieceSelectionButton.java">symmetricgroup/chesswars/ui/editor/PieceSelectionButton.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.game.BattleInfoPanel.java">symmetricgroup/chesswars/ui/game/BattleInfoPanel.java</a>
                 </td>
                 <td>
                   0
@@ -620,7 +732,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.ColorSelectionButton.java">symmetricgroup/chesswars/ui/editor/ColorSelectionButton.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.pieces.PieceMoveCalculator.java">symmetricgroup/chesswars/pieces/PieceMoveCalculator.java</a>
                 </td>
                 <td>
                   0
@@ -634,7 +746,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.BattleWinnerChecker.java">symmetricgroup/chesswars/battle/BattleWinnerChecker.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.map.MapEditorPanel.java">symmetricgroup/chesswars/ui/editor/map/MapEditorPanel.java</a>
                 </td>
                 <td>
                   0
@@ -690,7 +802,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.MapEditor.java">symmetricgroup/chesswars/ui/editor/MapEditor.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.settings.teams.TeamButton.java">symmetricgroup/chesswars/ui/editor/settings/teams/TeamButton.java</a>
                 </td>
                 <td>
                   0
@@ -705,6 +817,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.pieces.PieceImages.java">symmetricgroup/chesswars/pieces/PieceImages.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.map.MapAndNamePanel.java">symmetricgroup/chesswars/ui/map/MapAndNamePanel.java</a>
                 </td>
                 <td>
                   0
@@ -746,20 +872,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.SelectionButtonListener.java">symmetricgroup/chesswars/ui/editor/SelectionButtonListener.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.pieces.King.java">symmetricgroup/chesswars/pieces/King.java</a>
                 </td>
                 <td>
@@ -775,20 +887,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.GameTimerManager.java">symmetricgroup/chesswars/ui/GameTimerManager.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.MenuButton.java">symmetricgroup/chesswars/ui/MenuButton.java</a>
                 </td>
                 <td>
                   0
@@ -830,7 +928,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.TeamButton.java">symmetricgroup/chesswars/ui/editor/TeamButton.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.terrain.Woods.java">symmetricgroup/chesswars/terrain/Woods.java</a>
                 </td>
                 <td>
                   0
@@ -844,7 +942,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.terrain.Woods.java">symmetricgroup/chesswars/terrain/Woods.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.map.ColorSelectionButton.java">symmetricgroup/chesswars/ui/editor/map/ColorSelectionButton.java</a>
                 </td>
                 <td>
                   0
@@ -872,20 +970,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.TerrainSelectionButton.java">symmetricgroup/chesswars/ui/editor/TerrainSelectionButton.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.players.ui.UserControl.java">symmetricgroup/chesswars/players/ui/UserControl.java</a>
                 </td>
                 <td>
@@ -900,7 +984,63 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.TeamButtonListener.java">symmetricgroup/chesswars/ui/editor/TeamButtonListener.java</a>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.EditorRoom.java">symmetricgroup/chesswars/ui/editor/EditorRoom.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.game.BattleTeamPanel.java">symmetricgroup/chesswars/ui/game/BattleTeamPanel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.game.BattleTurnPanel.java">symmetricgroup/chesswars/ui/game/BattleTurnPanel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.defeat.DefeatStateParser.java">symmetricgroup/chesswars/battle/defeat/DefeatStateParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.map.MapEditor.java">symmetricgroup/chesswars/ui/editor/map/MapEditor.java</a>
                 </td>
                 <td>
                   0
@@ -915,6 +1055,48 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.players.ui.SelectedPiece.java">symmetricgroup/chesswars/players/ui/SelectedPiece.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.battle.defeat.DefeatState.java">symmetricgroup/chesswars/battle/defeat/DefeatState.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.editor.map.PieceSelectionButton.java">symmetricgroup/chesswars/ui/editor/map/PieceSelectionButton.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.map.MapMouseListener.java">symmetricgroup/chesswars/ui/map/MapMouseListener.java</a>
                 </td>
                 <td>
                   0
@@ -957,20 +1139,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.terrain.Terrain.java">symmetricgroup/chesswars/terrain/Terrain.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#symmetricgroup.chesswars.ui.MapDrawer.java">symmetricgroup/chesswars/ui/MapDrawer.java</a>
                 </td>
                 <td>
                   0
