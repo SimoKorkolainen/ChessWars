@@ -27,8 +27,10 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
 
 ## Sekvenssikaaviot
 
-Seuraavassa sekvenssikaaviossa kuvataan tornin lisäämistä kartalle editorissa.
+### Tornin lisääminen kartalle editorissa
  
  ![Sekvenssikaavio nappulan lisäämisestä](/dokumentaatio/Adding_selected_piece_to_map_sequence_diagram.png "Sekvenssikaavio nappulan lisäämisestä")
 
- ![Sekvenssikaavio käyttäjän siirron suorituksesta](/dokumentaatio/User_doing_a_move_during_the_battle_sequence_diagram.png "Sekvenssikaavio käyttäjän siirron suorituksesta")
+### Siirron pyyntö käyttäjältä
+
+ ![Sekvenssikaavio käyttäjän siirron pyynnöstä](/dokumentaatio/User_doing_a_move_during_the_battle_sequence_diagram.png "Sekvenssikaavio käyttäjän siirron pyynnöstä")
