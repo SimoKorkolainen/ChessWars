@@ -31,3 +31,4 @@ Seuraavassa sekvenssikaaviossa kuvataan tornin lisäämistä kartalle editorissa
  
  ![Sekvenssikaavio nappulan lisäämisestä](/dokumentaatio/Adding_selected_piece_to_map_sequence_diagram.png "Sekvenssikaavio nappulan lisäämisestä")
 
+ ![Sekvenssikaavio käyttäjän siirron suorituksesta](/dokumentaatio/User_doing_a_move_during_the_battle_sequence_diagram.png "Sekvenssikaavio käyttäjän siirron suorituksesta")
