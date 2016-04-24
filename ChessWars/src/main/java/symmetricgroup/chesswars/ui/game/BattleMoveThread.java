@@ -6,7 +6,7 @@
 package symmetricgroup.chesswars.ui.game;
 
 import symmetricgroup.chesswars.battle.Battle;
-import symmetricgroup.chesswars.battle.BattleWinnerChecker;
+import symmetricgroup.chesswars.battle.defeat.BattleWinnerChecker;
 import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;

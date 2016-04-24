@@ -1,5 +1,6 @@
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\defeat\BattleWinnerChecker.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\game\BattleTurnPanel.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\game\BattleMoveThread.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\defeat\DefeatStateParser.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\ClearButton.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\game\BattleInfoPanel.java
@@ -21,6 +22,7 @@ C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symme
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\PieceParser.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\map\MapEditorPanel.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\draw\RoundRectPanel.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleParser.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\game\Game.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\map\MapMouseListener.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\King.java
@@ -36,14 +38,15 @@ C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symme
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Queen.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\players\Player.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\util\ImageLoader.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\PieceMoveCalculator.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\navigation\NavigationRoom.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleIO.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\pieces\Pawn.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\map\TerrainSelectionButton.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\settings\teams\TeamSelectionPanel.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\players\ai\AiEvaluator.java
-C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\game\BattleThread.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\GameTimerManager.java
+C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\defeat\BattleDefeatHandler.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\battle\BattleCopier.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\ui\editor\map\MapEditor.java
 C:\Users\Simo\Documents\NetBeansProjects\ChessWars\ChessWars\src\main\java\symmetricgroup\chesswars\util\ImageColorer.java

@@ -28,17 +28,26 @@ public class UserInterface implements Runnable {
     public void run() {
         
         frame = new JFrame();
-        frame.setVisible(true);
         
-        frame.setPreferredSize(new Dimension(800, 700));
+        
+        frame.setPreferredSize(new Dimension(850, 800));
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setFocusable(true);
+        
         Rook rook = new Rook(ArmyColor.WHITE);
         frame.setIconImage(rook.getImage());
         
-        showRoom(navigation.getMainMenu());
+        frame.setTitle("ChessWars");
         
+        showRoom(navigation.getMainMenu());
+
+        frame.setVisible(true);
         frame.pack();
+        
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        
     }
     
     

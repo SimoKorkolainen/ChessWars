@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import symmetricgroup.chesswars.battle.Battle;
-import symmetricgroup.chesswars.battle.BattleWinnerChecker;
+import symmetricgroup.chesswars.battle.defeat.BattleWinnerChecker;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 import symmetricgroup.chesswars.players.ai.AiPlayer;
@@ -79,7 +79,7 @@ public class BattleTurnPanel extends JPanel {
             String name = player.getColor().toString();
 
             if (player.getClass() == AiPlayer.class) {
-                name += " ai";
+                name += " AI";
             }
 
 
@@ -87,8 +87,11 @@ public class BattleTurnPanel extends JPanel {
             x = width / 2;
 
             y = (i + 3) * height + height / 2;
-
-            fill = RoundRectTextButton.lighten(player.getColor().getDrawingColor(), 50);
+            
+            fill = player.getColor().getDrawingColor();
+            if (player.getColor() == ArmyColor.WHITE) {
+                fill = RoundRectTextButton.lighten(fill, 50);
+            }
             drawer = new TextDrawer(fill,  height * 2 / 3);
 
             drawer.draw(name, x, y, g2d);

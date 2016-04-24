@@ -103,7 +103,6 @@ public class BattleParser {
             int playerN = Integer.parseInt(conf[0]);
             
             List<Player> players = new ArrayList<>();
-            Map<ArmyColor, Integer> teams = new HashMap<>();
             
             for (int i = 0; i < playerN; i++) {
                 
@@ -112,7 +111,7 @@ public class BattleParser {
                 System.out.println(ai + " " + conf[2 + i * 3]);
                 int team = Integer.parseInt(conf[3 + i * 3]);
                 
-                teams.put(color, team);
+                battle.setTeam(color, team);
                 Player player;
 
                 if (ai) {

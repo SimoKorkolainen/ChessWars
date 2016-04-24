@@ -17,21 +17,37 @@ public class TeamButton extends RoundRectTextButton {
     private ArmyColor color;
     private int team;
     private static final int MAX_TEAMS = 6;
+    private boolean playerIsIn;
     public TeamButton(ArmyColor color, int team) {
-        super(30, 30, color.getDrawingColor(), new Color(30, 30, 30), "" + team);
+        super(30, 30, color.getDrawingColor(), new Color(30, 30, 30), "-");
         this.color = color;
         this.team = team;
-        /*
-        super.setOpaque(true);
-        super.setBorderPainted(false);
-        super.setBackground(color.getDrawingColor());
-        */
+        this.playerIsIn = false;
     }
 
     public void incrementTeam() {
-        team = team % MAX_TEAMS + 1;
-        super.setButtonText("" + team);
+        if (playerIsIn) {
+            team = team % MAX_TEAMS + 1;
+            super.setButtonText("" + team);
+        }
+    }
+
+    public boolean isPlayerIn() {
+        return playerIsIn;
+    }
+
+    public void setPlayerOut() {
+        this.playerIsIn = false;
+        super.setButtonText("-");
     }
     
- 
+    public void setPlayerIn() {
+        this.playerIsIn = true;
+        super.setButtonText("" + team);
+    }
+
+    public int getTeam() {
+        return team;
+    }
+    
 }

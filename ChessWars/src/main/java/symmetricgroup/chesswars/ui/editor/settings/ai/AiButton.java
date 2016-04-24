@@ -18,15 +18,17 @@ import symmetricgroup.chesswars.ui.editor.RoundRectTextButton;
 public class AiButton extends RoundRectTextButton {
     private ArmyColor color;
     private boolean aiIsOn;
+    private boolean playerIsIn;
     public AiButton(ArmyColor color) {
         super(30, 30, color.getDrawingColor(), new Color(30, 30, 30), "");
         this.color = color;
         this.aiIsOn = true;
+        this.playerIsIn = false;
         super.setMargin(new Insets(1, 1, 1, 1));
         updateText();
     }
 
-    public boolean isAiIsOn() {
+    public boolean aiIsOn() {
         return aiIsOn;
     }
 
@@ -34,6 +36,14 @@ public class AiButton extends RoundRectTextButton {
         this.aiIsOn = aiIsOn;
     }
     public void updateText() {
+        if (playerIsIn) {
+            updateTextOnOrOff();
+        } else {
+            super.setButtonText("-");
+        }
+    }   
+    
+    private void updateTextOnOrOff() {
         if (aiIsOn) {
             super.setButtonText("on");
             
@@ -41,4 +51,26 @@ public class AiButton extends RoundRectTextButton {
             super.setButtonText("off");
         }
     }
+    
+    public void setPlayerIn() {
+        playerIsIn = true;
+        updateText();
+    }
+    
+    public void setPlayerOut() {
+        playerIsIn = false;
+        updateText();
+    }
+
+    public boolean playerIsIn() {
+        return playerIsIn;
+    }
+
+    public ArmyColor getColor() {
+        return color;
+    }
+
+
+    
+    
 }

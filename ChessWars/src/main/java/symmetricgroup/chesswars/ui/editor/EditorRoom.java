@@ -27,18 +27,17 @@ import symmetricgroup.chesswars.ui.navigation.Room;
  */
 public class EditorRoom extends Room {
     
-    private BattleMap map;
-    private MapEditor editor;
+ 
+    private EditorPanel editor;
     private MapAndNamePanel mapAndName;
-
-    public EditorRoom(Navigation navigation, BattleMap map) {
+    private SaveButton save;
+    public EditorRoom(Navigation navigation, Battle battle) {
         super(navigation);
-        this.map = map;
         
-        createComponents();
+        createComponents(battle);
     }
 
-    public void createComponents() {
+    public void createComponents(Battle battle) {
         super.setLayout(new GridBagLayout());
         
         GridBagConstraints constraints = new GridBagConstraints();
@@ -50,7 +49,7 @@ public class EditorRoom extends Room {
         
   
         
-        MapScreen screen = new MapScreen(new Battle(map), null);
+        MapScreen screen = new MapScreen(battle, null);
 
 
         
@@ -65,9 +64,9 @@ public class EditorRoom extends Room {
         constraints.gridx = 1;
         constraints.gridy = 0;
         
-        EditorPanel editorPanel = new EditorPanel(this, map, screen);
+        editor = new EditorPanel(this, battle, screen);
         
-        super.add(editorPanel, constraints);
+        super.add(editor, constraints);
         
 
         
@@ -75,6 +74,10 @@ public class EditorRoom extends Room {
 
     public MapAndNamePanel getMapAndName() {
         return mapAndName;
+    }
+
+    public EditorPanel getEditorPanel() {
+        return editor;
     }
     
     

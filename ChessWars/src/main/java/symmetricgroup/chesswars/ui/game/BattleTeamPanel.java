@@ -66,7 +66,12 @@ public class BattleTeamPanel extends JPanel {
 
             y = (i + 2) * height + height / 2;
 
-            fill = RoundRectTextButton.lighten(player.getColor().getDrawingColor(), 50);
+            fill = player.getColor().getDrawingColor();
+            if (player.getColor() == ArmyColor.WHITE) {
+                fill = RoundRectTextButton.lighten(fill, 50);
+            }
+            
+            
             drawer = new TextDrawer(fill,  height * 2 / 3);
 
             drawer.draw(name, x, y, g2d);

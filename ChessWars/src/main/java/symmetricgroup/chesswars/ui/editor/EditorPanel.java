@@ -8,7 +8,7 @@ package symmetricgroup.chesswars.ui.editor;
 import symmetricgroup.chesswars.ui.editor.map.MapEditor;
 import symmetricgroup.chesswars.ui.editor.map.MapEditorPanel;
 import symmetricgroup.chesswars.ui.editor.settings.teams.TeamSelectionPanel;
-import symmetricgroup.chesswars.ui.editor.settings.AiButtonPanel;
+import symmetricgroup.chesswars.ui.editor.settings.ai.AiButtonPanel;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -28,22 +28,22 @@ import symmetricgroup.chesswars.ui.navigation.Navigation;
  */
 public class EditorPanel extends JPanel {
     private Navigation navigation;
-    private BattleMap map;
     private MapEditor editor;
     private MapScreen screen;
     private EditorRoom editorRoom;
-    
-    public EditorPanel(EditorRoom editorRoom, BattleMap map, MapScreen screen) {
+    private TeamSelectionPanel teamPanel;
+    private AiButtonPanel aiPanel;
+    private SaveButton save;
+    public EditorPanel(EditorRoom editorRoom, Battle battle, MapScreen screen) {
         this.editorRoom = editorRoom;
-        this.map = map;
         this.screen = screen;
-        createComponents();
+        createComponents(battle);
         super.setBackground(new Color(218, 231, 247));
         
    
     }
 
-    public void createComponents() {
+    public void createComponents(Battle battle) {
         super.setLayout(new GridBagLayout());
         
         GridBagConstraints constraints = new GridBagConstraints();
@@ -66,14 +66,14 @@ public class EditorPanel extends JPanel {
         constraints.gridx = 0;
         constraints.gridy = 1;
         
-        AiButtonPanel aiPanel = new AiButtonPanel();
+        aiPanel = new AiButtonPanel();
         
         super.add(aiPanel, constraints);
         
         constraints.gridx = 0;
         constraints.gridy = 2;
         
-        TeamSelectionPanel teamPanel = new TeamSelectionPanel();
+        teamPanel = new TeamSelectionPanel(this);
         super.add(teamPanel, constraints);
         
         constraints.gridx = 0;
@@ -85,7 +85,7 @@ public class EditorPanel extends JPanel {
         constraints.gridx = 0;
         constraints.gridy = 4;
         
-        ClearButtonListener clearListener = new ClearButtonListener(map, screen);
+        ClearButtonListener clearListener = new ClearButtonListener(battle.getMap(), screen);
         ClearButton clearButton = new ClearButton();
         clearButton.addActionListener(clearListener);
         
@@ -95,9 +95,9 @@ public class EditorPanel extends JPanel {
         constraints.gridx = 0;
         constraints.gridy = 5;
         
-        SaveButton save = new SaveButton();
+        save = new SaveButton(this);
         
-        save.addActionListener(new SaveButtonListener(map));
+        save.addActionListener(new SaveButtonListener(battle, editorRoom));
         
         super.add(save, constraints);
         
@@ -114,7 +114,7 @@ public class EditorPanel extends JPanel {
         super.add(editorButton, constraints);
         
         
-        editor = new MapEditor(panel, map);
+        editor = new MapEditor(panel, this, battle.getMap());
         MapMouseListener listener = new MapMouseListener(screen, null);
         listener.setEditor(editor);
         
@@ -124,6 +124,19 @@ public class EditorPanel extends JPanel {
     public EditorRoom getEditorRoom() {
         return editorRoom;
     }
+    
+    public TeamSelectionPanel getTeamPanel() {
+        return teamPanel;
+    }
+
+    public AiButtonPanel getAiPanel() {
+        return aiPanel;
+    }
+
+    public SaveButton getSave() {
+        return save;
+    }
+    
     
     
 }

@@ -35,6 +35,7 @@ import symmetricgroup.chesswars.pieces.Queen;
  */
 public class BattleMap {
     
+    private String mapName;
     private int width;
     private int height;
     private Piece[][] map; //Kartta käyttää matriisi-indeksointia
@@ -177,6 +178,14 @@ public class BattleMap {
 
     public void setMapTerrain(Terrain[][] mapTerrain) {
         this.mapTerrain = mapTerrain;
+    }
+
+    public String getMapName() {
+        return mapName;
+    }
+
+    public void setMapName(String mapName) {
+        this.mapName = mapName;
     }
 
 }

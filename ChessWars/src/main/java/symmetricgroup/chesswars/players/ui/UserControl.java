@@ -34,7 +34,7 @@ public class UserControl {
 
             selectPiece(x, y);
             
-        } else {
+        } else if (player != null) {
 
             checkForNextMove(x, y);
             selected = null;
@@ -63,6 +63,7 @@ public class UserControl {
             if (move != null) {
                 
                 player.executeMove(move);
+                player = null;
                 
             } else {
                 

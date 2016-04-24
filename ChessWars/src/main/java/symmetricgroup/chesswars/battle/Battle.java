@@ -22,7 +22,6 @@ import symmetricgroup.chesswars.ui.game.BattleMoveThread;
 * Battle-luokka mallintaa taistelun kulkua kartalla.
 */
 public class Battle {
-    private String battleName;
     private BattleMap map;
     private Map<ArmyColor, Integer> team;
 
@@ -196,4 +195,13 @@ public class Battle {
     public List<DefeatState> getDefeatStates() {
         return defeatStates;
     }
+    
+    public String getName() {
+        return map.getMapName();
+    }
+    
+    public void setName(String name) {
+        map.setMapName(name);
+    }
+            
 }

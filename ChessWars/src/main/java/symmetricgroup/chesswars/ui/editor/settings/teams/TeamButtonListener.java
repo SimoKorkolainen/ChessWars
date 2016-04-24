@@ -7,6 +7,7 @@ package symmetricgroup.chesswars.ui.editor.settings.teams;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import symmetricgroup.chesswars.ui.editor.EditorPanel;
 import symmetricgroup.chesswars.ui.editor.settings.teams.TeamButton;
 
 /**
@@ -14,12 +15,18 @@ import symmetricgroup.chesswars.ui.editor.settings.teams.TeamButton;
  * jota käytetään pelaajien valitsemiseen.
  */
 public class TeamButtonListener implements ActionListener {
+    EditorPanel editor;
 
+    public TeamButtonListener(EditorPanel editor) {
+        this.editor = editor;
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         
         TeamButton button = (TeamButton) e.getSource();
         button.incrementTeam();
+        editor.getSave().updateSaveButton();
     }
     
 }

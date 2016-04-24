@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: symmetricgroup.chesswars.pieces.KingTest
+Test set: symmetricgroup.chesswars.battle.defeat.DefeatStateTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec

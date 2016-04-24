@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package symmetricgroup.chesswars.ui.editor.settings;
+package symmetricgroup.chesswars.ui.editor.settings.ai;
 
 import symmetricgroup.chesswars.ui.editor.settings.AiButton;
 import java.awt.Dimension;
@@ -12,21 +12,24 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import symmetricgroup.chesswars.players.ArmyColor;
+import symmetricgroup.chesswars.ui.editor.settings.teams.TeamButton;
+import symmetricgroup.chesswars.ui.editor.settings.teams.TeamButtonListener;
 
 /**
  * AiButtonPanel on paneeli, joka sisältää tekoälyn valitsemiseen tarkoitetut napit.
  */
 public class AiButtonPanel extends JPanel {
-    List<AiButton> buttons;
+    private HashMap<ArmyColor, AiButton> aiButtons;
     JPanel grid;
     public AiButtonPanel() {
         
-        buttons = new ArrayList<>();
+        aiButtons = new HashMap<>();
         
         
         grid = new JPanel();
@@ -37,12 +40,13 @@ public class AiButtonPanel extends JPanel {
         addComponents();
     }
     public void createComponents() {
-        buttons.add(new AiButton(ArmyColor.WHITE));
-        buttons.add(new AiButton(ArmyColor.BLACK));
-        buttons.add(new AiButton(ArmyColor.YELLOW));
-        buttons.add(new AiButton(ArmyColor.RED));
-        buttons.add(new AiButton(ArmyColor.GREEN));
-        buttons.add(new AiButton(ArmyColor.BLUE));
+        AiButtonListener listener = new AiButtonListener();
+        addButton(ArmyColor.WHITE, listener);
+        addButton(ArmyColor.BLACK, listener);
+        addButton(ArmyColor.YELLOW, listener);
+        addButton(ArmyColor.RED, listener);
+        addButton(ArmyColor.GREEN, listener);
+        addButton(ArmyColor.BLUE, listener);
     }
     
     public void addComponents() {
@@ -57,15 +61,28 @@ public class AiButtonPanel extends JPanel {
         
         super.add(aiLabel, constraints);
         
-        AiButtonListener listener = new AiButtonListener();
-        for (AiButton i : buttons) {
-            i.addActionListener(listener);
-            grid.add(i);
-        }
-        
         constraints.gridx = 0;
         constraints.gridy = 1;
         
         super.add(grid, constraints);
     }
+    
+    
+    private void addButton(ArmyColor color, AiButtonListener listener) {
+        AiButton button = new AiButton(color);
+        button.addActionListener(listener);
+        
+        aiButtons.put(color, button);
+        grid.add(button);
+    }
+    
+    public AiButton getButton(ArmyColor color) {
+        return aiButtons.get(color);
+    }
+
+    public HashMap<ArmyColor, AiButton> getAiButtons() {
+        return aiButtons;
+    }
+    
+    
 }

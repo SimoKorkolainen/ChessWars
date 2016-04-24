@@ -13,7 +13,7 @@ import java.util.Set;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleCopier;
 import symmetricgroup.chesswars.battle.move.BattleMoveCalculator;
-import symmetricgroup.chesswars.battle.BattleWinnerChecker;
+import symmetricgroup.chesswars.battle.defeat.BattleWinnerChecker;
 import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.players.ArmyColor;

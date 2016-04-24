@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package symmetricgroup.chesswars.ui.editor.settings;
+package symmetricgroup.chesswars.ui.editor.settings.ai;
 
 import symmetricgroup.chesswars.ui.editor.settings.AiButton;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ public class AiButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         AiButton button = (AiButton) e.getSource();
 
-        boolean ai = !button.isAiIsOn();
+        boolean ai = !button.aiIsOn();
         
         button.setAiIsOn(ai);
         button.updateText();

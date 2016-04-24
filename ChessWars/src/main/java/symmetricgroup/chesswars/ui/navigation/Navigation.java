@@ -48,7 +48,7 @@ public class Navigation {
     
     
     public void connectEditorMenu() {
-        editorMenu.addMenuButton(new MenuButton("Map 1", new EditorRoom(this, new BattleMap(10, 10))));
+        editorMenu.addMenuButton(new MenuButton("Map 1", new EditorRoom(this, new Battle(new BattleMap(10, 10)))));
         editorMenu.addMenuButton(new MenuButton("Main menu", mainMenu));
     }
     
