@@ -48,16 +48,18 @@ public class Navigation {
     
     
     public void connectEditorMenu() {
-        editorMenu.addMenuButton(new MenuButton("Map 1", new EditorRoom(this, new Battle(new BattleMap(10, 10)))));
+
+ 
+        editorMenu.addMenuButton(new MenuButton("Edit map", new EditorRoom(this, new Battle(new BattleMap(10, 10)))));
         editorMenu.addMenuButton(new MenuButton("Main menu", mainMenu));
     }
     
     public void connectBattleMenu() {
         UserControl control = new UserControl();
 
-        
-        
-        battleMenu.addMenuButton(new MenuButton("Map", new Game(this, new Battle(new BattleMap(10, 10)), control)));
+        Game game = new Game(this, new Battle(new BattleMap(10, 10)), control);
+        String name = game.loadBattle().getName();
+        battleMenu.addMenuButton(new MenuButton(name.trim(), game));
 
         battleMenu.addMenuButton(new MenuButton("Main menu", mainMenu));
         
@@ -80,4 +82,10 @@ public class Navigation {
         editorMenu.init();
         battleMenu.init();
     }
+
+    public NavigationRoom getBattleMenu() {
+        return battleMenu;
+    }
+    
+    
 }

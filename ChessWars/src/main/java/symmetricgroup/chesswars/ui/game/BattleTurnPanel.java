@@ -38,6 +38,7 @@ public class BattleTurnPanel extends JPanel {
         this.width = 200;
         this.height = 50;
         super.setDoubleBuffered(true);
+        System.out.println("I exist!");
     }
 
     @Override

@@ -29,7 +29,7 @@ public class BattleIOTest {
     private Battle battle;
     private BattleMap map;
     private Battle result;
-    private final String filename = "/battles/battleTest.txt";
+    private final String filename = "battles/battleTest.txt";
     public BattleIOTest() {
     }
     

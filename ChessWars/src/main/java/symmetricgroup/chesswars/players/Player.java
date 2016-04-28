@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.players;
 
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.ui.game.BattleMoveThread;
 
 /**
@@ -24,5 +25,6 @@ public interface Player {
      */
     public ArmyColor getColor();
 
+    public Player copy(Battle battle);
     
 }

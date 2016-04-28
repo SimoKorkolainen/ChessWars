@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="symmetricgroup.chesswars.battle.BattleTest" time="0.032" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="symmetricgroup.chesswars.battle.BattleTest" time="0.014" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,15 +62,15 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="movingRookLeavesEmptyBehind" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="undoEatingRestoresRook" time="0.016"/>
-  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="eatingLeavesEmptyBehind" time="0"/>
+  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="undoEatingRestoresRook" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="eatingLeavesEmptyBehind" time="0.002"/>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="rookMoves" time="0"/>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="undoMoveLeavesEmptyBehind" time="0"/>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="turnIsZeroAfterEatingRook" time="0"/>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="undoMoveReturnsRookToItsOriginalPosition" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="turnAfterMoveIsOne" time="0"/>
+  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="turnAfterMoveIsOne" time="0.001"/>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="undoEatingRestoresBishop" time="0"/>
   <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="turnIsOneAfterUndoEating" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="rookIsRemovedWhenEaten" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="afterUndoMoveTurnIsZero" time="0"/>
+  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="rookIsRemovedWhenEaten" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.battle.BattleTest" name="afterUndoMoveTurnIsZero" time="0.001"/>
 </testsuite>

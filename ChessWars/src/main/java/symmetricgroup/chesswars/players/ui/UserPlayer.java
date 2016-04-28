@@ -5,6 +5,7 @@
  */
 package symmetricgroup.chesswars.players.ui;
 
+import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
@@ -44,5 +45,9 @@ public class UserPlayer implements Player {
     public void executeMove(Move move) {
         moveThread.executeMove(move);
     }
-
+    
+    @Override
+    public Player copy(Battle battle) {
+        return new UserPlayer(color, control);
+    }
 }

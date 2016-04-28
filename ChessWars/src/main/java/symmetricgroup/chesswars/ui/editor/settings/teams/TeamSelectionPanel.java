@@ -29,6 +29,7 @@ public class TeamSelectionPanel extends JPanel {
     public TeamSelectionPanel(EditorPanel editor) {
         this.teamButtons = new HashMap<>();
         super.setLayout(new GridLayout(2, 3));
+        super.setOpaque(false);
         createComponents(editor);
     }
     

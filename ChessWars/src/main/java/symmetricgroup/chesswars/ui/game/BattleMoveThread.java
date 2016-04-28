@@ -47,7 +47,7 @@ public class BattleMoveThread extends Thread {
        
         battle.doMove(move);
         
-        if (!BattleWinnerChecker.myTeamHasWon(battle, battle.nextColorToMove())) {
+        if (!battle.isStopped() && !BattleWinnerChecker.myTeamHasWon(battle, battle.nextColorToMove())) {
             askPlayerForNextMove();
         }
         

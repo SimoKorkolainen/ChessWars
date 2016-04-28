@@ -196,4 +196,10 @@ public class AiPlayer implements Player {
         Move next = alphaBeta();
         thread.executeMove(next);  
     }
+    
+    
+    @Override
+    public Player copy(Battle battle) {
+        return new AiPlayer(searchDepth, color, battle);
+    }
 }

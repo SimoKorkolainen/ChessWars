@@ -7,6 +7,7 @@ package symmetricgroup.chesswars.ui.editor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Map;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleIO;
@@ -42,7 +43,7 @@ public class SaveButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Map<ArmyColor, AiButton> aiButtons = editor.getEditorPanel().getAiPanel().getAiButtons();
         TeamSelectionPanel teamPanel = editor.getEditorPanel().getTeamPanel();
-        
+        battle.setPlayers(new ArrayList<>());
         for (ArmyColor i : aiButtons.keySet()) {
             AiButton button = aiButtons.get(i);
             
@@ -54,6 +55,10 @@ public class SaveButtonListener implements ActionListener {
             
             }
         }
+        
+        battle.setName(editor.getMapAndName().getMapName().getText());
+        System.out.println("Saved battle: " + battle.getName());
+        
         SaveButton save = (SaveButton) e.getSource();
         save.updateSaveButton();
         BattleIO.saveBattle("battles/battleTest.txt", battle);

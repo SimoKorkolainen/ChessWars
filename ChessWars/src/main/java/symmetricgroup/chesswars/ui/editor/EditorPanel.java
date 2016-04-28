@@ -16,6 +16,7 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.map.BattleMap;
+import symmetricgroup.chesswars.ui.RoundRectPanel;
 import symmetricgroup.chesswars.ui.map.MapMouseListener;
 import symmetricgroup.chesswars.ui.editor.settings.MapNameFieldListener;
 import symmetricgroup.chesswars.ui.map.MapScreen;
@@ -48,11 +49,11 @@ public class EditorPanel extends JPanel {
         
         GridBagConstraints constraints = new GridBagConstraints();
         
-        constraints.insets = new Insets(5, 5, 5, 5);
+        constraints.insets = new Insets(2, 2, 2, 2);
   
         constraints.anchor = GridBagConstraints.CENTER;
         
-        String name = "Best map ever";
+        String name = battle.getName();
         
         MapNameField mapName = new MapNameField(name, new MapNameFieldListener(this));
         editorRoom.getMapAndName().setMapName(name);
@@ -74,6 +75,7 @@ public class EditorPanel extends JPanel {
         constraints.gridy = 2;
         
         teamPanel = new TeamSelectionPanel(this);
+        //super.add(new RoundRectPanel(new Color(100, 100, 100), new Color(150, 150, 150), 10, teamPanel), constraints);
         super.add(teamPanel, constraints);
         
         constraints.gridx = 0;

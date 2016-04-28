@@ -18,10 +18,7 @@ import symmetricgroup.chesswars.players.ai.AiPlayer;
 import symmetricgroup.chesswars.players.ui.UserControl;
 import symmetricgroup.chesswars.players.ui.UserPlayer;
 
-/**
- *
- * @author Simo
- */
+
 /**
  * BattleParser on tarkoitettu taistelun muuttamiseen tekstiksi ja toisinpäin.
  * @author Simo
@@ -35,6 +32,11 @@ public class BattleParser {
     public static String battleToString(Battle battle) {
     
         StringBuilder sb = new StringBuilder();
+        
+        sb.append(battle.getName());
+        
+        sb.append(" NAME_END ");
+        
         
         sb.append(MapParser.mapToString(battle.getMap()));
 
@@ -92,11 +94,19 @@ public class BattleParser {
         
         try {
             
-            String batConf[] = battleConf.split("MAP_END ");
+            
+            
+            String batConf[] = battleConf.split("NAME_END ");
+            
+            String name = batConf[0];
+            
+            batConf = batConf[1].split("MAP_END ");
             
             BattleMap map = MapParser.stringToMap(batConf[0]);
             
             Battle battle = new Battle(map);
+            System.out.println("Creating new battle: " + name);
+            battle.setName(name);
             
             String conf[] = batConf[1].split(" ");
 
@@ -142,6 +152,9 @@ public class BattleParser {
             battle.setPlayers(players);
             battle.setMoves(moves);
             battle.setTurn(turn);
+            
+            System.out.println("Loaded battle has " + battle.getPlayers().size() + " players");
+            
             return battle;
             
         } catch (Exception e) {

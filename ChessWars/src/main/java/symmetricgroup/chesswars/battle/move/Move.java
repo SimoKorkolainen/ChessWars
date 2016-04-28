@@ -69,7 +69,15 @@ public class Move {
      * @return palauttaa siirron kopion
      */
     public Move copy() {
-        return new Move(startX, startY, endX, endY, piece.copy(), eaten.copy());
+        Piece eatenCopy = null;
+        if (eaten != null) {
+            eatenCopy = eaten.copy();
+        }
+        Piece pieceCopy = null;
+        if (piece != null) {
+            pieceCopy = piece.copy();
+        }
+        return new Move(startX, startY, endX, endY, eatenCopy, pieceCopy);
     }
     
     @Override

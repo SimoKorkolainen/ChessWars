@@ -24,7 +24,7 @@ import symmetricgroup.chesswars.ui.game.BattleMoveThread;
 public class Battle {
     private BattleMap map;
     private Map<ArmyColor, Integer> team;
-
+    private boolean stop;
     private List<Player> players;
     private int turn;
     private List<Move> moves;
@@ -42,7 +42,7 @@ public class Battle {
         this.moves = new ArrayList<>();
         this.defeatStates = new ArrayList<>();
         this.turn = 0;
-       
+        setName("The best map ever");
         setDefaultTeams();
     }
     /**
@@ -203,5 +203,15 @@ public class Battle {
     public void setName(String name) {
         map.setMapName(name);
     }
+    
+    
+    public void stop() {
+        stop = true;
+    }
+
+    public boolean isStopped() {
+        return stop;
+    }
+    
             
 }

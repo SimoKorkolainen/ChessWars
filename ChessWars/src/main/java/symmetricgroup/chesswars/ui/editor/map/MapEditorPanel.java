@@ -44,6 +44,7 @@ public class MapEditorPanel extends JPanel {
         pieceButtons = new ArrayList<>();
         colorButtons = new ArrayList<>();
         terrainButtons = new ArrayList<>();
+        super.setOpaque(false);
         createComponents();
 
     }

@@ -5,31 +5,26 @@
  */
 package symmetricgroup.chesswars.ui.editor.map;
 
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JToggleButton;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.pieces.Piece;
+import symmetricgroup.chesswars.ui.editor.RoundRectImageButton;
 
 /**
  * PieceSelectionButton on nappi, jota käytetään editorissa pelinappulan tyypin valitsemiseen.
  */
-public class PieceSelectionButton extends JToggleButton {
+public class PieceSelectionButton extends RoundRectImageButton {
     private Piece piece;
     
     public PieceSelectionButton(Piece piece) {
+        super(1, piece.getImage());
         this.piece = piece;
-        
-        super.setIcon(new ImageIcon(piece.getImage()));
-
+        updateIcons();
     }
     
-    @Override
-    public Dimension getPreferredSize() {
-        return new Dimension(50, 50);
-    }
+
     
     @Override
     public Dimension getMaximumSize() {
@@ -38,7 +33,8 @@ public class PieceSelectionButton extends JToggleButton {
     
     public void setColor(ArmyColor color) {
         piece.setColor(color);
-        super.setIcon(new ImageIcon(piece.getImage()));
+        setImage(piece.getImage());
+        updateIcons();
         super.repaint();
     }
 
@@ -46,4 +42,14 @@ public class PieceSelectionButton extends JToggleButton {
         return piece;
     }
     
+    public void updateIcons() {
+        
+        super.setIcon(new ImageIcon(icon(lighten(Color.gray, 20), lighten(Color.gray, 40))));
+        super.setPressedIcon(new ImageIcon(icon(lighten(Color.gray, 50), lighten(Color.gray, 70))));
+        super.setSelectedIcon(new ImageIcon(icon(lighten(Color.gray, 50), lighten(Color.gray, 70))));
+    }
+    
 }
+
+    
+

@@ -33,9 +33,10 @@ public class AiButtonPanel extends JPanel {
         
         
         grid = new JPanel();
+        grid.setOpaque(false);
         grid.setLayout(new GridLayout(2, 3));
         super.setLayout(new GridBagLayout());
-        
+        super.setOpaque(false);
         createComponents();
         addComponents();
     }

@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleIO;
 import symmetricgroup.chesswars.players.ui.UserControl;
+import symmetricgroup.chesswars.ui.map.MapAndNamePanel;
 import symmetricgroup.chesswars.ui.navigation.Navigation;
 import symmetricgroup.chesswars.ui.navigation.Room;
 
@@ -23,7 +24,7 @@ import symmetricgroup.chesswars.ui.navigation.Room;
  * Game on pelin esittämiseen käytetty luokka.
  */
 public class Game extends Room {
-    private MapScreen screen;
+    private MapAndNamePanel mapAndName;
     private Battle battle;
     UserControl control;
 
@@ -38,8 +39,7 @@ public class Game extends Room {
     
 
     public void createComponents() {
-        
-        screen = new MapScreen(battle, control);
+        MapScreen screen = new MapScreen(battle, control);
         
         MapMouseListener listener = new MapMouseListener(screen, control);
         
@@ -56,26 +56,36 @@ public class Game extends Room {
         constraints.gridx = 0;
         constraints.gridy = 0;
         
-        super.add(screen, constraints);
+        
+        mapAndName = new MapAndNamePanel(screen);
+        mapAndName.setMapName(battle.getName());
+
+        super.add(mapAndName, constraints);
+        
+
         
 
         constraints.gridx = 1;
         constraints.gridy = 0;
         
-        super.add(new BattleInfoPanel(battle), constraints);
+        super.add(new BattleInfoPanel(battle, getNavigation()), constraints);
     
     }
 
     @Override
     public void update() {
-        battle = BattleIO.readBattle("battles/battleTest.txt", control);
+        battle = loadBattle();
         super.removeAll();
         createComponents();
+        System.out.println("players " + battle.getPlayers().size());
         control.setBattle(battle);
+        
         battle.start();
         
     }
 
-
+    public Battle loadBattle() {
+        return BattleIO.readBattle("battles/battleTest.txt", control);
+    }
     
 }

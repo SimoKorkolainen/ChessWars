@@ -25,14 +25,14 @@ public class MapNameField extends JPanel {
     public MapNameField(String mapName, MapNameFieldListener listener) {
         this.mapName = mapName;
         super.setLayout(new GridLayout(2, 1));
-        super.setBorder(BorderFactory.createCompoundBorder(new EtchedBorder(), new EmptyBorder(10, 5, 10, 5)));
-        
+        super.setOpaque(false);
+        super.setBorder(new EmptyBorder(5, 5, 5, 5));
         createComponents(listener);
     }
     
     public void createComponents(MapNameFieldListener listener) {
         
-        super.add(new JLabel("Map name"));
+        super.add(new JLabel("Battle name"));
         
         JTextField field = new JTextField(mapName);
         field.getDocument().addDocumentListener(listener);

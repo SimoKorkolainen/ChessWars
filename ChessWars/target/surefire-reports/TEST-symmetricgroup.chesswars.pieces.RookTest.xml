@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="11" failures="0" name="symmetricgroup.chesswars.pieces.RookTest" time="0.012" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="symmetricgroup.chesswars.pieces.RookTest" time="0.006" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -62,14 +62,14 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookIsBlockedByMountains" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCantMoveOutsideMap" time="0.004"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCantMoveOutsideMap" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCanMoveCorrectNumberOfSteps" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookHasMoves" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCanMakeCorrectNumberOfMoves" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCantMakeIncorrectMoves" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCanEatEnemyPawn" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rooksColorIsCorrect" time="0"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCanMakeCorrectNumberOfMoves" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCantMakeIncorrectMoves" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rookCanEatEnemyPawn" time="0.001"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rooksColorIsCorrect" time="0.001"/>
   <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="rooksNameIsCorrect" time="0"/>
   <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="copyWorks" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="imageOfRookIsNotNull" time="0"/>
+  <testcase classname="symmetricgroup.chesswars.pieces.RookTest" name="imageOfRookIsNotNull" time="0.001"/>
 </testsuite>

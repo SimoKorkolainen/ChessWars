@@ -40,13 +40,13 @@ public class UserInterface implements Runnable {
         
         frame.setTitle("ChessWars");
         
+        
         showRoom(navigation.getMainMenu());
 
         frame.setVisible(true);
         frame.pack();
         
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
         
     }
     

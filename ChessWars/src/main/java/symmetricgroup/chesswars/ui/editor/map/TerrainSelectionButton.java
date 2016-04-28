@@ -5,22 +5,24 @@
  */
 package symmetricgroup.chesswars.ui.editor.map;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JToggleButton;
 import symmetricgroup.chesswars.terrain.Terrain;
+import symmetricgroup.chesswars.ui.editor.RoundRectImageButton;
 
 /**
  * TerrainSelectionButton on editorissa maaston tyypin valitsemiseen käyttetty nappi.
  */
-public class TerrainSelectionButton extends JToggleButton {
+public class TerrainSelectionButton extends RoundRectImageButton {
     private Terrain terrain;
 
     public TerrainSelectionButton(Terrain terrain) {
-        super();
+        super(1, terrain.getImage());
         this.terrain = terrain;
-        super.setIcon(new ImageIcon(terrain.getImage()));
+        updateIcons();
     }
 
     public Terrain getTerrain() {
@@ -36,5 +38,11 @@ public class TerrainSelectionButton extends JToggleButton {
         return getPreferredSize();
     }
     
+    public void updateIcons() {
+        
+        super.setIcon(new ImageIcon(icon(lighten(Color.gray, 20), lighten(Color.gray, 40))));
+        super.setPressedIcon(new ImageIcon(icon(lighten(Color.gray, 50), lighten(Color.gray, 70))));
+        super.setSelectedIcon(new ImageIcon(icon(lighten(Color.gray, 50), lighten(Color.gray, 70))));
+    }
     
 }
