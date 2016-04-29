@@ -14,9 +14,11 @@ Pelin käyttöliittymä koostuu kolmesta osasta.
 
 Pelin säännöt perustuvat perinteiseen shakkiin. Hevonen, kuningas, torni, lähetti ja kuningatar liikkuvat täsmälleen kuin shakissa. Tornin, lähetin ja kuningattaren askelpituus on rajoitettu kuuteen askeleeseen. Hevonen, sotilas ja kuningas voivat liikkua vain yhden askeleen. Siirtojen askelpituutta rajoittavat myös vuoret, joiden läpi vain sotilaat voivat kulkea. Lisäksi metsien läpi kulkeminen pienentää mahdollisten askelien lukumäärää.
 
-![Tornin liikkumismahdollisuudet](/dokumentaatio/tornin_liikkuminen.png "Tornin liikkuminenn")
+![Tornin liikkumismahdollisuudet](/dokumentaatio/tornin_liikkuminen.png "Tornin liikkuminen")
 
 Toisin kuin perinteisessä shakissa sotilaat voivat liikkua yhden askeljeen vaaka- tai pystysuuntaan. Sotilaat voivat myös liikkua vinottain syödessään vastustajan sotilaan. Jos vastustajan sotilasarvoton nappula syö oman sotilaan, ei tämän vastustaja nappulan syöminen ole mahdollista seuraavalla vuorolla omalla sotilaalla, koska sotilaat ovat pelkureita.
+
+![Sotilaan syöminen](/dokumentaatio/sotilaan_syominen_tornilla.png "Sotilaan syöminen")
 
 Jokaisella pelaajalla tulisi olla kuningas pelikentällä. Jos pelaajan kuningas syödään, pelaaja häviää pelin. Peli loppuu, kun enään on jäljellä vain samaan joukkueeseen kuuluvia pelaajia.
 
