@@ -16,7 +16,7 @@ Pelin säännöt perustuvat perinteiseen shakkiin. Hevonen, kuningas, torni, lä
 
 ![Tornin liikkumismahdollisuudet](/dokumentaatio/tornin_liikkuminen.png "Tornin liikkuminen")
 
-Toisin kuin perinteisessä shakissa sotilaat voivat liikkua yhden askeljeen vaaka- tai pystysuuntaan. Sotilaat voivat myös liikkua vinottain syödessään vastustajan sotilaan. Jos vastustajan sotilasarvoton nappula syö oman sotilaan, ei tämän vastustaja nappulan syöminen ole mahdollista seuraavalla vuorolla omalla sotilaalla, koska sotilaat ovat pelkureita.
+Toisin kuin perinteisessä shakissa sotilaat voivat liikkua yhden askeljeen vaaka- tai pystysuuntaan. Sotilaat voivat myös liikkua vinottain syödessään vastustajan sotilaan. Jos vastustajan sotilasarvoton nappula syö oman sotilaan, ei tämän vastustaja nappulan syöminen ole mahdollista seuraavalla vuorolla omalla sotilaalla, koska sotilaat ovat pelkureita. Tämä sääntö on välttämätön, jottei olisi mahdollista muodostaa voittamattomia sotilaista koostuvia muureja.
 
 ![Sotilaan syöminen](/dokumentaatio/sotilaan_syominen_tornilla.png "Sotilaan syöminen")
 
