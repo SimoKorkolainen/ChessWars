@@ -1,7 +1,7 @@
 
 # ChessWars pelin käyttöohje
 
-# Käyttöliittymä
+## Käyttöliittymä
 
 Pelin käyttöliittymä koostuu kolmesta osasta.
 
@@ -10,6 +10,8 @@ Pelin käyttöliittymä koostuu kolmesta osasta.
 * Taisteluhuoneessa on mahdollista pelata peliä tekoälyä vastaan tai toista ihmistä vastaan käyttäen samaa käyttöliittymää vuorotellen.
 
 
+## Pelin säännöt
 
+Pelin säännöt perustuvat perinteiseen shakkiin. Hevonen, kuningas, torni, lähetti ja kuningatar liikkuvat täsmälleen kuin shakissa, mutta niiden askelpituus on rajoitettu kuuteen askeleeseen. Siirtojen askelpituutta rajoittavat vuoret, joiden läpi vain sotilaat voivat kulkea. Metsien läpikulkeminen pienentää mahdollisten askelien lukumäärää.
 
 
