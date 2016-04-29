@@ -18,4 +18,5 @@ Pelin säännöt perustuvat perinteiseen shakkiin. Hevonen, kuningas, torni, lä
 
 Toisin kuin perinteisessä shakissa sotilaat voivat liikkua yhden askeljeen vaaka- tai pystysuuntaan. Sotilaat voivat myös liikkua vinottain syödessään vastustajan sotilaan. Jos vastustajan sotilasarvoton nappula syö oman sotilaan, ei tämän vastustaja nappulan syöminen ole mahdollista seuraavalla vuorolla omalla sotilaalla, koska sotilaat ovat pelkureita.
 
+Jokaisella pelaajalla tulisi olla kuningas pelikentällä. Jos pelaajan kuningas syödään, pelaaja häviää pelin. Peli loppuu, kun enään on jäljellä vain samaan joukkueeseen kuuluvia pelaajia.
 
