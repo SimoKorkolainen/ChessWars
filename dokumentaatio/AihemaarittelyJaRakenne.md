@@ -16,11 +16,19 @@ Pelaaminen tapahtuu lähtökohtaisesti tietokonetta vastaan. Tietokoneen tekoäl
 - Kenttäeditorin käyttö
 - Luodun kentän pelaaminen
   * Onnistuu, mikäli kentän luonti onnistui.
-- Pelin tallentaminen
-- Tallennetun pelin jatkaminen
- * Onnistuu, mikäli aikaisemmin tallennettu peli on olemassa.
- 
+
+
+## Rakenteen kuvaus
+
+Kohdassa Luokkakaavio on esiteltynä luokkakaavio ohjelman logiikasta. Luokat Battle ja BattleMap ovat toiminnallisuuden tärkeimmät luokat. Ohjelmaa toteutettaessa ajateltiin, että kartta on olemassaoloriippuvainen taistelusta. Kartta on olemassa vain yhtä taistelua varten ja taistelua varten on vain yksi kartta. Ohjelmakoodissa ei ole kuitenkaan mitään rajoitetta, mikä estäisi kartan vaihtamisen kesken taistelun.
+
+Nappuloita varten tehtiin abstrakti yläluokka Piece, joka vähentää koodin toisteisuutta. Alaluokat Rook ja Knight perivät yläluokan Piece. Maastotyyppejä varten tehtiin rajapinta Terrain. Rajapinnassa vaaditaan, että maastoilla on kustannus ja kuva. Maastotyypit Woods ja Mountains toteuttavat rajapinnan Terrain.
+
+Taistelun siirrot toteutettaan kartalla Move-olioden avulla. Move-olio sisältää tiedon siirrettävästä nappulasta ja mahdollisesti syödystä nappulasta. Move-olio tietää myös siirron alku- ja loppukoordinaatit.
+
 ## Luokkakaavio
+
+
 
 ![Luokkakaavio](/dokumentaatio/chesswarsClassDiagram2.png "Luokkakaavio")
 
