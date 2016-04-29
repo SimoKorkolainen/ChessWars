@@ -58,7 +58,7 @@ public class Game extends Room {
         
         
         mapAndName = new MapAndNamePanel(screen);
-        mapAndName.setMapName(battle.getName());
+        mapAndName.setMapName(battle.getMap().getMapName());
 
         super.add(mapAndName, constraints);
         

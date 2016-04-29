@@ -56,8 +56,8 @@ public class SaveButtonListener implements ActionListener {
             }
         }
         
-        battle.setName(editor.getMapAndName().getMapName().getText());
-        System.out.println("Saved battle: " + battle.getName());
+        battle.getMap().setMapName(editor.getMapAndName().getMapName().getText());
+        System.out.println("Saved battle: " + battle.getMap().getMapName());
         
         SaveButton save = (SaveButton) e.getSource();
         save.updateSaveButton();

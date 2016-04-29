@@ -13,6 +13,7 @@ symmetricgroup\chesswars\map\MapParserTest.class
 symmetricgroup\chesswars\battle\defeat\DefeatStateParserTest.class
 symmetricgroup\chesswars\terrain\PlainTest.class
 symmetricgroup\chesswars\pieces\PieceParserTest.class
+symmetricgroup\chesswars\players\ai\AiPlayerGameplayTest.class
 symmetricgroup\chesswars\terrain\WoodsTest.class
 symmetricgroup\chesswars\map\BattleMapTest.class
 symmetricgroup\chesswars\pieces\QueenTest.class

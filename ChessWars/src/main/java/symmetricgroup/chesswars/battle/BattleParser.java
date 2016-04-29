@@ -33,7 +33,7 @@ public class BattleParser {
     
         StringBuilder sb = new StringBuilder();
         
-        sb.append(battle.getName());
+        sb.append(battle.getMap().getMapName());
         
         sb.append(" NAME_END ");
         
@@ -106,7 +106,7 @@ public class BattleParser {
             
             Battle battle = new Battle(map);
             System.out.println("Creating new battle: " + name);
-            battle.setName(name);
+            battle.getMap().setMapName(name);
             
             String conf[] = batConf[1].split(" ");
 

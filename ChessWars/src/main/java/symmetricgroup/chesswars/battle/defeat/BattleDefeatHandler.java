@@ -22,6 +22,7 @@ public class BattleDefeatHandler {
      * 
      */
     public static void handleDefeat(Battle battle, ArmyColor color) {
+        int turn = battle.getTurn();
         Player loser = null;
         int playerPos = 0;
         
@@ -34,6 +35,7 @@ public class BattleDefeatHandler {
             
             playerPos++;
         }
+        System.out.println("playerPos " + playerPos);
         if (loser != null) {
             if (playerPos < battle.getTurn()) {
                 battle.setTurn(battle.getTurn() - 1);
@@ -43,7 +45,7 @@ public class BattleDefeatHandler {
             
             battle.setTurn(battle.getTurn() % battle.getPlayers().size());
             
-            DefeatState defeat = new DefeatState(loser, playerPos);
+            DefeatState defeat = new DefeatState(loser, playerPos, turn);
 
             defeat.removeDefeated(battle.getMap());
             
@@ -62,9 +64,9 @@ public class BattleDefeatHandler {
         
         battle.getPlayers().add(defeat.getPlayerPos(), defeat.getPlayer());
         
-        if (defeat.getPlayerPos() <= battle.getTurn()) {
-            battle.setTurn(battle.getTurn() + 1);
-        }
+        
+        battle.setTurn(defeat.getTurn());
+        
     }
 
 }

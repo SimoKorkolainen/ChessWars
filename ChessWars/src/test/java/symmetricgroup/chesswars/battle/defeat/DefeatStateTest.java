@@ -29,6 +29,7 @@ import symmetricgroup.chesswars.players.ai.AiPlayer;
 public class DefeatStateTest {
     private Battle battle;
     private BattleMap map;
+ 
     
     public DefeatStateTest() {
     }

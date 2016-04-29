@@ -76,7 +76,7 @@ public class AiPlayer implements Player {
         List<EvalMove> evalMoves = EvalMove.calculateSortedEvalMoves(copy, myTeam);
         Collections.reverse(evalMoves);
         for (EvalMove i : evalMoves) {
-            
+            System.out.println(i.getMove());
             copy.doMove(i.getMove());
             
             if (BattleWinnerChecker.myTeamHasWon(battle, color)) {
@@ -88,14 +88,11 @@ public class AiPlayer implements Player {
             if (newValue > value) {
                 value = newValue;
                 best = i.getMove();
-
             }
             
             copy.undoLastMove();
-        
         }
-        System.out.println(value);
-        //System.out.println(best);
+        
         return best;
     }
     
@@ -122,10 +119,9 @@ public class AiPlayer implements Player {
             }
 
             value = Math.max(value, newValue);
-            
 
             copy.undoLastMove();
-            
+
             if (beta <= value) {
                 return value;
             }
@@ -146,7 +142,7 @@ public class AiPlayer implements Player {
         List<EvalMove> evalMoves = EvalMove.calculateSortedEvalMoves(copy, myTeam);
         
         for (EvalMove i : evalMoves) {
-            
+
             copy.doMove(i.getMove());
             
             double newValue;
@@ -178,7 +174,6 @@ public class AiPlayer implements Player {
 
     private double calculateValue(double alpha, double beta, int depth) {
         if (myTeam.contains(copy.nextColorToMove())) {
-            
             return maxValue(alpha, beta, depth - 1);
         } 
         return minValue(alpha, beta, depth - 1);  
@@ -196,7 +191,6 @@ public class AiPlayer implements Player {
         Move next = alphaBeta();
         thread.executeMove(next);  
     }
-    
     
     @Override
     public Player copy(Battle battle) {

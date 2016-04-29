@@ -53,7 +53,7 @@ public class EditorPanel extends JPanel {
   
         constraints.anchor = GridBagConstraints.CENTER;
         
-        String name = battle.getName();
+        String name = battle.getMap().getMapName();
         
         MapNameField mapName = new MapNameField(name, new MapNameFieldListener(this));
         editorRoom.getMapAndName().setMapName(name);

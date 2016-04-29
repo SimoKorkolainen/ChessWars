@@ -23,6 +23,7 @@ import symmetricgroup.chesswars.players.Player;
 public class DefeatState {
     private Player player;
     private int playerPos;
+    private int turn;
     private List<Move> removeMove;
     
    
@@ -31,11 +32,13 @@ public class DefeatState {
      * Konstruktori luo lopputila olion.
      * @param player pelaaja, jonka lopputila halutaan luoda
      * @param playerPos pelaajan, indeksi taistelun pelaajalistalla ennen pelaajan häviötä.
+     * @param turn siirron numero
      */
-    public DefeatState(Player player, int playerPos) {
+    public DefeatState(Player player, int playerPos, int turn) {
         this.player = player;
         this.playerPos = playerPos;
         this.removeMove = new ArrayList<Move>();
+        this.turn = turn;
     }
     
     
@@ -99,6 +102,8 @@ public class DefeatState {
         this.removeMove = removeMove;
     }
     
-
+    public int getTurn() {
+        return turn;
+    }
     
 }

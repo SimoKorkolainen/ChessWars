@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package symmetricgroup.chesswars.battle;
 
 import symmetricgroup.chesswars.players.ArmyColor;
@@ -17,7 +13,6 @@ import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.pieces.Piece;
 import symmetricgroup.chesswars.ui.game.BattleMoveThread;
-
 /**
 * Battle-luokka mallintaa taistelun kulkua kartalla.
 */
@@ -37,12 +32,11 @@ public class Battle {
     public Battle(BattleMap map) {
         this.map = map;
         this.team = new HashMap<>();
-
         this.players = new ArrayList<>();
         this.moves = new ArrayList<>();
         this.defeatStates = new ArrayList<>();
         this.turn = 0;
-        setName("The best map ever");
+        map.setMapName("The best map ever");
         setDefaultTeams();
     }
     /**
@@ -99,19 +93,15 @@ public class Battle {
         
         Piece eaten = move.getEaten();
         if (eaten != null && "King".equals(eaten.getName())) {
-        
             BattleDefeatHandler.handleDefeat(this, eaten.getColor());
         }
     }
-
     private void undoMove(Move move) {
         Piece eaten = move.getEaten();
         if (eaten != null && "King".equals(eaten.getName())) {
         
             BattleDefeatHandler.undoDefeat(this, defeatStates.remove(defeatStates.size() - 1));
-        
         }
-        
         turn = (turn - 1 + players.size()) % players.size();
         map.undoMove(move);
     }
@@ -139,7 +129,6 @@ public class Battle {
     public Player nextPlayerToMove() {
         return players.get(turn);
     }
-    
     /**
      *  Metodi kertoo mihin joukkueeseen väri kuuluu
      * @param color väri, jonka joukkue halutaan tietää
@@ -195,23 +184,14 @@ public class Battle {
     public List<DefeatState> getDefeatStates() {
         return defeatStates;
     }
-    
-    public String getName() {
-        return map.getMapName();
-    }
-    
-    public void setName(String name) {
-        map.setMapName(name);
-    }
-    
-    
+    /**
+     * Metodi lopettaa taistelun.
+     */
     public void stop() {
         stop = true;
     }
 
     public boolean isStopped() {
         return stop;
-    }
-    
-            
+    }       
 }

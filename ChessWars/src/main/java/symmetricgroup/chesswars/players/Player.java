@@ -25,6 +25,11 @@ public interface Player {
      */
     public ArmyColor getColor();
 
+    /**
+     * Metodi palauttaa kopion pelaajasta
+     * @param battle Taistelu, jossa kopion halutaan pelaavan
+     * @return kopion pejaajasta
+     */
     public Player copy(Battle battle);
     
 }

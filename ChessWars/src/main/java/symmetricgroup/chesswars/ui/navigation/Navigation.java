@@ -58,7 +58,7 @@ public class Navigation {
         UserControl control = new UserControl();
 
         Game game = new Game(this, new Battle(new BattleMap(10, 10)), control);
-        String name = game.loadBattle().getName();
+        String name = game.loadBattle().getMap().getMapName();
         battleMenu.addMenuButton(new MenuButton(name.trim(), game));
 
         battleMenu.addMenuButton(new MenuButton("Main menu", mainMenu));

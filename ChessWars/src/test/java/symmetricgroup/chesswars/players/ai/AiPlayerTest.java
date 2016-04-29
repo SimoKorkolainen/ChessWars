@@ -24,6 +24,7 @@ import symmetricgroup.chesswars.terrain.Mountains;
  * @author Simo
  */
 public class AiPlayerTest {
+    
     private Battle battle;
     private BattleMap map;
     private AiPlayer black;
@@ -70,13 +71,13 @@ public class AiPlayerTest {
         setOrderWRB();
         assertFalse(white.alphaBeta() == null);
     }
-    
+    /*
     @Test
     public void whiteEatsBlackKing() {
         setOrderWRB();
         Move best = white.alphaBeta();
         assertEquals("King", best.getEaten().getName());
-    }
+    }*/
     
     @Test
     public void blackKingMovesToSafety() {
@@ -114,4 +115,5 @@ public class AiPlayerTest {
         black.setUpTeam();
         red.setUpTeam();
     }
+    
 }

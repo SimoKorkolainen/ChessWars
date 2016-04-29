@@ -35,6 +35,10 @@ public class DefeatStateParser {
         sb.append(defeat.getPlayerPos());
         
         sb.append(" ");
+        
+        sb.append(defeat.getTurn());
+        
+        sb.append(" ");
             
         sb.append(defeat.getDefeatedRemoveMoves().size());
         
@@ -63,7 +67,11 @@ public class DefeatStateParser {
             
             ArmyColor color = ArmyColor.stringToArmyColor(conf[0]);
             
-            int playerPos = Integer.parseInt(conf[1]);
+            int turn = Integer.parseInt(conf[1]);
+            
+            int playerPos = Integer.parseInt(conf[2]);
+            
+            
             
             Player player = null;
             
@@ -78,9 +86,9 @@ public class DefeatStateParser {
                 return null;
             }
             
-            DefeatState defeat = new DefeatState(player, playerPos);
+            DefeatState defeat = new DefeatState(player, playerPos, turn);
             
-            int defeatedN = Integer.parseInt(conf[2]);
+            int defeatedN = Integer.parseInt(conf[3]);
             
             List<Move> moves = new ArrayList<>();
             
@@ -90,7 +98,7 @@ public class DefeatStateParser {
                 String moveConf = "";
                 
                 for (int j = 0; j < 6; j++) {
-                    moveConf += conf[3 + i * 6 + j] + " ";
+                    moveConf += conf[4 + i * 6 + j] + " ";
                 }
                 moves.add(Move.stringToMove(moveConf));
                 
