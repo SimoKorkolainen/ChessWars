@@ -35,4 +35,7 @@ Karttaeditorissa on paljon erilaista toiminnallisuutta.
   - Kun värin kuningas on lisätty kartaalle, on mahdollista valita pelaako väriä tekoäly vai käyttäjä.
   - Tällöin on myös mahdollista valita numeronapeista joukkuenumerot eri väreille.
   - Kuvattomista värinappuloista on mahdollista valita kartalle asetettavien nappuloiden väri.
-  - Kartalle asetettavan nappulan tai maaston voi valita kuvallista nappia painamalla.
+  - Kartalle asetettavan nappulan tai maaston voi valita kuvallista nappia painamalla. Karttaa klikattaessa haluttu nappula tai maasto asettuu kartalle, mikäli se on mahdollista.
+  - Kartan on mahdollista tyhjentää painamalla Clear-nappia.
+  - Kartan voi tallentaa painamalla Save-nappia.
+  - Editorin valikkoon voi palata painamalla Editor menu-nappia.
