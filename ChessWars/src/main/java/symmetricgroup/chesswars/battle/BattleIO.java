@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -42,25 +43,11 @@ public class BattleIO {
      * @param battle tallenettava taistelu
      */
     public static void saveBattle(String filename, Battle battle) {
+       
         String battleConf = BattleParser.battleToString(battle);
-
         
-        try  {
-            
-            File file = new File(filename);
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-            
-            FileWriter writer = new FileWriter(filename);
-            
-            writer.append(battleConf);
-            writer.close();
-            
-        } catch (Exception e) {
+        writeBattleConf(filename, battleConf);
         
-            System.out.println("Unable to save the map " + filename + " :"  + e.getLocalizedMessage());
-            
-        }
     
     }
     
@@ -72,28 +59,33 @@ public class BattleIO {
      */
     public static Battle readBattle(String filename, UserControl control) {
 
-
-        
         try  {
             File file = new File(filename);
-            
-            System.out.println(file.getAbsolutePath());
             
             BufferedReader reader = new BufferedReader(new FileReader(file));
 
             
             String battleConf = reader.readLine();
+            
+            reader.close();
 
             return BattleParser.stringToBattle(battleConf, control);
             
-        } catch (Exception e) {
+        } catch (Exception e) { }
         
-            System.out.println("Unable to read the map " + filename + " :" + e.getLocalizedMessage());
-            
-        }
         return null;
     }
     
-
+    private static void writeBattleConf(String filename, String battleConf) {
+        
+            
+        try (FileWriter writer = new FileWriter(filename)) {
+            
+            writer.append(battleConf);
+            
+        } catch (IOException e) {
+        
+        }
+    }
     
 }

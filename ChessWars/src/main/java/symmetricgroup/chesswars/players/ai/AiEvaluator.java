@@ -24,6 +24,7 @@ public class AiEvaluator {
     public static final double RANDOMNESS = 0.001;
     public static final double DIST_TO_KING_IMPORTANCE = 0.01;
     
+    
     /**
      * Metodi laskee heuristiikkafunktion arvon kartan nykyisen tilanteen perusteella.
      * @param map evaluoitava kartta
@@ -32,11 +33,8 @@ public class AiEvaluator {
      * @return heuristiikkafunktion arvo
      */
     public static double evaluate(BattleMap map, Set<ArmyColor> myTeam, boolean random) {
-        double eval = 0;
-
-        if (random) {
-            eval += Math.random() * RANDOMNESS;
-        }
+        double eval = addRandomness(random);
+        
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
                 eval += evalMapPosition(i, j, map, myTeam);
@@ -48,35 +46,61 @@ public class AiEvaluator {
     
     }
     
+    private static double addRandomness(boolean random) {
+        double eval = 0;
+        if (random) {
+            eval += Math.random() * RANDOMNESS;
+        }
+        return eval;
+    }
+    
     private static double evalMapPosition(int x, int y, BattleMap map, Set<ArmyColor> myTeam) {
-        double factor = -1 - AGGRESSIVENESS;
+        
         
         Piece p = map.getPiece(x, y);
         
         if (p != null) {
-            if (myTeam.contains(p.getColor())) {
-                factor = 1;
-            }
 
-            switch (p.getName()) {
+
+            return evaluatePiece(x, y, map, p, myTeam);
             
-                case "Rook": return factor * ROOK_VALUE;
-                case "Bishop": return factor * BISHOP_VALUE;
-                case "Knight": return factor * KNIGHT_VALUE;
-                       
-                case "King": 
-                    
-                    if (myTeam.contains(p.getColor())) {
-                        return factor * KING_VALUE;
-                    } 
-                    return factor * KING_VALUE - distanceToKing(map, myTeam, x, y) * DIST_TO_KING_IMPORTANCE;
-                    
-                case "Queen": return factor * QUEEN_VALUE;
-                case "Pawn": return factor * PAWN_VALUE; 
-            }
         }
         
         return 0;
+    }
+    
+    private static double evaluatePiece(int x, int y, BattleMap map, Piece piece, Set<ArmyColor> myTeam) {
+        double factor = -1 - AGGRESSIVENESS;
+
+        if (myTeam.contains(piece.getColor())) {
+            factor = 1;
+        }
+
+        if (!"King".equals(piece.getName()))  {
+            return factor * evaluateNotKing(piece);
+        }
+
+
+        return evaluateKing(factor, map, myTeam, x, y);
+    }
+    
+    private static double evaluateKing(double factor, BattleMap map, Set<ArmyColor> myTeam, int kingX, int kingY) {
+        if (myTeam.contains(map.getPiece(kingX, kingY).getColor())) {
+            return factor * KING_VALUE;
+        } 
+        return factor * KING_VALUE - distanceToKing(map, myTeam, kingX, kingY) * DIST_TO_KING_IMPORTANCE;
+    }
+    
+    private static double evaluateNotKing(Piece piece) {
+        switch (piece.getName()) {
+
+            case "Rook": return ROOK_VALUE;
+            case "Bishop": return BISHOP_VALUE;
+            case "Knight": return KNIGHT_VALUE;  
+            case "Queen": return QUEEN_VALUE;
+            case "Pawn": return PAWN_VALUE; 
+            default: return 0;
+        }
     }
     
     
@@ -84,16 +108,22 @@ public class AiEvaluator {
         double distSum = 0;
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
-                if (map.getPiece(i, j) != null) {
-                    if (myTeam.contains(map.getPiece(i, j).getColor())) {
-                        distSum += distance(kingX, kingY, i, j) / (map.getWidth() + map.getHeight());
-                    }
-                }
+                
+                distSum += pieceDistanceToKing(map, myTeam, kingX, kingY, i, j);
                 
             }
         
         }
         return distSum;
+    }
+    
+    private static double pieceDistanceToKing(BattleMap map, Set<ArmyColor> myTeam, int kingX, int kingY, int x, int y) {
+        if (map.getPiece(x, y) != null) {
+            if (myTeam.contains(map.getPiece(x, y).getColor())) {
+                return distance(kingX, kingY, x, y) / (map.getWidth() + map.getHeight());
+            }
+        }
+        return 0;
     }
     
     /**

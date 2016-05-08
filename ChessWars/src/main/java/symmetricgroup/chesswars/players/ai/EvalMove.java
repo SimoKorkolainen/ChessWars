@@ -61,10 +61,7 @@ public class EvalMove implements Comparable<EvalMove> {
         List<Move> moves = calculator.allPossibleNextMoves();
         List<EvalMove> evalMoves = new ArrayList<>();
         for (Move i : moves) {
-            battle.doMove(i);
-            double eval = AiEvaluator.evaluate(battle.getMap(), myTeam, true);
-            evalMoves.add(new EvalMove(eval, i));
-            battle.undoLastMove();
+            addEvaluatedMove(battle, myTeam, evalMoves, i);
         }
         
         Collections.sort(evalMoves);
@@ -72,5 +69,12 @@ public class EvalMove implements Comparable<EvalMove> {
         return evalMoves;
     
     } 
+    
+    private static void addEvaluatedMove(Battle battle, Set<ArmyColor> myTeam, List<EvalMove> evalMoves, Move i) {
+        battle.doMove(i);
+        double eval = AiEvaluator.evaluate(battle.getMap(), myTeam, true);
+        evalMoves.add(new EvalMove(eval, i));
+        battle.undoLastMove();
+    }
     
 }

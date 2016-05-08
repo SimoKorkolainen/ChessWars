@@ -67,7 +67,7 @@ public class SaveButtonListener implements ActionListener {
     private void addPlayer(ArmyColor color, int team, boolean ai) {
         Player player;
         if (ai) {
-            player = new AiPlayer(4, color, battle);
+            player = new AiPlayer(4, color, battle, true);
         } else {
             player = new UserPlayer(color, control);
         }

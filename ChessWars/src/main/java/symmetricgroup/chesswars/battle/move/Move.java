@@ -69,15 +69,16 @@ public class Move {
      * @return palauttaa siirron kopion
      */
     public Move copy() {
-        Piece eatenCopy = null;
-        if (eaten != null) {
-            eatenCopy = eaten.copy();
+        
+        return new Move(startX, startY, endX, endY, pieceCopy(piece), pieceCopy(eaten));
+        
+    }
+    
+    private Piece pieceCopy(Piece piece) {
+        if (piece == null) {
+            return null;
         }
-        Piece pieceCopy = null;
-        if (piece != null) {
-            pieceCopy = piece.copy();
-        }
-        return new Move(startX, startY, endX, endY, eatenCopy, pieceCopy);
+        return piece.copy();
     }
     
     @Override
@@ -95,20 +96,29 @@ public class Move {
         
         try {
 
-            int startX = Integer.parseInt(conf[0]);
-            int startY = Integer.parseInt(conf[1]);
-            int endX = Integer.parseInt(conf[2]);
-            int endY = Integer.parseInt(conf[3]);
-            Piece piece = PieceParser.stringToPiece(conf[4]);
-            Piece eaten = PieceParser.stringToPiece(conf[5]);
-            
-            return new Move(startX, startY, endX, endY, piece, eaten);
-        
-        } catch (Exception e) {
-            System.out.println("Unable to parse move: " + e.getMessage());
-        }
+            return parseMove(conf);
+
+        } catch (Exception e) { }
         
         return null;
     
     }
+    
+    private static Move parseMove(String[] conf) throws Exception {
+        int sX = Integer.parseInt(conf[0]);
+        int sY = Integer.parseInt(conf[1]);
+        int eX = Integer.parseInt(conf[2]);
+        int eY = Integer.parseInt(conf[3]);
+        Piece p = PieceParser.stringToPiece(conf[4]);
+        Piece e = PieceParser.stringToPiece(conf[5]);
+
+        return new Move(sX, sY, eX, eY, p, e);
+        
+    }
+
+    public void setEaten(Piece eaten) {
+        this.eaten = eaten;
+    }
+    
+    
 }

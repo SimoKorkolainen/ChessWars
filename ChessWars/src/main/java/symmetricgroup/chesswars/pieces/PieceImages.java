@@ -7,6 +7,8 @@ package symmetricgroup.chesswars.pieces;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.util.ImageColorer;
 import symmetricgroup.chesswars.util.ImageLoader;
@@ -23,24 +25,29 @@ public class PieceImages {
     private BufferedImage greenImage;
     private BufferedImage blueImage;
     private BufferedImage yellowImage;
-    
+    private Map<ArmyColor, BufferedImage> images;
     /**
      * Konstruktori lataa nappulan kuvat ja värittää ne.
      * @param pieceName nappulan nimi
      */
     public PieceImages(String pieceName) {
-        
+        this.images = new HashMap<>();
         String startPart = "/images/";
         String endPart = pieceName + ".png";
         ImageLoader loader = new ImageLoader();
-        whiteImage = loader.loadImage(startPart + "White" + endPart);
-        blackImage = loader.loadImage(startPart + "Black" + endPart);
+        
+        images.put(ArmyColor.WHITE, loader.loadImage(startPart + "White" + endPart));
+        images.put(ArmyColor.BLACK, loader.loadImage(startPart + "Black" + endPart));
 
-        redImage = ImageColorer.color(whiteImage, ArmyColor.RED.getDrawingColor());
-        greenImage = ImageColorer.color(whiteImage, ArmyColor.GREEN.getDrawingColor());
-        blueImage = ImageColorer.color(whiteImage, ArmyColor.BLUE.getDrawingColor());
-        yellowImage = ImageColorer.color(whiteImage, ArmyColor.YELLOW.getDrawingColor());
+        addColoredImage(ArmyColor.RED);
+        addColoredImage(ArmyColor.GREEN);
+        addColoredImage(ArmyColor.BLUE);
+        addColoredImage(ArmyColor.YELLOW);
                 
+    }
+    
+    private void addColoredImage(ArmyColor color) {
+        images.put(color, ImageColorer.color(images.get(ArmyColor.WHITE), color.getDrawingColor()));
     }
     
     /**
@@ -50,23 +57,7 @@ public class PieceImages {
      */
     public BufferedImage getImage(ArmyColor color) {
 
-        switch (color) {
-            
-            case RED: return redImage;
-                
-            case GREEN: return greenImage;
-                
-            case BLUE: return blueImage;
-                
-            case BLACK: return blackImage;
-                
-            case WHITE: return whiteImage;
-            
-            case YELLOW: return yellowImage;
-                
-            default: return null;
-    
-        }
+        return images.get(color);
         
     }
     

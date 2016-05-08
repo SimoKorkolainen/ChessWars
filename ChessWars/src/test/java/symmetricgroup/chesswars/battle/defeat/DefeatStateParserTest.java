@@ -94,12 +94,12 @@ public class DefeatStateParserTest {
     }
     
     public void setUpPlayers() {
-        white = new AiPlayer(2, ArmyColor.WHITE, battle);
-        black = new AiPlayer(2, ArmyColor.BLACK, battle);
-        blue = new AiPlayer(2, ArmyColor.BLUE, battle);
-        red = new AiPlayer(2, ArmyColor.RED, battle);
-        green = new AiPlayer(2, ArmyColor.GREEN, battle);
-        yellow = new AiPlayer(2, ArmyColor.YELLOW, battle);      
+        white = new AiPlayer(2, ArmyColor.WHITE, battle, false);
+        black = new AiPlayer(2, ArmyColor.BLACK, battle, false);
+        blue = new AiPlayer(2, ArmyColor.BLUE, battle, false);
+        red = new AiPlayer(2, ArmyColor.RED, battle, false);
+        green = new AiPlayer(2, ArmyColor.GREEN, battle, false);
+        yellow = new AiPlayer(2, ArmyColor.YELLOW, battle, false);      
         addPlayers();
     } 
     

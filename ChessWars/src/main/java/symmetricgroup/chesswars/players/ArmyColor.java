@@ -1,6 +1,8 @@
 package symmetricgroup.chesswars.players;
 
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,31 +29,14 @@ public enum ArmyColor {
     private ArmyColor(String color, Color drawingColor) {
         this.color = color;
         this.drawingColor = drawingColor;
+        
     }
 
     public Color getDrawingColor() {
         return drawingColor;
     }
     
-    /**
-     * Metodi muuttaa tekstin väriksi.
-     * @param armyColor värin kuvaava teksti
-     * @return tekstin kuvaama väri
-     */
-    public static ArmyColor stringToArmyColor(String armyColor) {
-        switch (armyColor) {
-        
-            case "Black": return ArmyColor.BLACK;
-            case "White": return ArmyColor.WHITE;
-            case "Green": return ArmyColor.GREEN;
-            case "Blue": return ArmyColor.BLUE;
-            case "Red": return ArmyColor.RED;
-            case "Yellow": return ArmyColor.YELLOW;
-            default: return null;
-             
-        }
-    
-    }
+
     
     @Override
     public String toString() {

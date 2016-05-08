@@ -1,4 +1,3 @@
-
 package symmetricgroup.chesswars.battle;
 
 import symmetricgroup.chesswars.players.ArmyColor;
@@ -30,15 +29,24 @@ public class Battle {
      * @param map kartta, jossa taistelu tapahtuu
      */
     public Battle(BattleMap map) {
+        this();
         this.map = map;
+        map.setMapName("The best map ever");
+    }
+    
+    /** 
+     * Taistelun luomiseen tarkoitettu konstruktori.
+     */
+    public Battle() {
         this.team = new HashMap<>();
         this.players = new ArrayList<>();
         this.moves = new ArrayList<>();
         this.defeatStates = new ArrayList<>();
         this.turn = 0;
-        map.setMapName("The best map ever");
-        setDefaultTeams();
+        BattleTeamSetter.setDefaultTeams(this);
     }
+
+    
     /**
      * Taistelun alottava metodi. Pelaajat tulee olla lisättynä ennen taistelun aloitusta.
      * Metodin suorituksen seurauksena ensimmäiseltä vuorossa olevalta pelaajalta kysytään siirto.
@@ -56,19 +64,7 @@ public class Battle {
     public void setTeam(ArmyColor color, int teamNumber) {
         team.put(color, teamNumber);
     }
-    /**
-     * Metodi asettaa oletusarvoiset joukkueet.
-     * Jokainen pelaaja on oletusarvoisesti eri joukkueessa.
-     *
-     */
-    public void setDefaultTeams() {
-        setTeam(ArmyColor.WHITE, 1);
-        setTeam(ArmyColor.BLACK, 2);
-        setTeam(ArmyColor.BLUE, 3); 
-        setTeam(ArmyColor.RED, 4); 
-        setTeam(ArmyColor.GREEN, 5);
-        setTeam(ArmyColor.YELLOW, 6);
-    }
+
     /**
      * Metodi addPlayer lisää uuden pelaajan peliin. Pelaajalla oletetaan olevan kuningas kartalla.
      * Pelaajat tulee lisätä ennen taistelun aloitusta.
@@ -193,5 +189,10 @@ public class Battle {
 
     public boolean isStopped() {
         return stop;
-    }       
+    }    
+
+    public void setMap(BattleMap map) {
+        this.map = map;
+    }
+    
 }

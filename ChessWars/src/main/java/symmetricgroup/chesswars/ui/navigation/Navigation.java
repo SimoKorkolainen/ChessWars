@@ -30,9 +30,9 @@ public class Navigation {
     }
    
     public void createRooms() {
-        mainMenu = new NavigationRoom("ChessWars", this);
-        editorMenu = new NavigationRoom("Battle editor", this);
-        battleMenu = new NavigationRoom("Battle room", this);
+        mainMenu = new NavigationRoom("ChessWars", "What do you want to do?", this);
+        editorMenu = new NavigationRoom("Battle editor", "Please edit map", this);
+        battleMenu = new NavigationRoom("Battle room", "Select map", this);
     }
     
     public void connectRooms() {
@@ -48,8 +48,7 @@ public class Navigation {
     
     
     public void connectEditorMenu() {
-
- 
+  
         editorMenu.addMenuButton(new MenuButton("Edit map", new EditorRoom(this, new Battle(new BattleMap(10, 10)))));
         editorMenu.addMenuButton(new MenuButton("Main menu", mainMenu));
     }
@@ -64,6 +63,8 @@ public class Navigation {
         battleMenu.addMenuButton(new MenuButton("Main menu", mainMenu));
         
     }
+    
+    
     public NavigationRoom getMainMenu() {
         return mainMenu;
     }
@@ -73,6 +74,7 @@ public class Navigation {
     }
 
     public void goToRoom(Room room) {
+        update(room);
         room.update();
         ui.showRoom(room);
     }
@@ -85,6 +87,13 @@ public class Navigation {
 
     public NavigationRoom getBattleMenu() {
         return battleMenu;
+    }
+    
+    public void update(Room room) {
+        if (room == battleMenu) {
+            battleMenu.clearMenuButtons();
+            connectBattleMenu();
+        }
     }
     
     

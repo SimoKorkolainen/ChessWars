@@ -40,14 +40,21 @@ public class MapCopier {
         Piece[][] copy = new Piece[map.getHeight()][map.getWidth()];
         for (int i = 0; i < map.getWidth(); i++) {
             for (int j = 0; j < map.getHeight(); j++) {
-                if (map.getPiece(i, j) == null) {
-                    copy[j][i] = null;
-                } else {
-                    copy[j][i] = map.getPiece(i, j).copy();
-                }
+
+                copy[j][i] = copyPiece(i, j, map);
+                
             }
         }
         return copy;
+    }
+    
+    private static Piece copyPiece(int x, int y, BattleMap map) {
+        if (map.getPiece(x, y) == null) {
+            return null;
+        }
+        
+        return map.getPiece(x, y).copy();
+        
     }
     
 }

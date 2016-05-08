@@ -22,35 +22,16 @@ public class BattleDefeatHandler {
      * 
      */
     public static void handleDefeat(Battle battle, ArmyColor color) {
-        int turn = battle.getTurn();
-        Player loser = null;
-        int playerPos = 0;
-        
-        for (Player i : battle.getPlayers()) {
-            
-            if (i.getColor() == color) {
-                loser = i;
-                break;
-            }
-            
-            playerPos++;
+        DefeatState defeat = createDefeat(battle, color);
+        if (defeat == null) {
+            return;
         }
-        System.out.println("playerPos " + playerPos);
-        if (loser != null) {
-            if (playerPos < battle.getTurn()) {
-                battle.setTurn(battle.getTurn() - 1);
-            }
-            
-            battle.getPlayers().remove(playerPos);
-            
-            battle.setTurn(battle.getTurn() % battle.getPlayers().size());
-            
-            DefeatState defeat = new DefeatState(loser, playerPos, turn);
+        updateTurn(defeat, battle);
 
-            defeat.removeDefeated(battle.getMap());
-            
-            battle.getDefeatStates().add(defeat);
-        }
+        defeat.removeDefeated(battle.getMap());
+
+        battle.getDefeatStates().add(defeat);
+        
     }
     /**
      * Metodi kumoaa pelaajan häviön
@@ -64,9 +45,50 @@ public class BattleDefeatHandler {
         
         battle.getPlayers().add(defeat.getPlayerPos(), defeat.getPlayer());
         
+
         
         battle.setTurn(defeat.getTurn());
         
+    }
+    
+    private static DefeatState createDefeat(Battle battle, ArmyColor color) {
+        int turn = battle.getTurn();
+        
+        int playerPos = findPlayerPosition(battle, color);
+        
+        if (playerPos == -1) {
+            return null;
+        }
+        Player loser = battle.getPlayers().remove(playerPos);
+        DefeatState defeat = new DefeatState(loser, playerPos, turn);
+        
+        return defeat;
+    }
+    
+    private static int findPlayerPosition(Battle battle, ArmyColor color) {
+        int playerPos = 0;
+        
+        for (Player i : battle.getPlayers()) {
+            
+            if (i.getColor() == color) {
+                return playerPos;
+            }
+            
+            playerPos++;
+        }
+        
+        return -1;
+    }
+    
+    private static void updateTurn(DefeatState defeat, Battle battle) {
+        int playerPos = defeat.getPlayerPos();
+        
+        if (playerPos < battle.getTurn()) {
+            battle.setTurn(battle.getTurn() - 1);
+        }
+
+        battle.setTurn(battle.getTurn() % battle.getPlayers().size());
+
     }
 
 }

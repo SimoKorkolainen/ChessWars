@@ -29,12 +29,14 @@ public class UserControl {
     
     
     public void handleLeftMouseReleased(int x, int y) {
-        
+        if (player == null) {
+            return;
+        }
         if (selected == null) {
 
             selectPiece(x, y);
             
-        } else if (player != null) {
+        } else  {
 
             checkForNextMove(x, y);
             selected = null;
@@ -64,7 +66,7 @@ public class UserControl {
                 
                 player.executeMove(move);
                 player = null;
-                
+                selected = null;
             } else {
                 
                 selectPiece(x, y);

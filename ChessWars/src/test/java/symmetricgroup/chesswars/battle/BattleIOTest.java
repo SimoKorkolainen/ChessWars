@@ -51,8 +51,8 @@ public class BattleIOTest {
         map.setPiece(0, 8, new Pawn(ArmyColor.BLACK));
         map.setPiece(0, 1, new Rook(ArmyColor.WHITE));
         Move move = new Move(5, 5, 6, 5, map.getPiece(5, 5), null);
-        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle));
-        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle, false));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle, false));
         battle.doMove(move);
         
 

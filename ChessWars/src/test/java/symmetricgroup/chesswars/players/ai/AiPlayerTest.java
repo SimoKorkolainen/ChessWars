@@ -55,9 +55,9 @@ public class AiPlayerTest {
         map.setPiece(7, 0, new King(ArmyColor.WHITE));
         map.setPiece(7, 5, new King(ArmyColor.RED));
         
-        black = new AiPlayer(4, ArmyColor.BLACK, battle);
-        white = new AiPlayer(4, ArmyColor.WHITE, battle);
-        red = new AiPlayer(4, ArmyColor.RED, battle);
+        black = new AiPlayer(4, ArmyColor.BLACK, battle, false);
+        white = new AiPlayer(4, ArmyColor.WHITE, battle, false);
+        red = new AiPlayer(4, ArmyColor.RED, battle, false);
         
         battle.setTeam(ArmyColor.RED, battle.getTeam(ArmyColor.WHITE));
         
@@ -71,13 +71,13 @@ public class AiPlayerTest {
         setOrderWRB();
         assertFalse(white.alphaBeta() == null);
     }
-    /*
+    
     @Test
     public void whiteEatsBlackKing() {
         setOrderWRB();
         Move best = white.alphaBeta();
         assertEquals("King", best.getEaten().getName());
-    }*/
+    }
     
     @Test
     public void blackKingMovesToSafety() {

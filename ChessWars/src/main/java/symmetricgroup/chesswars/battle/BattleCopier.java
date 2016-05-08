@@ -26,26 +26,39 @@ public class BattleCopier {
      * @return kopioitu taistelu
      */
     public static Battle copy(Battle battle) {
+        
         Battle copy = new Battle(MapCopier.copy(battle.getMap()));
         copy.setTeam(battle.getTeam());
         copy.setTurn(battle.getTurn());
         
-        List<Move> moves = new ArrayList<>();
+        copy.setMoves(copyMoves(battle.getMoves()));
         
-        for (Move i : battle.getMoves()) {
+        copy.setPlayers(copyPlayers(battle.getPlayers(), copy));
         
-            moves.add(i.copy());
+        return copy;
+    }
+    
+    
+    private static List<Move> copyMoves(List<Move> moves) {
+        List<Move> copy = new ArrayList<>();
+        
+        for (Move i : moves) {
+        
+            copy.add(i.copy());
         
         }
+        return copy;
+    }
+    
+    
+    private static List<Player> copyPlayers(List<Player> players, Battle reference) {
+        List<Player> copy = new ArrayList<>();
         
-        copy.setMoves(moves);
+        for (Player i : players) {
         
-        List<Player> players = new ArrayList<>();
+            copy.add(i.copy(reference));
         
-        for (Player i : battle.getPlayers()) {
-            players.add(i.copy(copy));
         }
-        copy.setPlayers(players);
         return copy;
     }
 }

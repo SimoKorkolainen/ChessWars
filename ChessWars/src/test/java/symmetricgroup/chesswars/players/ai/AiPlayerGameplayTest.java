@@ -53,8 +53,8 @@ public class AiPlayerGameplayTest {
         map.setPiece(2, 2, new Rook(ArmyColor.WHITE));
         map.setPiece(6, 2, new Rook(ArmyColor.BLACK));
         
-        black = new AiPlayer(4, ArmyColor.BLACK, battle);
-        white = new AiPlayer(4, ArmyColor.WHITE, battle);
+        black = new AiPlayer(4, ArmyColor.BLACK, battle, false);
+        white = new AiPlayer(4, ArmyColor.WHITE, battle, false);
         
         battle.addPlayer(black);
         battle.addPlayer(white);
@@ -77,7 +77,9 @@ public class AiPlayerGameplayTest {
         assertEquals("White_Rook", best.getEaten().toString());
     }
     
-    
+    /**
+     * Tämä testi varmistaa, että testin blackRookEatsWhiteRook() pitäisi onnistua.
+     */
     @Test
     public void blackRookCanEatWhiteRook() {
         

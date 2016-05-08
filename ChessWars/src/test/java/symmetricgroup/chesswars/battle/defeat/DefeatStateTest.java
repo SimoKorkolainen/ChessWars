@@ -47,9 +47,9 @@ public class DefeatStateTest {
         map = new BattleMap(5, 5);
         battle = new Battle(map);
         
-        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle));
-        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle));
-        battle.addPlayer(new AiPlayer(4, ArmyColor.RED, battle));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle, false));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle, false));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.RED, battle, false));
         
         map.setPiece(0, 0, new King(ArmyColor.BLACK));
         map.setPiece(0, 1, new Rook(ArmyColor.WHITE));

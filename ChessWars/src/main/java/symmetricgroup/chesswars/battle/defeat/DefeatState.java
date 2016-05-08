@@ -50,24 +50,38 @@ public class DefeatState {
      */
     public void removeDefeated(BattleMap map) {
         for (int i = 0; i < map.getWidth(); i++) {
-            for (int j = 0; j < map.getWidth(); j++) {
+            for (int j = 0; j < map.getHeight(); j++) {
 
-                Piece piece = map.getPiece(i, j);
-                if (piece == null) {
-                    continue;
-                }
-                
-                if (piece.getColor() == player.getColor()) {
-                    
-                    Move move = new Move(i, j, i, j, null, piece);
-                    map.doMove(move);
-                    removeMove.add(move);
-                
-                }
+                removePiece(map, i, j);
 
             }
         }
     
+    }
+    
+    private void removePiece(BattleMap map, int x, int y) {
+        Piece piece = map.getPiece(x, y);
+        if (piece == null) {
+            return;
+        }
+
+        if (piece.getColor() == player.getColor()) {
+
+            reallyRemoveTheFuckingPieceNow(map, x, y);
+
+        }
+    }
+    
+    private void reallyRemoveTheFuckingPieceNow(BattleMap map, int x, int y) {
+        Piece piece = map.getPiece(x, y);
+        Move move = new Move(x, y, x, y, null, piece);
+        
+        noMoreExcusesYouIdiotJustRemoveTheFuckingPiece(map, move);
+    }
+    
+    private void noMoreExcusesYouIdiotJustRemoveTheFuckingPiece(BattleMap map, Move move) {
+        map.doMove(move);
+        removeMove.add(move);
     }
     /**
      * Metodi kumoaa häviöön liittyvän nappuloiden poisto-operaation.

@@ -27,14 +27,16 @@ import symmetricgroup.chesswars.util.ImageLoader;
  */
 public class NavigationRoom extends Room {
     private String roomName;
+    private String helpText;
     private List<MenuButton> menuButtons;
     
     private BufferedImage largeRook;
     
-    public NavigationRoom(String roomName, Navigation navigation) {
+    public NavigationRoom(String roomName, String helpText, Navigation navigation) {
         super(navigation);
         this.menuButtons = new ArrayList<>();
         this.roomName = roomName;
+        this.helpText = helpText;
         ImageLoader loader = new ImageLoader();
         largeRook = loader.loadImage("/images/largeWhiteRook.png");
         largeRook = ImageColorer.color(largeRook, new Color(187, 219, 144));
@@ -46,6 +48,7 @@ public class NavigationRoom extends Room {
     
     }
     
+
     private void createComponents() {
         super.setLayout(new GridBagLayout());
         
@@ -92,8 +95,28 @@ public class NavigationRoom extends Room {
         int y = height / 3 - metrics.getHeight() / 2;
         
         g2d.setColor(new Color(46, 55, 60));
-        g2d.drawString(roomName, x, y);
+        drawText(g2d, roomName, 0.5, 0.33, 8);
+        drawText(g2d, helpText, 0.5, 0.40, 32);
         
+    }
+    
+    public void drawText(Graphics2D g2d, String text, double relX, double relY, int ratio) {
+        int width = super.getWidth();
+        int height = super.getHeight();
+        
+        
+        g2d.setFont(new Font("SansSerif", Font.PLAIN, Math.min(height / ratio, width / ratio)));
+        
+        FontMetrics metrics = g2d.getFontMetrics();
+        
+        int x = (int) Math.floor(relX * width);
+        int y = (int) Math.floor(relY * height);
+        
+        x -= metrics.stringWidth(text) / 2;
+        y -= metrics.getHeight() / 2;
+        
+        g2d.setColor(new Color(46, 55, 60));
+        g2d.drawString(text, x, y);
         
     }
     
@@ -103,7 +126,12 @@ public class NavigationRoom extends Room {
 
     @Override
     public void update() {
+        removeAll();
+        createComponents();
     }
     
+    public void clearMenuButtons() {
+        menuButtons.clear();
+    }
 
 }

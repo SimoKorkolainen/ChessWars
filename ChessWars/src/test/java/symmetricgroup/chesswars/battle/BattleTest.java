@@ -46,8 +46,8 @@ public class BattleTest {
         map.setPiece(7, 6, new Bishop(ArmyColor.BLACK));
         
         Move move = new Move(5, 5, 6, 5, map.getPiece(5, 5), null);
-        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle));
-        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle, false));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle, false));
         battle.doMove(move);
     }
     
