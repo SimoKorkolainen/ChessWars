@@ -22,7 +22,7 @@ public class SelectionButtonListener implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
+
         if (e.getSource().getClass() == ColorSelectionButton.class) {
             handleColorButtons(e);
 

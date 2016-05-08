@@ -73,10 +73,10 @@ public class Game extends Room {
 
     @Override
     public void update() {
+        battle.stop();
         battle = loadBattle();
         super.removeAll();
         createComponents();
-        System.out.println("players " + battle.getPlayers().size());
         control.setBattle(battle);
         
         battle.start();

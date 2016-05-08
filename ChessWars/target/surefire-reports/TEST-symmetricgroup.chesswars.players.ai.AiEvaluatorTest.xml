@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="17" failures="0" name="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" time="0.555" errors="0" skipped="0">
+<testsuite tests="17" failures="0" name="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" time="0.474" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -70,7 +70,7 @@
   <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="diagonalDistanceFromOrigoIsCorrect" time="0"/>
   <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="horizontalDistanceFromOrigoIsCorrect" time="0"/>
   <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="diagonalDistanceCorrect" time="0"/>
-  <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="randomnessIsAddedToEvaluation" time="0.555"/>
+  <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="randomnessIsAddedToEvaluation" time="0.473"/>
   <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="mapWithEnemyRookIsEvaluatedCorrectly" time="0"/>
   <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="horizontalDistanceIsCorrect" time="0"/>
   <testcase classname="symmetricgroup.chesswars.players.ai.AiEvaluatorTest" name="enemyKingWithFriendlyPiecesIsEvaluatedCorrectly" time="0"/>

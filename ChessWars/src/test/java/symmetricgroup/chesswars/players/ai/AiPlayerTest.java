@@ -83,14 +83,9 @@ public class AiPlayerTest {
     public void blackKingMovesToSafety() {
         setOrderBRW();
         
-        for (Move i : map.getPiece(0, 0).getMoves(0, 0, battle)) {
-            System.out.println("possible move: " + i.toString());
-        }
-        
 
         Move best = black.alphaBeta();
         
-        System.out.println("best: " + best);
 
         assertEquals(0, best.getEndX());
         assertEquals(1, best.getEndY());

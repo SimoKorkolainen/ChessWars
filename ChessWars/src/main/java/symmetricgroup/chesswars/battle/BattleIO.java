@@ -27,6 +27,7 @@ import java.util.Map;
 import symmetricgroup.chesswars.battle.move.Move;
 import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.map.MapParser;
+import symmetricgroup.chesswars.pieces.King;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 import symmetricgroup.chesswars.players.ai.*;
@@ -73,7 +74,7 @@ public class BattleIO {
             
         } catch (Exception e) { }
         
-        return null;
+        return defaultBattle();
     }
     
     private static void writeBattleConf(String filename, String battleConf) {
@@ -86,6 +87,18 @@ public class BattleIO {
         } catch (IOException e) {
         
         }
+    }
+    
+    private static Battle defaultBattle() {
+        Battle battle = new Battle(new BattleMap(10, 10));
+        
+        battle.getMap().setPiece(0, 0, new King(ArmyColor.BLACK));
+        battle.getMap().setPiece(9, 9, new King(ArmyColor.WHITE));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.BLACK, battle, true));
+        battle.addPlayer(new AiPlayer(4, ArmyColor.WHITE, battle, true));
+        
+        
+        return battle;
     }
     
 }

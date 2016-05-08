@@ -11,15 +11,12 @@ import java.util.ArrayList;
 import java.util.Map;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleIO;
-import symmetricgroup.chesswars.map.BattleMap;
 import symmetricgroup.chesswars.players.ArmyColor;
 import symmetricgroup.chesswars.players.Player;
 import symmetricgroup.chesswars.players.ai.AiPlayer;
 import symmetricgroup.chesswars.players.ui.UserControl;
 import symmetricgroup.chesswars.players.ui.UserPlayer;
-import symmetricgroup.chesswars.ui.editor.map.MapEditor;
 import symmetricgroup.chesswars.ui.editor.settings.AiButton;
-import symmetricgroup.chesswars.ui.editor.settings.ai.AiButtonPanel;
 import symmetricgroup.chesswars.ui.editor.settings.teams.TeamSelectionPanel;
 
 /**
@@ -60,7 +57,7 @@ public class SaveButtonListener implements ActionListener {
 
         SaveButton save = (SaveButton) e.getSource();
         save.updateSaveButton();
-
+        BattleIO.saveBattle("battles/battleTest.txt", battle);
     }
     
     private void addPlayer(ArmyColor color, int team, boolean ai) {
