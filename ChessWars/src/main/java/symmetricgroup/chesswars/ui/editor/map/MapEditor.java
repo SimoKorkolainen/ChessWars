@@ -46,7 +46,7 @@ public class MapEditor {
 
     public void addSelectedToMap(int x, int y) {
 
-        System.out.println("editor: x = " + x + " y = " + y);
+
         Piece piece = panel.getSelectedPiece();
         Terrain terrain = panel.getSelectedTerrain();
         

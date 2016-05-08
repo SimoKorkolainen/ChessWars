@@ -50,18 +50,17 @@ public class SaveButtonListener implements ActionListener {
             if (button.playerIsIn()) {
                 ArmyColor color = button.getColor();
                 int team = teamPanel.getButton(color).getTeam();
-                System.out.println(color + " in team " + team);
+
                 addPlayer(color, team, button.aiIsOn());
             
             }
         }
         
         battle.getMap().setMapName(editor.getMapAndName().getMapName().getText());
-        System.out.println("Saved battle: " + battle.getMap().getMapName());
-        
+
         SaveButton save = (SaveButton) e.getSource();
         save.updateSaveButton();
-        BattleIO.saveBattle("battles/battleTest.txt", battle);
+
     }
     
     private void addPlayer(ArmyColor color, int team, boolean ai) {

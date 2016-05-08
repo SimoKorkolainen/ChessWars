@@ -39,7 +39,6 @@ public class AiPlayer implements Player {
         this.myTeam = new HashSet<>();
         this.myTeam.add(color);
         this.battle = battle;
-        System.out.println("Ai " + searchDepth);  
         this.random = random;
     }
     

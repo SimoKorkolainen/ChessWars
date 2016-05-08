@@ -49,7 +49,7 @@ public class BattleInfoPanel extends JPanel {
 
             super.add(new RoundRectPanel(new Color(158, 171, 187), new Color(188, 201, 217), 10, new BattleTeamPanel(battle)), constraints);
         }
-        System.out.println(battle.getPlayers().size());
+
         constraints.gridx = 0;
         constraints.gridy = 2;
         

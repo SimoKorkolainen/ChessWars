@@ -12,7 +12,6 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import javax.swing.JPanel;
 import symmetricgroup.chesswars.battle.Battle;
 import symmetricgroup.chesswars.battle.BattleIO;
 import symmetricgroup.chesswars.players.ui.UserControl;

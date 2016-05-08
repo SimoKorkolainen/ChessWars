@@ -66,7 +66,7 @@ public class SaveButton extends RoundRectTextButton {
             }
         }
         
-        System.out.println("teams: " + count);
+
         return count;
         
     }
