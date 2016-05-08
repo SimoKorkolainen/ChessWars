@@ -8,3 +8,9 @@ Voit lukea ohjelmasta tarkemmin klikkaamalla seuraavia linkkejä.
 - [PIT-raportti](http://htmlpreview.github.io/?https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/pit-reports/201605081817/index.html)
 - [CheckStyle-raportti](http://htmlpreview.github.io/?https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/site/checkstyle.html)
 - [Käyttöohje] (https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/kayttoohje.md)
+
+
+
+![Are you ready?](/dokumentaatio/areyouready.png "Are you ready?")
+
+
