@@ -26,3 +26,5 @@ Päivä | Tunnit | Kuvaus
 22.4.2016 | 10h | JavaDocsien ja testien kirjoitus, sekvenssikaavioiden teko ja koodin siistiminen
 27.4.2016 | 3h | Käyttöliittymän koodaus
 29.4.2016 | 4h | Dokumentaation päivitys ja tekoälyn bugin korjaus. (Tekoäly on nyt huomattavasti älykkäämpi kuin aiemmin.)
+7.5.2016 | 3h | Koodin siistiminen
+8.5.2016 | 7h | Koodin siistiminen siten, että ohjelmalogiikan metodit ovat enintään 10 riviä (CheckStyle tarkastaa)
