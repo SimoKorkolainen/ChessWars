@@ -9,7 +9,7 @@ Voit lukea ohjelmasta tarkemmin klikkaamalla seuraavia linkkejä.
 - [CheckStyle-raportti](http://htmlpreview.github.io/?https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/site/checkstyle.html)
 - [Käyttöohje] (https://github.com/SimoKorkolainen/ChessWars/blob/master/dokumentaatio/kayttoohje.md)
 
-
+##
 
 ![Are you ready?](/dokumentaatio/areyouready.png "Are you ready?")
 
