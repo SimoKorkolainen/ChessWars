@@ -20,5 +20,8 @@ Toisin kuin perinteisessä shakissa sotilaat voivat liikkua yhden askeljeen vaak
 
 ![Sotilaan syöminen](/dokumentaatio/sotilaan_syominen_tornilla.png "Sotilaan syöminen")
 
+![Karttaeditori](/dokumentaatio/karttaeditori.png "Karttaeditori")
+
+
 Jokaisella pelaajalla tulisi olla kuningas pelikentällä. Jos pelaajan kuningas syödään, pelaaja häviää pelin. Peli loppuu, kun enää on jäljellä vain samaan joukkueeseen kuuluvia pelaajia.
 
