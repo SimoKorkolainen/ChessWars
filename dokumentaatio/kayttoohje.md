@@ -25,5 +25,14 @@ Jokaisella pelaajalla tulisi olla kuningas pelikentällä. Jos pelaajan kuningas
 
 ## Karttaeditori
 
+Karttaeditorissa on mahdollista tehdä oma taistelu, jota voi pelata tallennettuaan sen. 
+
 ![Karttaeditori](/dokumentaatio/karttaeditori.png "Karttaeditori")
 
+Karttaeditorissa on paljon erilaista toiminnallisuutta.
+
+  - Kartan nimen voi kirjoittaa ylimpänä olevaan tekstikenttään. 
+  - Kun värin kuningas on lisätty kartaalle, on mahdollista valita pelaako väriä tekoäly vai käyttäjä.
+  - Tällöin on myös mahdollista valita numeronapeista joukkuenumerot eri väreille.
+  - Kuvattomista värinappuloista on mahdollista valita kartalle asetettavien nappuloiden väri.
+  - Kartalle asetettavan nappulan tai maaston voi valita kuvallista nappia painamalla.
